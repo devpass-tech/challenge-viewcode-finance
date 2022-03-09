@@ -5,7 +5,7 @@
 //  Created by Edson Neto on 08/03/22.
 //
 
-import Foundation
+import UIKit
 
 protocol ViewConfiguration {
     func setupViews()
@@ -19,5 +19,17 @@ extension ViewConfiguration {
         configViews()
         buildViews()
         setupConstraints()
+    }
+}
+
+extension ViewConfiguration where Self: UIView {
+    func addSubviews(_ subviews: [UIView]) {
+        subviews.forEach(addSubview)
+    }
+}
+
+extension ViewConfiguration where Self: UIStackView {
+    func addArrangedSubviews(_ subviews: [UIView]) {
+        subviews.forEach(addArrangedSubview)
     }
 }
