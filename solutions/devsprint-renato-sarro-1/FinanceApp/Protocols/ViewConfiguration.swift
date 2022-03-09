@@ -26,7 +26,10 @@ extension ViewConfiguration where Self: UIView {
     /// Call this method to add a list of views in hierarchy
     /// - Parameter subviews: List of views to be added
     func addSubviews(_ subviews: [UIView]) {
-        subviews.forEach(addSubview)
+        subviews.forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            addSubview($0)
+        }
     }
 }
 
@@ -34,6 +37,9 @@ extension ViewConfiguration where Self: UIStackView {
     /// Call this method to add a list of arranged views in hierarchy
     /// - Parameter subviews: List of views to be added
     func addArrangedSubviews(_ subviews: [UIView]) {
-        subviews.forEach(addArrangedSubview)
+        subviews.forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            addArrangedSubview($0)
+        }
     }
 }
