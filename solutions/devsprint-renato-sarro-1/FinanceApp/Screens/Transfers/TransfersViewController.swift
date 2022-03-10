@@ -8,8 +8,29 @@
 import UIKit
 
 class TransfersViewController: UIViewController {
-
+    // MARK: Properties
+    private let transfersView: TransfersView = {
+        let transfersView = TransfersView()
+        return transfersView
+    }()
+    
+    // MARK: Init
     override func loadView() {
-        self.view = TransfersView()
+        self.view = transfersView
+    }
+    
+    override func viewDidLoad() {
+        bindEvents()
+    }
+    
+    // MARK: Methods
+    private func bindEvents() {
+        transfersView.didPressTransferButton = { [weak self] in
+            print("transfer button tapped!")
+        }
+
+        transfersView.didPressChooseContactButton = { [weak self] in
+            print("contact button tapped!")
+        }
     }
 }
