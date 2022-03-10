@@ -9,71 +9,60 @@ import UIKit
 
 class ActivityDetailsView: UIView {
     
-    lazy var activityDetailsImage: UIImageView = {
+    private lazy var activityDetailsImage: UIImageView = {
         let image = UIImageView()
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(named: "ProfilePhoto")
-        image.center = .zero
-        image.contentMode = .scaleAspectFill
-        image.clipsToBounds = true
+        image.tintColor = UIColor(red: 0.686, green: 0.322, blue: 0.871, alpha: 1)
+        image.image = UIImage(named: "bag.circle.fill")
+        image.contentMode = .scaleAspectFit
         
         return image
     }()
     
-    lazy var nameActivityLabel: UILabel = {
+    private lazy var nameActivityLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Mall"
-        label.frame = CGRect(x: 0, y: 0, width: 121, height: 22)
-        label.font = UIFont(name: "SFProText-Semibold", size: 17)
+        label.font = .boldSystemFont(ofSize: 22.0)
         label.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         label.textAlignment = .center
         
         return label
     }()
     
-    lazy var typeActivityLabel: UILabel = {
+    private lazy var typeActivityLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Shopping"
-        label.font = UIFont(name: "SFProText-Regular", size: 15)
+        label.font = .systemFont(ofSize: 15.0)
         label.textColor = UIColor(red: 0.235, green: 0.235, blue: 0.263, alpha: 0.6)
         label.textAlignment = .center
         
         return label
     }()
     
-    lazy var valueActivityLabel: UILabel = {
+    private lazy var valueActivityLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "$ 200.00"
+        label.text = "$100.00"
         label.font = .boldSystemFont(ofSize: 34)
-        label.frame = CGRect(x: 0, y: 0, width: 413, height: 41)
         label.textColor =  UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         label.textAlignment = .center
         
         return label
     }()
     
-    lazy var timeActivityLabel: UILabel = {
+    private lazy var timeActivityLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "8:57 AM"
-        label.font = UIFont(name: "SFProText-Regular", size: 15)
+        label.font = .systemFont(ofSize: 15.0)
         label.textColor =  UIColor(red: 0.235, green: 0.235, blue: 0.263, alpha: 0.6)
         label.textAlignment = .center
         
         return label
     }()
     
-    lazy var buttonReport: UIButton = {
+    private lazy var buttonReport: UIButton = {
         let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Report a issue", for: .normal)
         button.layer.cornerRadius = 14
         button.layer.backgroundColor = UIColor(red: 0, green: 0.478, blue: 1, alpha: 1).cgColor
-        button.frame = CGRect(x: 0, y: 0, width: 375, height: 56)
-        // = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         
         return button
     }()
@@ -81,7 +70,6 @@ class ActivityDetailsView: UIView {
     init() {
 
         super.init(frame: .zero)
-        
         self.setupViews()
     }
 
@@ -105,32 +93,52 @@ class ActivityDetailsView: UIView {
     }
     
     func configureSubviewsConstraints() {
+            
+        [activityDetailsImage, nameActivityLabel, typeActivityLabel, valueActivityLabel, timeActivityLabel, buttonReport].forEach { $0.translatesAutoresizingMaskIntoConstraints = false
+        }
 
         NSLayoutConstraint.activate([
-            self.activityDetailsImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 156.0),
-            self.activityDetailsImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 122.0),
-            self.activityDetailsImage.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -156.0),
+            activityDetailsImage.topAnchor.constraint(equalTo: topAnchor, constant: 34),
+            activityDetailsImage.centerXAnchor.constraint(equalTo: centerXAnchor),
+            activityDetailsImage.heightAnchor.constraint(equalToConstant: 100.0),
+            activityDetailsImage.widthAnchor.constraint(equalToConstant: 100.0),
             
-            self.nameActivityLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 156.0),
-            self.nameActivityLabel.topAnchor.constraint(equalTo: activityDetailsImage.bottomAnchor, constant: 8.0),
-            self.nameActivityLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -156.0),
+            nameActivityLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 156.0),
+            nameActivityLabel.topAnchor.constraint(equalTo: activityDetailsImage.bottomAnchor, constant: 8.0),
+            nameActivityLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -156.0),
             
-            self.typeActivityLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0.0),
-            self.typeActivityLabel.topAnchor.constraint(equalTo: nameActivityLabel.bottomAnchor, constant: 8.0),
-            self.typeActivityLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0.0),
+            typeActivityLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0.0),
+            typeActivityLabel.topAnchor.constraint(equalTo: nameActivityLabel.bottomAnchor, constant: 8.0),
+            typeActivityLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0.0),
             
-            self.valueActivityLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0.0),
-            self.valueActivityLabel.topAnchor.constraint(equalTo: typeActivityLabel.bottomAnchor, constant: 132.0),
-            self.valueActivityLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0.0),
+            valueActivityLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0.0),
+            valueActivityLabel.topAnchor.constraint(equalTo: typeActivityLabel.bottomAnchor, constant: 132.0),
+            valueActivityLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0.0),
             
-            self.timeActivityLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0.0),
-            self.timeActivityLabel.topAnchor.constraint(equalTo: valueActivityLabel.bottomAnchor, constant: 8.0),
-            self.timeActivityLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0.0),
+            timeActivityLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0.0),
+            timeActivityLabel.topAnchor.constraint(equalTo: valueActivityLabel.bottomAnchor, constant: 8.0),
+            timeActivityLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0.0),
             
-            self.buttonReport.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20.0),
-            self.buttonReport.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -17.5),
-            self.buttonReport.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20.0),
-            
+            buttonReport.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20.0),
+            buttonReport.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -17.5),
+            buttonReport.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20.0),
+            buttonReport.heightAnchor.constraint(equalToConstant: 56.0)
         ])
     }
+    
+//    /// Metodo para inicializar a view
+//    /// - Parameters:
+//    ///   - image: Icone/Imagem
+//    ///   - nameActivity: Atividade
+//    ///   - typeActivity: Tipo da atividade
+//    ///   - value: Valor
+//    ///   - time: Horario
+//    ///
+//    func setup(image: UIImage?, nameActivity: String, typeActivity: String, value: String, time: String) {
+//        activityDetailsImage.image = image
+//        nameActivityLabel.text = nameActivity
+//        typeActivityLabel.text = typeActivity
+//        valueActivityLabel.text = value
+//        timeActivityLabel.text = time
+//    }
 }
