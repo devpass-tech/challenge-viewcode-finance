@@ -20,7 +20,8 @@ class TransfersViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        bindEvents()
+        self.bindEvents()
+        self.hideKeyboardWhenTappedOnScreen()
     }
     
     // MARK: Methods
