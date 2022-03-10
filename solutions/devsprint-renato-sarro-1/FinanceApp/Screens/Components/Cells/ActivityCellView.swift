@@ -40,10 +40,7 @@ final class ActivityCellView: UITableViewCell, ViewConfiguration {
     }()
 
     private lazy var activityDetailLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: ActivityDetailsConstants.smallFontSize)//todo: tirar magic number
-        label.textColor = .systemGray
-        return label
+        return UILabel.build(with: .footNote(weight: .regular, color: .secondary))
     }()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
