@@ -9,7 +9,9 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    private let service = FinanceService()
+    private let service: FinanceServiceProtocol
+    private let thread: DispatchQueue
+    
     lazy var profileBtn: UIButton = {
         let btn = UIButton(type: .custom)
         btn.setImage(UIImage(named: "Avatar"), for: .normal)
@@ -22,11 +24,27 @@ class HomeViewController: UIViewController {
         let homeView = HomeView()
         return homeView
     }()
-
+    
+    init(service: FinanceServiceProtocol = FinanceService(), thread: DispatchQueue = .main) {
+        self.service = service
+        self.thread = thread
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func loadView() {
+        self.view = homeView
+    }
+    
     override func viewDidLoad() {
         navigationItem.title = "Finance App 💰"
         navigationController?.navigationBar.prefersLargeTitles = true
-        
+
         let itemBtn = UIBarButtonItem(customView: profileBtn)
         self.navigationItem.setRightBarButton(itemBtn, animated: true)
 
@@ -38,14 +56,9 @@ class HomeViewController: UIViewController {
 
             let configuration = HomeViewConfiguration(homeData: homeData)
 
-            DispatchQueue.main.async {
-
+            self.thread.async {
                 self.homeView.updateView(with: configuration)
             }
         }
-    }
-
-    override func loadView() {
-        self.view = homeView
     }
 }

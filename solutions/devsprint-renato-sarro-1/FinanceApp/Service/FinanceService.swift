@@ -7,7 +7,11 @@
 
 import Foundation
 
-class FinanceService {
+protocol FinanceServiceProtocol {
+    func fetchHomeData(_ completion: @escaping (HomeData?) -> Void)
+}
+
+class FinanceService: FinanceServiceProtocol {
 
     func fetchHomeData(_ completion: @escaping (HomeData?) -> Void) {
 
