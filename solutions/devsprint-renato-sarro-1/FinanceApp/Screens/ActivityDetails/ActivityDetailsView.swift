@@ -46,7 +46,7 @@ class ActivityDetailsView: UIView {
     lazy var valueActivityLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "$ 100.00"
+        label.text = "$ 200.00"
         label.font = .boldSystemFont(ofSize: 34)
         label.frame = CGRect(x: 0, y: 0, width: 413, height: 41)
         label.textColor =  UIColor(red: 0, green: 0, blue: 0, alpha: 1)
