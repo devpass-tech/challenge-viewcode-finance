@@ -22,7 +22,7 @@ extension ViewConfiguration {
     }
 }
 
-extension ViewConfiguration where Self: UIView {
+extension UIView {
     /// Call this method to add a list of views in hierarchy
     /// - Parameter subviews: List of views to be added
     func addSubviews(_ subviews: [UIView]) {
@@ -33,7 +33,7 @@ extension ViewConfiguration where Self: UIView {
     }
 }
 
-extension ViewConfiguration where Self: UIStackView {
+extension UIStackView {
     /// Call this method to add a list of arranged views in hierarchy
     /// - Parameter subviews: List of views to be added
     func addArrangedSubviews(_ subviews: [UIView]) {
