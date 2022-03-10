@@ -42,6 +42,7 @@
 		98C8A4E527C81A3F00A630ED /* TransferResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8A4E427C81A3F00A630ED /* TransferResult.swift */; };
 		98C8A4E727C81A9C00A630ED /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8A4E627C81A9C00A630ED /* UserProfile.swift */; };
 		9BD075DE804FBB5FD349FC5A /* Pods_FinanceApp_FinanceAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AEE90C360E2C52EC080BE98 /* Pods_FinanceApp_FinanceAppUITests.framework */; };
+		BF2DA18127DAB496008D5B3B /* ViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2DA18027DAB496008D5B3B /* ViewController+Extensions.swift */; };
 		D70C4503C88AEA6AE0CF1023 /* Pods_FinanceAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EFAAD3FA281F92E0DA80616 /* Pods_FinanceAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +110,7 @@
 		98C8A4E427C81A3F00A630ED /* TransferResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferResult.swift; sourceTree = "<group>"; };
 		98C8A4E627C81A9C00A630ED /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		9EFAAD3FA281F92E0DA80616 /* Pods_FinanceAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinanceAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF2DA18027DAB496008D5B3B /* ViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -366,6 +368,7 @@
 			children = (
 				98C8A4D827C8152200A630ED /* String+Extensions.swift */,
 				98C8A4DA27C815C000A630ED /* UITableViewCell+Extensions.swift */,
+				BF2DA18027DAB496008D5B3B /* ViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -615,6 +618,7 @@
 				98584AE8277E50430028DBEA /* TransfersViewController.swift in Sources */,
 				98584B14277E605F0028DBEA /* ActivityDetailsView.swift in Sources */,
 				98584AE7277E50430028DBEA /* TransfersView.swift in Sources */,
+				BF2DA18127DAB496008D5B3B /* ViewController+Extensions.swift in Sources */,
 				98C8A4DB27C815C000A630ED /* UITableViewCell+Extensions.swift in Sources */,
 				87C3B7AD27D929BF00509304 /* TabBarViewController.swift in Sources */,
 				98584AF3277E50430028DBEA /* ConfirmationView.swift in Sources */,
