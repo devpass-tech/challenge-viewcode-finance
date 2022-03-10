@@ -64,10 +64,9 @@ final class ActivityCellView: UITableViewCell, ViewConfiguration {
     }
 
     func buildViews() {
-        contentView.addSubview(icon)
-        contentView.addSubview(infoStackView)
-
-        [activityTitleLabel, activityDetailLabel].forEach(infoStackView.addArrangedSubview)
+        
+        addSubviews([icon, infoStackView])
+        infoStackView.addArrangedSubviews([activityTitleLabel, activityDetailLabel])
     }
 
     func setupConstraints() {
