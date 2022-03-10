@@ -18,7 +18,6 @@ final class ActivityCellView: UITableViewCell, ViewConfiguration {
         image.clipsToBounds         = true
         image.layer.masksToBounds   = true
         image.contentMode           = .scaleAspectFill
-        image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
 
@@ -30,7 +29,6 @@ final class ActivityCellView: UITableViewCell, ViewConfiguration {
         stackView.contentMode   = .left
         stackView.spacing       = ActivityDetailsConstants.negativeSpacing
         stackView.layoutIfNeeded()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
 
@@ -38,7 +36,6 @@ final class ActivityCellView: UITableViewCell, ViewConfiguration {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: ActivityDetailsConstants.mediumFontSize)
         label.textColor = .black
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
@@ -46,7 +43,6 @@ final class ActivityCellView: UITableViewCell, ViewConfiguration {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: ActivityDetailsConstants.smallFontSize)//todo: tirar magic number
         label.textColor = .systemGray
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
