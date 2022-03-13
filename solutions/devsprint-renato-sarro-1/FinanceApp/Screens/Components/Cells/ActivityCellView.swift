@@ -33,8 +33,8 @@ final class ActivityCellView: UITableViewCell, ViewConfiguration {
     }()
 
     private lazy var activityTitleLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: ActivityDetailsConstants.mediumFontSize)
+        let label       = UILabel()
+        label.font      = UIFont.boldSystemFont(ofSize: ActivityDetailsConstants.mediumFontSize)
         label.textColor = .black
         return label
     }()
@@ -75,8 +75,8 @@ final class ActivityCellView: UITableViewCell, ViewConfiguration {
         ])
     }
 
-    func populate(detail: ActivityDetails){
-        activityTitleLabel.text = detail.name
-        activityDetailLabel.text = String.activityDetails(with: detail.price, and: detail.time)
+    func populate(detail: [Activity], indexPath: IndexPath){
+        activityTitleLabel.text     = detail[indexPath.row].name
+        activityDetailLabel.text    = String.activityDetails(with: detail[indexPath.row].price, and: detail[indexPath.row].time)
     }
 }
