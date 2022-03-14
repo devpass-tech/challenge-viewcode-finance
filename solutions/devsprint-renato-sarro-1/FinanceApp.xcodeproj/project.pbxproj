@@ -14,6 +14,8 @@
 		8794EE2227D95E7A0051B349 /* UserProfileViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8794EE2127D95E7A0051B349 /* UserProfileViewTest.swift */; };
 		8794EE2527D962D40051B349 /* HomeViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8794EE2427D962D40051B349 /* HomeViewTest.swift */; };
 		8794EE2727D9685F0051B349 /* FinanceServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8794EE2627D9685F0051B349 /* FinanceServiceStub.swift */; };
+		8794EE2C27DAB5D40051B349 /* LabelStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8794EE2B27DAB5D40051B349 /* LabelStyles.swift */; };
+		8794EE2F27DAB7170051B349 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8794EE2E27DAB7170051B349 /* Color.swift */; };
 		87C3B7AD27D929BF00509304 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C3B7AC27D929BF00509304 /* TabBarViewController.swift */; };
 		98584A6D277E32C30028DBEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584A6C277E32C30028DBEA /* AppDelegate.swift */; };
 		98584A6F277E32C30028DBEA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584A6E277E32C30028DBEA /* SceneDelegate.swift */; };
@@ -76,6 +78,8 @@
 		8794EE2127D95E7A0051B349 /* UserProfileViewTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewTest.swift; sourceTree = "<group>"; };
 		8794EE2427D962D40051B349 /* HomeViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewTest.swift; sourceTree = "<group>"; };
 		8794EE2627D9685F0051B349 /* FinanceServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceServiceStub.swift; sourceTree = "<group>"; };
+		8794EE2B27DAB5D40051B349 /* LabelStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelStyles.swift; sourceTree = "<group>"; };
+		8794EE2E27DAB7170051B349 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		87C3B7AC27D929BF00509304 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		8C7BBD193B262E6FA625E9F0 /* Pods-FinanceApp-FinanceAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinanceApp-FinanceAppUITests.release.xcconfig"; path = "Target Support Files/Pods-FinanceApp-FinanceAppUITests/Pods-FinanceApp-FinanceAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9262731F09C61EA5C3E32323 /* Pods-FinanceApp-FinanceAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinanceApp-FinanceAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-FinanceApp-FinanceAppUITests/Pods-FinanceApp-FinanceAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -176,6 +180,22 @@
 				8794EE2627D9685F0051B349 /* FinanceServiceStub.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		8794EE2A27DAB5C70051B349 /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				8794EE2B27DAB5D40051B349 /* LabelStyles.swift */,
+			);
+			path = Label;
+			sourceTree = "<group>";
+		};
+		8794EE2D27DAB7060051B349 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				8794EE2E27DAB7170051B349 /* Color.swift */,
+			);
+			path = Colors;
 			sourceTree = "<group>";
 		};
 		87C3B7B427D95E3900509304 /* UserProfile */ = {
@@ -335,6 +355,8 @@
 		98584AF8277E511C0028DBEA /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				8794EE2D27DAB7060051B349 /* Colors */,
+				8794EE2A27DAB5C70051B349 /* Label */,
 				76426C1627D7FE90005801EA /* Cells */,
 			);
 			path = Components;
@@ -617,6 +639,7 @@
 				98C8A4D927C8152200A630ED /* String+Extensions.swift in Sources */,
 				98C8A4E727C81A9C00A630ED /* UserProfile.swift in Sources */,
 				98C8A4E327C819DE00A630ED /* Contact.swift in Sources */,
+				8794EE2C27DAB5D40051B349 /* LabelStyles.swift in Sources */,
 				98C8A4E527C81A3F00A630ED /* TransferResult.swift in Sources */,
 				98584AE8277E50430028DBEA /* TransfersViewController.swift in Sources */,
 				98584B14277E605F0028DBEA /* ActivityDetailsView.swift in Sources */,
@@ -633,6 +656,7 @@
 				98584B1F277E60740028DBEA /* ContactListView.swift in Sources */,
 				989627E027ADC2F60009A07F /* DebugViewController.swift in Sources */,
 				98584AA5277E35E90028DBEA /* HomeViewController.swift in Sources */,
+				8794EE2F27DAB7170051B349 /* Color.swift in Sources */,
 				76426C1927D7FF28005801EA /* ViewConfiguration.swift in Sources */,
 				98584AED277E50430028DBEA /* UserProfileView.swift in Sources */,
 				98C8A4E127C8196100A630ED /* ActivityDetails.swift in Sources */,
