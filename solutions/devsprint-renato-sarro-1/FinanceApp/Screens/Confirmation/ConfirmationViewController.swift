@@ -23,7 +23,6 @@ class ConfirmationViewController: UIViewController {
             label.text = "Your transfer was successful"
             label.textAlignment = .center
             label.font = .systemFont(ofSize: 17, weight: .bold)
-    //        label.textColor
             label.translatesAutoresizingMaskIntoConstraints = false
             
             return label
@@ -31,9 +30,8 @@ class ConfirmationViewController: UIViewController {
         
         lazy var buttonConfirmation: UIButton = {
             let button = UIButton()
-            button.layer.name = "Nice!"
-//            button.set
-            button.backgroundColor = .blue
+            button.setTitle("Nice", for: .normal)
+            button.backgroundColor = UIColor(red: 0, green: 0.478, blue: 1, alpha: 1)
             button.layer.cornerRadius = 14
             button.translatesAutoresizingMaskIntoConstraints = false
             
@@ -41,7 +39,6 @@ class ConfirmationViewController: UIViewController {
         }()
     //MARK: Life cycle
     override func viewDidLoad() {
-//        self.view = ConfirmationView()
         super.viewDidLoad()
         configViews()
         buildViews()
@@ -61,11 +58,13 @@ class ConfirmationViewController: UIViewController {
         NSLayoutConstraint.activate([
             imageConfirmation.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             imageConfirmation.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            imageConfirmation.heightAnchor.constraint(equalToConstant: 89),
+            imageConfirmation.widthAnchor.constraint(equalToConstant: 89),
             
             titleConfirmation.topAnchor.constraint(equalTo: imageConfirmation.bottomAnchor, constant: 8),
             titleConfirmation.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            buttonConfirmation.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -21),
+            buttonConfirmation.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -34),
             buttonConfirmation.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             buttonConfirmation.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             buttonConfirmation.heightAnchor.constraint(equalToConstant: 56)
