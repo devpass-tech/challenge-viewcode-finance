@@ -68,6 +68,8 @@ class UserProfileViewController: UIViewController, ViewConfiguration {
         return tableView
     }()
     
+    private var availableHeight: CGFloat = 0
+    
     //MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,7 +78,8 @@ class UserProfileViewController: UIViewController, ViewConfiguration {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        tableView.contentInset = UIEdgeInsets(top: profileContent.frame.height + 32,
+        availableHeight = profileContent.frame.height + 32
+        tableView.contentInset = UIEdgeInsets(top: availableHeight,
                                               left: 0,
                                               bottom: 0,
                                               right: 0)
@@ -112,7 +115,16 @@ class UserProfileViewController: UIViewController, ViewConfiguration {
 }
 
 extension UserProfileViewController: UITableViewDataSource, UITableViewDelegate {
+    // MARK: Delegate
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let alpha = -scrollView.contentOffset.y / availableHeight
+        
+        if alpha <= 1 {
+            profileContent.alpha = alpha
+        }
+    }
     
+    // MARK: Data source
     func numberOfSections(in tableView: UITableView) -> Int {
         return titleSections.count
     }
