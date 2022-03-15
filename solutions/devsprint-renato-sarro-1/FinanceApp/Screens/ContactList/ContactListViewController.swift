@@ -8,8 +8,13 @@
 import UIKit
 
 class ContactListViewController: UIViewController {
-
+    
     override func loadView() {
         self.view = ContactListView()
     }
+    
+ override func viewDidLoad() {
+     self.navigationItem.title = "Contatos list"
+
+  }
 }
