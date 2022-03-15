@@ -11,64 +11,65 @@ class ActivityDetailsView: UIView {
     
     private lazy var activityDetailsImage: UIImageView = {
         let image = UIImageView()
-        image.tintColor = UIColor(red: 0.686, green: 0.322, blue: 0.871, alpha: 1)
-        image.image = UIImage(named: "bag.circle.fill")
-        image.contentMode = .scaleAspectFit
+        image.image                 = UIImage(imageLiteralResourceName: "bag.circle.fill")
+        image.tintColor             = .systemPurple
+        image.contentMode           = .scaleAspectFit
+        image.clipsToBounds         = true
+        image.layer.masksToBounds   = true
         
         return image
     }()
     
     private lazy var nameActivityLabel: UILabel = {
         let label = UILabel()
-        label.text = "Mall"
-        label.font = .boldSystemFont(ofSize: 22.0)
-        label.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
-        label.textAlignment = .center
+        label.text              = "Mall"
+        label.font              = UIFont.boldSystemFont(ofSize: ActivityDetailsConstants.mediumFontSize)
+        label.textColor         = .black
+        label.textAlignment     = .center
         
         return label
     }()
     
     private lazy var typeActivityLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Shopping"
-        label.font = .systemFont(ofSize: 15.0)
-        label.textColor = UIColor(red: 0.235, green: 0.235, blue: 0.263, alpha: 0.6)
+        let label           = UILabel()
+        label.text          = "Shopping"
+        label.font          = .systemFont(ofSize: 15.0)
+        label.textColor     = UIColor(red: 0.235, green: 0.235, blue: 0.263, alpha: 0.6)
         label.textAlignment = .center
         
         return label
     }()
     
     private lazy var valueActivityLabel: UILabel = {
-        let label = UILabel()
-        label.text = "$100.00"
-        label.font = .boldSystemFont(ofSize: 34)
-        label.textColor =  UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+        let label           = UILabel()
+        label.text          = "$100.00"
+        label.font          = .boldSystemFont(ofSize: 34)
+        label.textColor     =  UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         label.textAlignment = .center
         
         return label
     }()
     
     private lazy var timeActivityLabel: UILabel = {
-        let label = UILabel()
-        label.text = "8:57 AM"
-        label.font = .systemFont(ofSize: 15.0)
-        label.textColor =  UIColor(red: 0.235, green: 0.235, blue: 0.263, alpha: 0.6)
-        label.textAlignment = .center
+        let label               = UILabel()
+        label.text              = "8:57 AM"
+        label.font              = .systemFont(ofSize: 15.0)
+        label.textColor         = UIColor(red: 0.235, green: 0.235, blue: 0.263, alpha: 0.6)
+        label.textAlignment     = .center
         
         return label
     }()
     
     private lazy var buttonReport: UIButton = {
-        let button = UIButton()
+        let button                      = UIButton()
+        button.layer.cornerRadius       = 14
+        button.layer.backgroundColor    = UIColor(red: 0, green: 0.478, blue: 1, alpha: 1).cgColor
         button.setTitle("Report a issue", for: .normal)
-        button.layer.cornerRadius = 14
-        button.layer.backgroundColor = UIColor(red: 0, green: 0.478, blue: 1, alpha: 1).cgColor
         
         return button
     }()
     
     init() {
-
         super.init(frame: .zero)
         self.setupViews()
     }
@@ -133,12 +134,12 @@ class ActivityDetailsView: UIView {
 //    ///   - typeActivity: Tipo da atividade
 //    ///   - value: Valor
 //    ///   - time: Horario
-//    ///
-//    func setup(image: UIImage?, nameActivity: String, typeActivity: String, value: String, time: String) {
-//        activityDetailsImage.image = image
-//        nameActivityLabel.text = nameActivity
-//        typeActivityLabel.text = typeActivity
-//        valueActivityLabel.text = value
-//        timeActivityLabel.text = time
+//    func setupActivityDetails(image: UIImage?, nameActivity: String, typeActivity: String, value: String, time: String) {
+//
+//        activityDetailsImage.image  = image
+//        nameActivityLabel.text      = nameActivity
+//        typeActivityLabel.text      = typeActivity
+//        valueActivityLabel.text     = value
+//        timeActivityLabel.text      = time
 //    }
 }
