@@ -26,19 +26,54 @@ final class TransfersView: UIView {
         textField.placeholder = "$0"
         textField.font = UIFont.boldSystemFont(ofSize: 34)
         textField.textAlignment = .center
-        textField.keyboardType = .numbersAndPunctuation
+        textField.keyboardType = .numberPad
         return textField
     }()
 
     private let chooseContactButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Choose contact", for: .normal)
-        button.setTitleColor(.systemBlue, for: .normal)
+        button.setTitleColor(.black, for: .normal)
         button.addTarget(self, action: #selector(chooseContact), for: .touchUpInside)
         return button
     }()
-
+    
+    private let chooseContactRoundDetail: UIView = {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 12, height: 12))
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = UIColor(red: 0.204, green: 0.78, blue: 0.349, alpha: 1)
+        view.layer.cornerRadius = 6
+        return view
+    }()
+    
+    private let chooseContactButtonLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Choose contact"
+        label.textColor = .black
+        label.font = UIFont(name: "SFProText-Semibold", size: 13)
+        label.textAlignment = .center
+        return label
+    }()
+    
+    private let chooseContactView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = UIColor(red: 0.898, green: 0.898, blue: 0.918, alpha: 1)
+        view.layer.cornerRadius = 19
+        return view
+    }()
+    
+    private let chooseContactLeftLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "To"
+        label.textColor = UIColor(red: 0.235, green: 0.235, blue: 0.263, alpha: 0.6)
+        label.font = UIFont(name: "SFProText-Regular", size: 15)
+        label.textAlignment = .center
+        return label
+    }()
+    
     private let transferButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -60,15 +95,57 @@ final class TransfersView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: Methods
+    private func makeChooseContactView() -> UIView {
+        let view = UIView()
+        view.backgroundColor = .clear
+
+        view.addSubview(chooseContactLeftLabel)
+        view.addSubview(chooseContactView)
+        chooseContactView.addSubview(chooseContactButton)
+        chooseContactView.addSubview(chooseContactRoundDetail)
+        chooseContactView.addSubview(chooseContactButtonLabel)
+        
+        NSLayoutConstraint.activate([
+            chooseContactLeftLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            chooseContactLeftLabel.trailingAnchor.constraint(equalTo: chooseContactView.leadingAnchor, constant: -13),
+            chooseContactLeftLabel.centerYAnchor.constraint(equalTo: chooseContactView.centerYAnchor),
+            chooseContactLeftLabel.widthAnchor.constraint(equalToConstant: 20),
+            chooseContactLeftLabel.heightAnchor.constraint(equalToConstant: 20),
+            
+            chooseContactButtonLabel.centerYAnchor.constraint(equalTo: chooseContactView.centerYAnchor),
+            chooseContactButtonLabel.trailingAnchor.constraint(equalTo: chooseContactView.trailingAnchor, constant: -10),
+            
+            chooseContactRoundDetail.leadingAnchor.constraint(equalTo: chooseContactView.leadingAnchor, constant: 10),
+            chooseContactRoundDetail.trailingAnchor.constraint(equalTo: chooseContactButtonLabel.leadingAnchor, constant: -2),
+            chooseContactRoundDetail.centerYAnchor.constraint(equalTo: chooseContactView.centerYAnchor),
+            chooseContactRoundDetail.widthAnchor.constraint(equalToConstant: 12),
+            chooseContactRoundDetail.heightAnchor.constraint(equalToConstant: 12),
+
+            chooseContactButton.centerXAnchor.constraint(equalTo: chooseContactView.centerXAnchor),
+            chooseContactButton.centerYAnchor.constraint(equalTo: chooseContactView.centerYAnchor),
+            chooseContactButton.widthAnchor.constraint(equalTo: chooseContactView.widthAnchor),
+            chooseContactButton.heightAnchor.constraint(equalTo: chooseContactView.heightAnchor),
+            
+            chooseContactView.topAnchor.constraint(equalTo: view.topAnchor),
+            chooseContactView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            chooseContactView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            chooseContactView.heightAnchor.constraint(equalToConstant: 38),
+            chooseContactView.widthAnchor.constraint(equalToConstant: 157)
+        ])
+        
+        return view
+    }
+    
     // MARK: Actions
     @objc
     private func chooseContact() {
-        didPressChooseContactButton?()
+        self.didPressChooseContactButton?()
     }
 
     @objc
     private func transfer() {
-        didPressTransferButton?()
+        self.didPressTransferButton?()
     }
 }
 
@@ -76,7 +153,7 @@ final class TransfersView: UIView {
 extension TransfersView: ViewConfiguration {
     func configViews() {
         stackView.addArrangedSubview(amountTextField)
-        stackView.addArrangedSubview(chooseContactButton)
+        stackView.addArrangedSubview(self.makeChooseContactView())
     }
     
     func buildViews() {
@@ -86,12 +163,12 @@ extension TransfersView: ViewConfiguration {
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            stackView.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
-            stackView.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor),
+            stackView.centerXAnchor.constraint(equalTo: readableContentGuide.centerXAnchor),
+            stackView.centerYAnchor.constraint(equalTo: readableContentGuide.centerYAnchor),
 
-            transferButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -16),
-            transferButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            transferButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            transferButton.bottomAnchor.constraint(equalTo: readableContentGuide.bottomAnchor, constant: -17.5),
+            transferButton.leadingAnchor.constraint(equalTo: readableContentGuide.leadingAnchor, constant: 20),
+            transferButton.trailingAnchor.constraint(equalTo: readableContentGuide.trailingAnchor, constant: -20),
             transferButton.heightAnchor.constraint(equalToConstant: 56)
         ])
 
