@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ConfirmationViewController: UIViewController {
+class ConfirmationViewController: UIViewController, ViewConfiguration {
 
     lazy var imageConfirmation: UIImageView = {
             let image = UIImageView()
@@ -40,9 +40,7 @@ class ConfirmationViewController: UIViewController {
     //MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        configViews()
-        buildViews()
-        setupConstraints()
+        setupViews()
     }
     
     //MARK: View Configuration
