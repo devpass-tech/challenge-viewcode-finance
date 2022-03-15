@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
     lazy var profileBtn: UIButton = {
         let btn = UIButton(type: .custom)
         btn.setImage(UIImage(named: "Avatar"), for: .normal)
+        btn.addTarget(self, action: #selector(actionNavBarButton), for: .touchUpInside)
         btn.frame = CGRect(x: 0, y: 0, width: 36, height: 36)
         return btn
     }()
@@ -60,5 +61,9 @@ class HomeViewController: UIViewController {
                 self.homeView.updateView(with: configuration)
             }
         }
+    }
+    
+    @objc private func actionNavBarButton() {
+        navigationController?.present(UserProfileViewController(), animated: true)
     }
 }
