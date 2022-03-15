@@ -9,11 +9,6 @@ import UIKit
 
 class UserProfileViewController: UIViewController, ViewConfiguration {
     
-    fileprivate let titleSections: [String] = [
-        "MY ACCOUNT",
-        "GENERAL"
-    ]
-    
     lazy var profileContent: UIStackView = {
         let stackview = UIStackView()
         stackview.axis = .vertical
@@ -69,6 +64,7 @@ class UserProfileViewController: UIViewController, ViewConfiguration {
     }()
     
     private var availableHeight: CGFloat = 0
+    private let viewModel = UserProfileViewModel()
     
     //MARK: Life cycle
     override func viewDidLoad() {
@@ -107,8 +103,8 @@ class UserProfileViewController: UIViewController, ViewConfiguration {
             profileImage.widthAnchor.constraint(equalToConstant: 100),
             
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
@@ -126,22 +122,31 @@ extension UserProfileViewController: UITableViewDataSource, UITableViewDelegate 
     
     // MARK: Data source
     func numberOfSections(in tableView: UITableView) -> Int {
-        return titleSections.count
+        return viewModel.listSections.count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return titleSections[section]
+        return viewModel.listSections[section].title
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return viewModel.listSections[section].itens.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.value1, reuseIdentifier: "UserProfileCell")
+        let config = viewModel.listSections[indexPath.section].itens[indexPath.row]
         
-        cell.textLabel?.text = "Phone"
-        cell.detailTextLabel?.text = "+55 (11) 99999-9999"
+        cell.selectionStyle = .none
+        
+        cell.textLabel?.text = config.title
+        cell.detailTextLabel?.text = config.detail
+        
+        if config.allowSelection {
+            cell.accessoryType = .disclosureIndicator
+        } else {
+            cell.isUserInteractionEnabled = false
+        }
         
         return cell
     }
