@@ -57,7 +57,7 @@ final class ActivityCellView: UITableViewCell, ViewConfiguration {
     }
 
     func buildViews() {
-        addSubviews([icon, infoStackView])
+        contentView.addSubviews([icon, infoStackView])
         infoStackView.addArrangedSubviews([activityTitleLabel, activityDetailLabel])
     }
 
@@ -65,13 +65,13 @@ final class ActivityCellView: UITableViewCell, ViewConfiguration {
         NSLayoutConstraint.activate([
             icon.centerYAnchor.constraint(equalTo: centerYAnchor),
             icon.leadingAnchor.constraint(equalTo: leadingAnchor, constant: ActivityDetailsConstants.smallSpacing),
-            icon.heightAnchor.constraint(equalTo: contentView.heightAnchor),
-            icon.widthAnchor.constraint(equalTo: icon.heightAnchor),
+            icon.heightAnchor.constraint(equalToConstant: 48),
+            icon.widthAnchor.constraint(equalToConstant: 48),
 
             infoStackView.leadingAnchor.constraint(equalTo: icon.trailingAnchor, constant: ActivityDetailsConstants.smallSpacing),
-            infoStackView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            infoStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            infoStackView.heightAnchor.constraint(equalTo: contentView.heightAnchor),
+            infoStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+            infoStackView.heightAnchor.constraint(greaterThanOrEqualTo: icon.heightAnchor),
+            infoStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)
         ])
     }
 
