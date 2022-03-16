@@ -11,6 +11,7 @@
 		76426C1927D7FF28005801EA /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76426C1827D7FF28005801EA /* ViewConfiguration.swift */; };
 		76426C2027D93B42005801EA /* ActivityCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76426C1F27D93B42005801EA /* ActivityCellView.swift */; };
 		76426C2227D94663005801EA /* ActivityDetailsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76426C2127D94663005801EA /* ActivityDetailsConstants.swift */; };
+		877C778F27DFFB9700AD8BF2 /* ConfirmationViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877C778E27DFFB9700AD8BF2 /* ConfirmationViewTest.swift */; };
 		8794EE2227D95E7A0051B349 /* UserProfileViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8794EE2127D95E7A0051B349 /* UserProfileViewTest.swift */; };
 		8794EE2527D962D40051B349 /* HomeViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8794EE2427D962D40051B349 /* HomeViewTest.swift */; };
 		8794EE2727D9685F0051B349 /* FinanceServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8794EE2627D9685F0051B349 /* FinanceServiceStub.swift */; };
@@ -76,6 +77,7 @@
 		76426C1F27D93B42005801EA /* ActivityCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCellView.swift; sourceTree = "<group>"; };
 		76426C2127D94663005801EA /* ActivityDetailsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsConstants.swift; sourceTree = "<group>"; };
 		7AEE90C360E2C52EC080BE98 /* Pods_FinanceApp_FinanceAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinanceApp_FinanceAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		877C778E27DFFB9700AD8BF2 /* ConfirmationViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewTest.swift; sourceTree = "<group>"; };
 		8794EE2127D95E7A0051B349 /* UserProfileViewTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewTest.swift; sourceTree = "<group>"; };
 		8794EE2427D962D40051B349 /* HomeViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewTest.swift; sourceTree = "<group>"; };
 		8794EE2627D9685F0051B349 /* FinanceServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceServiceStub.swift; sourceTree = "<group>"; };
@@ -175,6 +177,14 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		877C778D27DFFB6900AD8BF2 /* Confirmation */ = {
+			isa = PBXGroup;
+			children = (
+				877C778E27DFFB9700AD8BF2 /* ConfirmationViewTest.swift */,
+			);
+			path = Confirmation;
+			sourceTree = "<group>";
+		};
 		8794EE2327D962CB0051B349 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +258,7 @@
 		98584A82277E32C60028DBEA /* FinanceAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				877C778D27DFFB6900AD8BF2 /* Confirmation */,
 				8794EE2327D962CB0051B349 /* Home */,
 				87C3B7B427D95E3900509304 /* UserProfile */,
 				98584A83277E32C60028DBEA /* FinanceAppTests.swift */,
@@ -675,6 +686,7 @@
 				8794EE2527D962D40051B349 /* HomeViewTest.swift in Sources */,
 				8794EE2727D9685F0051B349 /* FinanceServiceStub.swift in Sources */,
 				8794EE2227D95E7A0051B349 /* UserProfileViewTest.swift in Sources */,
+				877C778F27DFFB9700AD8BF2 /* ConfirmationViewTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
