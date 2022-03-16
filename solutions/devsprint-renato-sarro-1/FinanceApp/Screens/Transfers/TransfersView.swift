@@ -13,24 +13,29 @@ final class TransfersView: UIView {
     var didPressTransferButton: (() -> Void)?
     
     // MARK: UI Components
-    private let stackView: UIStackView = {
+    private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 8
         return stackView
     }()
+    
+    private lazy var amountLabel: UILabel = {
+        let label = UILabel.build(with: .bigTitle(color: .lightGray), alignment: .center)
+        label.text = "R$ 0,00"
+        return label
+    }()
 
-    private let amountTextField: UITextField = {
+    private lazy var amountTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "$0"
-        textField.font = UIFont.boldSystemFont(ofSize: 34)
-        textField.textAlignment = .center
+        textField.isHidden = true
+        textField.addTarget(self, action: #selector(updateAmountLabelIfNeeded), for: .editingChanged)
         textField.keyboardType = .numberPad
         return textField
     }()
 
-    private let chooseContactButton: UIButton = {
+    private lazy var chooseContactButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(.black, for: .normal)
@@ -38,7 +43,7 @@ final class TransfersView: UIView {
         return button
     }()
     
-    private let chooseContactRoundDetail: UIView = {
+    private lazy var chooseContactRoundDetail: UIView = {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: 12, height: 12))
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = Color.lightGreen.color
@@ -46,7 +51,7 @@ final class TransfersView: UIView {
         return view
     }()
     
-    private let chooseContactButtonLabel: UILabel = {
+    private lazy var chooseContactButtonLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Choose contact"
@@ -56,7 +61,7 @@ final class TransfersView: UIView {
         return label
     }()
     
-    private let chooseContactView: UIView = {
+    private lazy var chooseContactView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = Color.lightGray.color
@@ -64,7 +69,7 @@ final class TransfersView: UIView {
         return view
     }()
     
-    private let chooseContactLeftLabel: UILabel = {
+    private lazy var chooseContactLeftLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "To"
@@ -74,7 +79,7 @@ final class TransfersView: UIView {
         return label
     }()
     
-    private let transferButton: UIButton = {
+    private lazy var transferButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Transfer", for: .normal)
@@ -85,14 +90,63 @@ final class TransfersView: UIView {
         return button
     }()
     
+    private lazy var selectContactView: UIView = {
+        return makeChooseContactView()
+    }()
+    
+    private var bottomConstraint: NSLayoutConstraint?
+    
     // MARK: Init
     init() {
         super.init(frame: .zero)
         self.setupViews()
+        
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: nil) { notification in
+            self.keyboardWillShow(notification: notification)
+        }
+        
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: nil) { notification in
+            self.keyboardWillHide()
+        }
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        
+        amountTextField.becomeFirstResponder()
+    }
+    
+    private func keyboardWillHide() {
+        bottomConstraint?.constant = -16
+        layoutIfNeeded()
+    }
+    
+    private func keyboardWillShow(notification: Notification) {
+        guard let size = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.size else { return }
+        
+        bottomConstraint?.constant = -size.height
+        layoutIfNeeded()
+    }
+    
+    @objc private func updateAmountLabelIfNeeded() {
+        guard let amountText = amountTextField.text, !amountText.isEmpty else {
+            amountLabel.text = "R$ 0,00"
+            amountLabel.textColor = Color.lightGray.color
+            
+            return
+        }
+        
+        amountLabel.text = amountTextField.text?.currencyInputFormatting
+        amountLabel.textColor = Color.primary.color
     }
     
     // MARK: Methods
@@ -152,27 +206,25 @@ final class TransfersView: UIView {
 // MARK: Extension
 extension TransfersView: ViewConfiguration {
     func configViews() {
-        stackView.addArrangedSubview(amountTextField)
-        stackView.addArrangedSubview(self.makeChooseContactView())
+        
     }
     
     func buildViews() {
-        addSubview(stackView)
-        addSubview(transferButton)
+        stackView.addArrangedSubviews([amountLabel, selectContactView])
+        addSubviews([amountTextField, stackView, transferButton])
     }
     
     func setupConstraints() {
+        bottomConstraint = transferButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -16)
+        bottomConstraint?.isActive = true
+        
         NSLayoutConstraint.activate([
-            stackView.centerXAnchor.constraint(equalTo: readableContentGuide.centerXAnchor),
-            stackView.centerYAnchor.constraint(equalTo: readableContentGuide.centerYAnchor),
+            stackView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
 
-            transferButton.bottomAnchor.constraint(equalTo: readableContentGuide.bottomAnchor, constant: -17.5),
-            transferButton.leadingAnchor.constraint(equalTo: readableContentGuide.leadingAnchor, constant: 20),
-            transferButton.trailingAnchor.constraint(equalTo: readableContentGuide.trailingAnchor, constant: -20),
+            transferButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            transferButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
             transferButton.heightAnchor.constraint(equalToConstant: 56)
         ])
-
     }
-    
-    
 }
