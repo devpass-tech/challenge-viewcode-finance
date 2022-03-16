@@ -41,7 +41,7 @@ final class TransfersView: UIView {
     private let chooseContactRoundDetail: UIView = {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: 12, height: 12))
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor(red: 0.204, green: 0.78, blue: 0.349, alpha: 1)
+        view.backgroundColor = Color.lightGreen.color
         view.layer.cornerRadius = 6
         return view
     }()
@@ -59,7 +59,7 @@ final class TransfersView: UIView {
     private let chooseContactView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor(red: 0.898, green: 0.898, blue: 0.918, alpha: 1)
+        view.backgroundColor = Color.lightGray.color
         view.layer.cornerRadius = 19
         return view
     }()
@@ -68,7 +68,7 @@ final class TransfersView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "To"
-        label.textColor = UIColor(red: 0.235, green: 0.235, blue: 0.263, alpha: 0.6)
+        label.textColor = Color.lightGray2.color
         label.font = UIFont(name: "SFProText-Regular", size: 15)
         label.textAlignment = .center
         return label
