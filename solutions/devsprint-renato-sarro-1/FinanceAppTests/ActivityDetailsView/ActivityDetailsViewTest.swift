@@ -15,7 +15,7 @@ class ActivityDetailsViewTest: XCTestCase {
     
     func test_ValidateUserProfileLayout() {
         
-        let view = ActivityDetailsView()
+        let view = ActivityDetailsViewController()
         assertSnapshot(matching: view, as: .image)
         
     }
