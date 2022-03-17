@@ -45,7 +45,7 @@ final class HomeView: UIView {
     func updateView(with configuration: HomeViewConfiguration) {
 
         self.activities = configuration.homeData.activity
-        self.tableView.reloadData()
+        self.tableView.reloadWithAnimation(direction: .vertical(.forward))
     }
 }
 
