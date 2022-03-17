@@ -33,8 +33,8 @@ final class ActivityCellView: UITableViewCell, ViewConfiguration {
     }()
 
     private lazy var activityTitleLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: ActivityDetailsConstants.mediumFontSize)
+        let label       = UILabel()
+        label.font      = UIFont.boldSystemFont(ofSize: ActivityDetailsConstants.mediumFontSize)
         label.textColor = .black
         return label
     }()
@@ -57,7 +57,7 @@ final class ActivityCellView: UITableViewCell, ViewConfiguration {
     }
 
     func buildViews() {
-        addSubviews([icon, infoStackView])
+        contentView.addSubviews([icon, infoStackView])
         infoStackView.addArrangedSubviews([activityTitleLabel, activityDetailLabel])
     }
 
@@ -65,18 +65,38 @@ final class ActivityCellView: UITableViewCell, ViewConfiguration {
         NSLayoutConstraint.activate([
             icon.centerYAnchor.constraint(equalTo: centerYAnchor),
             icon.leadingAnchor.constraint(equalTo: leadingAnchor, constant: ActivityDetailsConstants.smallSpacing),
-            icon.heightAnchor.constraint(equalTo: contentView.heightAnchor),
-            icon.widthAnchor.constraint(equalTo: icon.heightAnchor),
+            icon.heightAnchor.constraint(equalToConstant: 48),
+            icon.widthAnchor.constraint(equalToConstant: 48),
 
             infoStackView.leadingAnchor.constraint(equalTo: icon.trailingAnchor, constant: ActivityDetailsConstants.smallSpacing),
-            infoStackView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            infoStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            infoStackView.heightAnchor.constraint(equalTo: contentView.heightAnchor),
+            infoStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+            infoStackView.heightAnchor.constraint(greaterThanOrEqualTo: icon.heightAnchor),
+            infoStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)
         ])
     }
 
-    func populate(detail: ActivityDetails){
-        activityTitleLabel.text = detail.name
-        activityDetailLabel.text = String.activityDetails(with: detail.price, and: detail.time)
+    func populate(detail: [Activity], indexPath: IndexPath){
+        activityTitleLabel.text     = detail[indexPath.row].name
+        activityDetailLabel.text    = String.activityDetails(with: detail[indexPath.row].price, and: detail[indexPath.row].time)
+        getIcon(activityTitle: activityTitleLabel.text ?? "")
+    }
+    
+    func getIcon(activityTitle: String){
+        if activityTitle.contains("Mall"){
+            icon.image = UIImage(imageLiteralResourceName: "bag.circle.fill")
+            icon.tintColor = .systemPurple
+        } else if activityTitle.contains("Food") {
+            icon.image = UIImage(imageLiteralResourceName: "fork.knife.circle.fill")
+            icon.tintColor = .systemCyan
+        } else if activityTitle.contains("Airlines") {
+            icon.image = UIImage(imageLiteralResourceName: "airplane.circle.fill")
+            icon.tintColor = .systemOrange
+        } else if activityTitle.contains("Gym") {
+            icon.image = UIImage(imageLiteralResourceName: "heart.circle.fill")
+            icon.tintColor = .systemRed
+        } else if activityTitle.contains("Transport") {
+            icon.image = UIImage(imageLiteralResourceName: "car.circle.fill")
+            icon.tintColor = .systemGreen
+        }
     }
 }
