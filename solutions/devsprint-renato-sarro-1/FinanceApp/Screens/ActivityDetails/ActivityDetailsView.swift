@@ -7,8 +7,8 @@
 
 import UIKit
 
-class ActivityDetailsView: UIView {
-    
+class ActivityDetailsView: UIView, ViewConfiguration {
+
     private lazy var activityDetailsImage: UIImageView = {
         let image = UIImageView()
         image.image                 = UIImage(imageLiteralResourceName: "bag.circle.fill")
@@ -71,29 +71,22 @@ class ActivityDetailsView: UIView {
     
     init() {
         super.init(frame: .zero)
-        self.setupViews()
+        setupViews()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupViews() {
-        self.backgroundColor = .white
-        self.configurateSubView()
-        self.configureSubviewsConstraints()
+    func configViews() {
+        backgroundColor = .white
     }
     
-    func configurateSubView() {
-        self.addSubview(self.activityDetailsImage)
-        self.addSubview(self.nameActivityLabel)
-        self.addSubview(self.typeActivityLabel)
-        self.addSubview(self.valueActivityLabel)
-        self.addSubview(self.timeActivityLabel)
-        self.addSubview(self.buttonReport)
+    func buildViews() {
+        [activityDetailsImage, nameActivityLabel, typeActivityLabel, valueActivityLabel, timeActivityLabel, buttonReport].forEach(addSubview)
     }
     
-    func configureSubviewsConstraints() {
+    func setupConstraints() {
             
         [activityDetailsImage, nameActivityLabel, typeActivityLabel, valueActivityLabel, timeActivityLabel, buttonReport].forEach { $0.translatesAutoresizingMaskIntoConstraints = false
         }
@@ -126,20 +119,4 @@ class ActivityDetailsView: UIView {
             buttonReport.heightAnchor.constraint(equalToConstant: 56.0)
         ])
     }
-    
-//    /// Metodo para inicializar a view
-//    /// - Parameters:
-//    ///   - image: Icone/Imagem
-//    ///   - nameActivity: Atividade
-//    ///   - typeActivity: Tipo da atividade
-//    ///   - value: Valor
-//    ///   - time: Horario
-//    func setupActivityDetails(image: UIImage?, nameActivity: String, typeActivity: String, value: String, time: String) {
-//
-//        activityDetailsImage.image  = image
-//        nameActivityLabel.text      = nameActivity
-//        typeActivityLabel.text      = typeActivity
-//        valueActivityLabel.text     = value
-//        timeActivityLabel.text      = time
-//    }
 }
