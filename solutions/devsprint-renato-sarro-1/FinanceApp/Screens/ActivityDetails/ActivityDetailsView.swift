@@ -12,7 +12,7 @@ class ActivityDetailsView: UIView, ViewConfiguration {
     private lazy var activityDetailsImage: UIImageView = {
         let image = UIImageView()
         image.image                 = UIImage(imageLiteralResourceName: "bag.circle.fill")
-        image.tintColor             = .systemPurple
+        image.tintColor             = Color.purple.color
         image.contentMode           = .scaleAspectFit
         image.clipsToBounds         = true
         image.layer.masksToBounds   = true
@@ -24,7 +24,7 @@ class ActivityDetailsView: UIView, ViewConfiguration {
         let label = UILabel()
         label.text              = "Mall"
         label.font              = UIFont.boldSystemFont(ofSize: ActivityDetailsConstants.mediumFontSize)
-        label.textColor         = .black
+        label.textColor         = Color.primary.color
         label.textAlignment     = .center
         
         return label
@@ -34,7 +34,7 @@ class ActivityDetailsView: UIView, ViewConfiguration {
         let label           = UILabel()
         label.text          = "Shopping"
         label.font          = .systemFont(ofSize: 15.0)
-        label.textColor     = UIColor(red: 0.235, green: 0.235, blue: 0.263, alpha: 0.6)
+        label.textColor     = Color.lightGray2.color
         label.textAlignment = .center
         
         return label
@@ -44,7 +44,7 @@ class ActivityDetailsView: UIView, ViewConfiguration {
         let label           = UILabel()
         label.text          = "$100.00"
         label.font          = .boldSystemFont(ofSize: 34)
-        label.textColor     =  UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+        label.textColor     = Color.primary.color
         label.textAlignment = .center
         
         return label
@@ -54,7 +54,7 @@ class ActivityDetailsView: UIView, ViewConfiguration {
         let label               = UILabel()
         label.text              = "8:57 AM"
         label.font              = .systemFont(ofSize: 15.0)
-        label.textColor         = UIColor(red: 0.235, green: 0.235, blue: 0.263, alpha: 0.6)
+        label.textColor         = Color.lightGray2.color
         label.textAlignment     = .center
         
         return label
