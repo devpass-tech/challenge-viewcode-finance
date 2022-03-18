@@ -183,6 +183,15 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		8715A5A927E4EEBA00B7D5EE /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				8794EE2A27DAB5C70051B349 /* Label */,
+				8794EE2D27DAB7060051B349 /* Colors */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
 		877C778D27DFFB6900AD8BF2 /* Confirmation */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +258,8 @@
 		98584A6B277E32C30028DBEA /* FinanceApp */ = {
 			isa = PBXGroup;
 			children = (
+				98584AF8277E511C0028DBEA /* Components */,
+				8715A5A927E4EEBA00B7D5EE /* DesignSystem */,
 				98584A9D277E351B0028DBEA /* Resources */,
 				98584A9C277E350D0028DBEA /* AppDelegate */,
 				98584A9E277E35700028DBEA /* Screens */,
@@ -304,7 +315,6 @@
 		98584A9E277E35700028DBEA /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				98584AF8277E511C0028DBEA /* Components */,
 				98584B08277E602C0028DBEA /* ContactList */,
 				98584ADF277E50430028DBEA /* Confirmation */,
 				98584AD1277E50430028DBEA /* Transfers */,
@@ -376,8 +386,6 @@
 		98584AF8277E511C0028DBEA /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				8794EE2D27DAB7060051B349 /* Colors */,
-				8794EE2A27DAB5C70051B349 /* Label */,
 				76426C1627D7FE90005801EA /* Cells */,
 			);
 			path = Components;

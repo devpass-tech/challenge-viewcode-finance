@@ -43,8 +43,7 @@ class HomeViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        navigationItem.title = "Finance App 💰"
-        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = ""
 
         let itemBtn = UIBarButtonItem(customView: profileBtn)
         self.navigationItem.setRightBarButton(itemBtn, animated: true)
