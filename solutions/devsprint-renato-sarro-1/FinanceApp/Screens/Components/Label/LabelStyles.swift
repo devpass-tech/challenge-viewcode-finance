@@ -8,6 +8,7 @@
 import UIKit
 
 enum LabelStyles {
+    case bigTitle(color: Color)
     case footNote(weight: UIFont.Weight, color: Color)
 }
 
@@ -23,9 +24,16 @@ extension UILabel {
     
     func applyStyle(style: LabelStyles) {
         switch style {
+        case .bigTitle(let color):
+            applyBigtitle(color: color)
         case .footNote(let weight, let color):
             applyFootNote(weight: weight, color: color)
         }
+    }
+    
+    private func applyBigtitle(color: Color) {
+        font = .systemFont(ofSize: 34, weight: .bold)
+        textColor = color.color
     }
     
     private func applyFootNote(weight: UIFont.Weight, color: Color) {

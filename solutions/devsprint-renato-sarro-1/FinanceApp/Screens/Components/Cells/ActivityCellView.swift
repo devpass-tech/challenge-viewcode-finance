@@ -35,7 +35,7 @@ final class ActivityCellView: UITableViewCell, ViewConfiguration {
     private lazy var activityTitleLabel: UILabel = {
         let label       = UILabel()
         label.font      = UIFont.boldSystemFont(ofSize: ActivityDetailsConstants.mediumFontSize)
-        label.textColor = .black
+        label.textColor = Color.primary.color
         return label
     }()
 
