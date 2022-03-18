@@ -7,14 +7,27 @@
 
 import UIKit
 
-class TabBarViewController: UITabBarController {
+class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = .systemBackground
         UITabBar.appearance().barTintColor = .systemBackground
         tabBar.tintColor = .systemBlue
+        delegate = self
+        
         setupViewControllers()
+    }
+    
+    func tabBarController(_ tabBarController: UITabBarController, animationControllerForTransitionFrom fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        guard let toIndex = viewControllers?.firstIndex(of: toVC),
+              let fromIndex = viewControllers?.firstIndex(of: fromVC) else { return nil }
+        
+        let orientation: AnimationOrientation = toIndex > fromIndex ? .forward : .backward
+        
+        return TabbarAnimationObject(orientation: orientation)
     }
     
     private func setupViewControllers() {
@@ -29,7 +42,6 @@ class TabBarViewController: UITabBarController {
         let navController = UINavigationController(rootViewController: rootViewController)
         navController.tabBarItem.title = title
         navController.tabBarItem.image = image
-        navController.navigationBar.prefersLargeTitles = true
         rootViewController.navigationItem.title = title
         return navController
     }
