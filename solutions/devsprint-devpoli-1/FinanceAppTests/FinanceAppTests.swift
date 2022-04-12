@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Sn
 @testable import FinanceApp
 
 class FinanceAppTests: XCTestCase {
