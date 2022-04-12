@@ -17,9 +17,16 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
         UITabBar.appearance().barTintColor = .systemBackground
         tabBar.tintColor = .systemBlue
         delegate = self
+        setupNavigations()
     }
-    // MARK: Actions
+    
     // MARK: Methods
+    private func setupNavigations() {
+        viewControllers = [
+            createNewNavigation(for: HomeViewController(), title: NSLocalizedString("Home", comment: ""), image: UIImage(systemName: "house.fill")),
+            createNewNavigation(for: TransfersViewController(), title: NSLocalizedString("Transfers", comment: ""), image: UIImage(systemName: "arrow.up.arrow.down"))]
+    }
+    
     func createNewNavigation(for rootViewController: UIViewController,
                              title: String,
                              image: UIImage?) -> UIViewController {
