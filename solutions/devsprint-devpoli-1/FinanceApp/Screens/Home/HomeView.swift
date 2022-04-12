@@ -14,16 +14,15 @@ struct HomeViewConfiguration {
 
 final class HomeView: UIView {
 
-    private let listViewCellIdentifier = "ListViewCellIdentifier"
-
     private var activities: [Activity] = []
 
     private lazy var tableView: UITableView = {
 
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.listViewCellIdentifier)
+        tableView.register(ActivityCellView.self, forCellReuseIdentifier: ActivityCellView.identifier)
         tableView.dataSource = self
+        tableView.separatorStyle = .none
         return tableView
     }()
 
@@ -81,8 +80,8 @@ extension HomeView: UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.listViewCellIdentifier)!
-        cell.textLabel?.text = self.activities[indexPath.row].name
+        let cell = tableView.dequeueReusableCell(withIdentifier: ActivityCellView.identifier) as! ActivityCellView
+//        cell.textLabel?.text = self.activities[indexPath.row].name
         return cell
     }
 }
