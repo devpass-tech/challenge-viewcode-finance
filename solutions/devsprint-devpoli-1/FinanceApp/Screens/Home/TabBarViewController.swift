@@ -13,14 +13,20 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     // MARK: Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
-        UITabBar.appearance().barTintColor = .systemBackground
-        tabBar.tintColor = .systemBlue
-        delegate = self
+        setupTabBar()
         setupNavigations()
     }
     
     // MARK: Methods
+    private func setupTabBar() {
+        view.backgroundColor = .systemBackground
+        UITabBar.appearance().barTintColor = .systemBackground
+        tabBar.tintColor = .systemBlue
+        tabBar.layer.borderWidth = 1
+        tabBar.layer.borderColor = UIColor.lightGray.cgColor
+        tabBar.clipsToBounds = true
+        delegate = self
+    }
     
     private func setupNavigations() {
         viewControllers = [
