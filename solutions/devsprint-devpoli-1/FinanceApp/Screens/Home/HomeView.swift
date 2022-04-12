@@ -81,7 +81,7 @@ extension HomeView: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: ActivityCellView.identifier) as! ActivityCellView
-//        cell.textLabel?.text = self.activities[indexPath.row].name
+        cell.setupActivity(activity: self.activities[indexPath.row])
         return cell
     }
 }

@@ -92,13 +92,48 @@ extension ActivityCellView {
     func configureConstraints() {
         
         NSLayoutConstraint.activate([
-            activityMainStack.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            activityMainStack.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
-            activityMainStack.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+            activityMainStack.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 4),
+            activityMainStack.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -4),
+            activityMainStack.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
             activityMainStack.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
 
-            activityCategoryIcon.widthAnchor.constraint(equalToConstant: 48),
-            activityCategoryIcon.heightAnchor.constraint(equalToConstant: 48),
+            activityCategoryIcon.widthAnchor.constraint(equalToConstant: 50),
+            activityCategoryIcon.heightAnchor.constraint(equalToConstant: 50),
         ])
+    }
+    
+    // MARK: Populate Cell
+    
+    func setupActivity(activity: Activity) {
+        setupActivityCategoryIcon(activityName: activity.name)
+        setupActivityDescription(activity: activity)
+    }
+    
+    func setupActivityCategoryIcon(activityName: String) {
+        switch activityName {
+        case "Mall":
+            activityCategoryIcon.image =  UIImage(named: "bag.circle.fill")
+            activityCategoryIcon.tintColor = .systemPurple
+        case "Food Court":
+            activityCategoryIcon.image =  UIImage(named: "fork.knife.circle.fill")
+            activityCategoryIcon.tintColor = .systemCyan
+        case "Oceanic Airlines":
+            activityCategoryIcon.image =  UIImage(named: "airplane.circle.fill")
+            activityCategoryIcon.tintColor = .systemOrange
+        case "Gym Membership":
+            activityCategoryIcon.image =  UIImage(named: "heart.circle.fill")
+            activityCategoryIcon.tintColor = .systemRed
+        case "Private Transport":
+            activityCategoryIcon.image =  UIImage(named: "car.circle.fill")
+            activityCategoryIcon.tintColor = .systemGreen
+        default:
+            activityCategoryIcon.image =  UIImage(named: "bag.circle.fill")
+            activityCategoryIcon.tintColor = .gray
+        }
+    }
+    
+    func setupActivityDescription(activity: Activity) {
+        activityNameLabel.text = activity.name
+        activityDescriptionLabel.text = String.activityDetails(with: activity.price, and: activity.time)
     }
 }
