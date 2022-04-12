@@ -21,6 +21,7 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     }
     
     // MARK: Methods
+    
     private func setupNavigations() {
         viewControllers = [
             createNewNavigation(for: HomeViewController(), title: NSLocalizedString("Home", comment: ""), image: UIImage(systemName: "house.fill")),
