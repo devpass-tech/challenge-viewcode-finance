@@ -23,7 +23,7 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
         UITabBar.appearance().barTintColor = .systemBackground
         tabBar.tintColor = .systemBlue
         tabBar.layer.borderWidth = 1
-        tabBar.layer.borderColor = UIColor.lightGray.cgColor
+        tabBar.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.3).cgColor
         tabBar.clipsToBounds = true
         delegate = self
     }
