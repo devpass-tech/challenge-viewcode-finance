@@ -116,7 +116,7 @@ extension ActivityCellView {
             activityCategoryIcon.tintColor = .systemPurple
         case "Food Court":
             activityCategoryIcon.image =  UIImage(named: "fork.knife.circle.fill")
-            activityCategoryIcon.tintColor = .systemCyan
+            activityCategoryIcon.tintColor = .systemBlue
         case "Oceanic Airlines":
             activityCategoryIcon.image =  UIImage(named: "airplane.circle.fill")
             activityCategoryIcon.tintColor = .systemOrange
