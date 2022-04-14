@@ -32,7 +32,7 @@ class ActivityCellView: UITableViewCell {
     private lazy var activityCategoryIcon: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.layer.cornerRadius = 24
+        image.layer.cornerRadius = 8
         image.layer.masksToBounds = true
         image.image = UIImage(named: "bag.circle.fill")
         image.tintColor = .systemPurple
@@ -42,7 +42,7 @@ class ActivityCellView: UITableViewCell {
     lazy var activityNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 17)
+        label.font = UIFont.boldSystemFont(ofSize: 15)
         label.text = "Mall"
         return label
     }()
@@ -50,7 +50,7 @@ class ActivityCellView: UITableViewCell {
     lazy var activityDescriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 14)
+        label.font = UIFont.systemFont(ofSize: 13)
         label.textColor = .gray
         label.text = "$100.00 • 8:57 AM"
         return label
@@ -92,13 +92,13 @@ extension ActivityCellView {
     func configureConstraints() {
         
         NSLayoutConstraint.activate([
-            activityMainStack.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 4),
-            activityMainStack.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -4),
-            activityMainStack.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            activityMainStack.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 8),
+            activityMainStack.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -8),
+            activityMainStack.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
             activityMainStack.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
 
-            activityCategoryIcon.widthAnchor.constraint(equalToConstant: 50),
-            activityCategoryIcon.heightAnchor.constraint(equalToConstant: 50),
+            activityCategoryIcon.widthAnchor.constraint(equalToConstant: 48),
+            activityCategoryIcon.heightAnchor.constraint(equalToConstant: 48),
         ])
     }
     
