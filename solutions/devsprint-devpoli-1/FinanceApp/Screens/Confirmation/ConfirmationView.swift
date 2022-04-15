@@ -93,9 +93,9 @@ class ConfirmationView: UIView {
     }
     
     private func buttonConstraints() {
-        button.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15).isActive = true
-        button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15).isActive = true
+        button.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25).isActive = true
+        button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25).isActive = true
         button.heightAnchor.constraint(equalToConstant: 56).isActive = true
-        button.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -15).isActive = true
+        button.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -25).isActive = true
     }
 }
