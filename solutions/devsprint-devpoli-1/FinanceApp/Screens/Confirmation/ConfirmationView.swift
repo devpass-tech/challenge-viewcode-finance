@@ -13,8 +13,6 @@ class ConfirmationView: UIView {
         let imageView = UIImageView()
         let image = UIImage(named: "checkmark.circle.fill")
         imageView.image = image
-        imageView.contentMode = .scaleAspectFit
-        imageView.clipsToBounds = true
         imageView.tintColor = UIColor.systemGreen
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
