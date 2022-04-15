@@ -15,14 +15,14 @@ class ConfirmationView: UIView {
         imageView.image = image
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
-        imageView.tintColor = UIColor.green
+        imageView.tintColor = UIColor.systemGreen
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
     private lazy var label: UILabel = {
         let label = UILabel()
-        label.text = "Your transfer was successfull"
+        label.text = "Your transfer was successful"
         label.font = UIFont.boldSystemFont(ofSize: 17)
         label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -34,7 +34,7 @@ class ConfirmationView: UIView {
         button.setTitle("Nice", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
         button.backgroundColor = UIColor.systemBlue
-        button.layer.cornerRadius = 10
+        button.layer.cornerRadius = 14
         button.addTarget(self, action: #selector(onClick), for: .touchDown)
         button.addTarget(self, action: #selector(onClickEnd), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -97,7 +97,7 @@ class ConfirmationView: UIView {
     private func buttonConstraints() {
         button.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15).isActive = true
         button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15).isActive = true
-        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 56).isActive = true
         button.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -15).isActive = true
     }
 }
