@@ -12,4 +12,9 @@ class UserProfileViewController: UIViewController {
     override func loadView() {
         self.view = UserProfileView()
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
 }
