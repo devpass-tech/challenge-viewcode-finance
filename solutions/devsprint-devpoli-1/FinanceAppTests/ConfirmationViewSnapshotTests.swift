@@ -10,37 +10,23 @@ import SnapshotTesting
 
 class ConfirmationViewSnapshotTests: XCTestCase {
     
-    func test_image() {
-        let imageView = UIImageView()
-        let image = UIImage(named: "checkmark.circle.fill")
-        imageView.image = image
-        imageView.tintColor = UIColor.systemGreen
-        imageView.translatesAutoresizingMaskIntoConstraints = false
+    func test_confirmationViewControllerDefaultState() {
+            let viewController = UINavigationController(rootViewController: ConfirmationViewController())
+            verifyViewController(viewController, named: "Default")
+        }
         
-        let result = verifySnapshot(matching: imageView, as: .image, named: "Default", testName: "Image")
-        XCTAssertNil(result)
-      }
-    
-    func test_label() {
-        let label = UILabel()
-        label.text = "Your transfer was successful"
-        label.font = UIFont.boldSystemFont(ofSize: 17)
-        label.textColor = UIColor.black
-        label.translatesAutoresizingMaskIntoConstraints = false
-          
-        let result = verifySnapshot(matching: label, as: .image, named: "Default", testName: "Label")
-        XCTAssertNil(result)
-      }
-      
-    func test_button() {
-        let button = UIButton(type: .custom)
-        button.setTitle("Nice", for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
-        button.backgroundColor = UIColor.systemBlue
-        button.layer.cornerRadius = 14
-        button.translatesAutoresizingMaskIntoConstraints = false
-          
-        let result = verifySnapshot(matching: button, as: .image, named: "Default", testName: "Button")
-        XCTAssertNil(result)
-      }
+        private func verifyViewController(_ viewController: UIViewController, named: String) {
+            let devices: [String: ViewImageConfig] = ["iPhoneX": .iPhoneX,
+                                                      "iPhone8": .iPhone8,
+                                                      "iPhoneSe": .iPhoneSe]
+            
+            let results = devices.map { device in
+                verifySnapshot(matching: viewController,
+                               as: .image(on: device.value),
+                               named: "\(named)-\(device.key)",
+                               testName: "ConfirmationViewController")
+            }
+            
+            results.forEach { XCTAssertNil($0) }
+        }
 }
