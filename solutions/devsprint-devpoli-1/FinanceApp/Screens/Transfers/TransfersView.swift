@@ -8,6 +8,16 @@
 import UIKit
 
 class TransfersView: UIView {
+    private lazy var transferTextField: UITextField = {
+       let textField = UITextField()
+        textField.text = "$0"
+        textField.font = UIFont.boldSystemFont(ofSize: 30)
+        textField.borderStyle = .none
+        textField.keyboardType = .asciiCapableNumberPad
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
     private lazy var transferButton: UIButton = {
         let button = UIButton()
         button.setTitle("Transfer", for: .normal)
@@ -26,8 +36,6 @@ class TransfersView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    
 }
 private extension TransfersView {
     
@@ -37,10 +45,16 @@ private extension TransfersView {
     }
     
     func configureSubviews() {
+        self.addSubview(self.transferTextField)
         self.addSubview(self.transferButton)
     }
     
     func configureSubviewsConstraints() {
+        NSLayoutConstraint.activate([
+            transferTextField.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            transferTextField.centerXAnchor.constraint(equalTo: self.centerXAnchor)
+        ])
+        
         NSLayoutConstraint.activate([
             transferButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15),
             transferButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15),
