@@ -10,12 +10,12 @@ import UIKit
 class ConfirmationView: UIView {
     
     private lazy var imageView: UIImageView = {
-        let imageView = UIImageView()
+        let checkmarkImage = UIImageView()
         let image = UIImage(named: "checkmark.circle.fill")
-        imageView.image = image
-        imageView.tintColor = UIColor.systemGreen
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
+        checkmarkImage.image = image
+        checkmarkImage.tintColor = UIColor.systemGreen
+        checkmarkImage.translatesAutoresizingMaskIntoConstraints = false
+        return checkmarkImage
     }()
     
     private lazy var label: UILabel = {
@@ -33,21 +33,9 @@ class ConfirmationView: UIView {
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
         button.backgroundColor = UIColor.systemBlue
         button.layer.cornerRadius = 14
-        button.addTarget(self, action: #selector(onClick), for: .touchDown)
-        button.addTarget(self, action: #selector(onClickEnd), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-    
-    @objc
-    private func onClick() {
-        button.backgroundColor = UIColor.systemGray
-    }
-    
-    @objc
-    private func onClickEnd() {
-        button.backgroundColor = UIColor.systemBlue
-    }
     
     init() {
         super.init(frame: .zero)
@@ -69,33 +57,27 @@ class ConfirmationView: UIView {
     }
     
     private func imageViewConstraints() {
-        let constraint = [
+        NSLayoutConstraint.activate([
             imageView.heightAnchor.constraint(equalToConstant: CGFloat(89)),
             imageView.widthAnchor.constraint(equalToConstant: CGFloat(106)),
             imageView.centerXAnchor.constraint(equalTo: label.centerXAnchor),
             imageView.bottomAnchor.constraint(equalTo: label.topAnchor, constant: -10)
-        ]
-        
-        constraint.forEach { item in
-            item.isActive = true
-        }
+        ])
     }
     
     private func labelConstraints() {
-        let constraint = [
+        NSLayoutConstraint.activate([
             label.centerXAnchor.constraint(equalTo: centerXAnchor),
             label.centerYAnchor.constraint(equalTo: centerYAnchor)
-        ]
-        
-        constraint.forEach { item in
-            item.isActive = true
-        }
+        ])
     }
     
     private func buttonConstraints() {
-        button.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25).isActive = true
-        button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25).isActive = true
-        button.heightAnchor.constraint(equalToConstant: 56).isActive = true
-        button.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -25).isActive = true
+        NSLayoutConstraint.activate([
+            button.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
+            button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
+            button.heightAnchor.constraint(equalToConstant: 56),
+            button.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -25),
+        ])
     }
 }
