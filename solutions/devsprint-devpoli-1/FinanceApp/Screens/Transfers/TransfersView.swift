@@ -11,7 +11,7 @@ class TransfersView: UIView {
     private lazy var transferTextField: UITextField = {
        let textField = UITextField()
         textField.text = "$0"
-        textField.font = UIFont.boldSystemFont(ofSize: 30)
+        textField.font = UIFont.boldSystemFont(ofSize: 34)
         textField.borderStyle = .none
         textField.keyboardType = .asciiCapableNumberPad
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -21,7 +21,7 @@ class TransfersView: UIView {
     private lazy var transferButton: UIButton = {
         let button = UIButton()
         button.setTitle("Transfer", for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
         button.backgroundColor = .systemBlue
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 15
