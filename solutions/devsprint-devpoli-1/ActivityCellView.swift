@@ -16,6 +16,7 @@ class ActivityCellView: UITableViewCell {
     private lazy var activityMainStack: UIStackView = {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .horizontal
         stack.spacing = 8
         stack.alignment = .center
         return stack
@@ -39,15 +40,16 @@ class ActivityCellView: UITableViewCell {
         return image
     }()
     
-    lazy var activityNameLabel: UILabel = {
+    private lazy var activityNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFont(ofSize: 15)
         label.text = "Mall"
+        label.tintColor = .black
         return label
     }()
     
-    lazy var activityDescriptionLabel: UILabel = {
+    private lazy var activityDescriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 13)
