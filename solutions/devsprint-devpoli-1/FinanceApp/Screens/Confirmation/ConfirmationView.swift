@@ -9,7 +9,7 @@ import UIKit
 
 class ConfirmationView: UIView {
     
-    private lazy var imageView: UIImageView = {
+    private lazy var checkmarkImage: UIImageView = {
         let checkmarkImage = UIImageView()
         let image = UIImage(named: "checkmark.circle.fill")
         checkmarkImage.image = image
@@ -51,17 +51,17 @@ class ConfirmationView: UIView {
     }
     
     private func addSubviews() {
-        addSubview(imageView)
+        addSubview(checkmarkImage)
         addSubview(label)
         addSubview(button)
     }
     
     private func imageViewConstraints() {
         NSLayoutConstraint.activate([
-            imageView.heightAnchor.constraint(equalToConstant: CGFloat(89)),
-            imageView.widthAnchor.constraint(equalToConstant: CGFloat(106)),
-            imageView.centerXAnchor.constraint(equalTo: label.centerXAnchor),
-            imageView.bottomAnchor.constraint(equalTo: label.topAnchor, constant: -10)
+            checkmarkImage.heightAnchor.constraint(equalToConstant: CGFloat(100)),
+            checkmarkImage.widthAnchor.constraint(equalToConstant: CGFloat(100)),
+            checkmarkImage.centerXAnchor.constraint(equalTo: label.centerXAnchor),
+            checkmarkImage.bottomAnchor.constraint(equalTo: label.topAnchor, constant: -10)
         ])
     }
     
