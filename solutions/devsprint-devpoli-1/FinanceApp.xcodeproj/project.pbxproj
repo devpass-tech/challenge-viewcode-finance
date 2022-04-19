@@ -38,7 +38,7 @@
 		BDE0E8A89D7FFF1CC94643AC /* libPods-FinanceAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5BFC91AE9B49CEE26BF5DD2 /* libPods-FinanceAppTests.a */; };
 		D7DAADB109E6F66081E2B5B3 /* Pods_FinanceApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7B8A5915310018E095F3A29 /* Pods_FinanceApp.framework */; };
 		DA2FBB302808881000475A9E /* ActivityCellViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2FBB2F2808881000475A9E /* ActivityCellViewTests.swift */; };
-		DA5FEC2F28061F410012D52E /* ActivityCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5FEC2E28061F410012D52E /* ActivityCellView.swift */; };
+		DA54803C280F6F5900A880E5 /* ActivityCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA54803B280F6F5900A880E5 /* ActivityCellView.swift */; };
 		E47ED6C2280730D6007EA1B6 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47ED6C1280730D6007EA1B6 /* TabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -97,7 +97,7 @@
 		98C8A4E627C81A9C00A630ED /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		C5BFC91AE9B49CEE26BF5DD2 /* libPods-FinanceAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FinanceAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA2FBB2F2808881000475A9E /* ActivityCellViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCellViewTests.swift; sourceTree = "<group>"; };
-		DA5FEC2E28061F410012D52E /* ActivityCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCellView.swift; sourceTree = SOURCE_ROOT; };
+		DA54803B280F6F5900A880E5 /* ActivityCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityCellView.swift; path = FinanceApp/Components/ActivityCellView.swift; sourceTree = SOURCE_ROOT; };
 		DA948292C6E716FDEFAA5D9C /* Pods-FinanceApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinanceApp.debug.xcconfig"; path = "Target Support Files/Pods-FinanceApp/Pods-FinanceApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E47ED6C1280730D6007EA1B6 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		F7B8A5915310018E095F3A29 /* Pods_FinanceApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinanceApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,7 +206,7 @@
 		98584A9E277E35700028DBEA /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				98584AF8277E511C0028DBEA /* Components */,
+				DA54803A280F6EB600A880E5 /* Components */,
 				98584B08277E602C0028DBEA /* ContactList */,
 				98584ADF277E50430028DBEA /* Confirmation */,
 				98584AD1277E50430028DBEA /* Transfers */,
@@ -274,14 +274,6 @@
 			path = Confirmation;
 			sourceTree = "<group>";
 		};
-		98584AF8277E511C0028DBEA /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				DA5FEC2E28061F410012D52E /* ActivityCellView.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 		98584B07277E5FF60028DBEA /* ActivityDetails */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +313,14 @@
 			isa = PBXGroup;
 			children = (
 				DA2FBB2F2808881000475A9E /* ActivityCellViewTests.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		DA54803A280F6EB600A880E5 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				DA54803B280F6F5900A880E5 /* ActivityCellView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -531,9 +531,9 @@
 				98C8A4DD27C818A800A630ED /* HomeData.swift in Sources */,
 				98C8A4D927C8152200A630ED /* String+Extensions.swift in Sources */,
 				98C8A4E727C81A9C00A630ED /* UserProfile.swift in Sources */,
+				DA54803C280F6F5900A880E5 /* ActivityCellView.swift in Sources */,
 				98C8A4E327C819DE00A630ED /* Contact.swift in Sources */,
 				98C8A4E527C81A3F00A630ED /* TransferResult.swift in Sources */,
-				DA5FEC2F28061F410012D52E /* ActivityCellView.swift in Sources */,
 				98584AE8277E50430028DBEA /* TransfersViewController.swift in Sources */,
 				98584B14277E605F0028DBEA /* ActivityDetailsView.swift in Sources */,
 				98584AE7277E50430028DBEA /* TransfersView.swift in Sources */,
