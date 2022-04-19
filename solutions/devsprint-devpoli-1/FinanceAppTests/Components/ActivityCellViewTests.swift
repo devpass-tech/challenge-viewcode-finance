@@ -12,28 +12,18 @@ import UIKit
 
 class ActivityCellViewTests: XCTestCase {
     
-    var sut: TableViewCellSnapshotContainer<ActivityCellView>!
-    var defaultStateMock: Activity!
-
-    override func setUpWithError() throws {
-        defaultStateMock = Activity(name: "Mall", price: 100, time: "8:57 AM")
-        sut = TableViewCellSnapshotContainer<ActivityCellView>(width: 375, configureCell: { cell in
-            cell.setupActivity(activity: self.defaultStateMock)
-        })
-    }
-
-    override func tearDownWithError() throws {
-        sut = nil
-        defaultStateMock = nil
-    }
+    private lazy var sut: TableViewCellSnapshotContainer<ActivityCellView> = TableViewCellSnapshotContainer<ActivityCellView>(width: 375, configureCell: { cell in
+        cell.setupActivity(activity: self.defaultStateMock)
+    })
+    private lazy var defaultStateMock: Activity = Activity(name: "Mall", price: 100, time: "8:57 AM")
 
     func testDefaultState() {
-        let container = sut!
+        let container = sut
         assertSnapshot(matching: container, as: .image)
     }
     
     func testDarkMode() {
-        let container = sut!
+        let container = sut
         container.overrideUserInterfaceStyle = .dark
         assertSnapshot(matching: container, as: .image)
     }
@@ -82,7 +72,9 @@ class TableViewCellSnapshotContainer<Cell: UITableViewCell>: UIView, UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! Cell
+        let cell = tableView.dequeueReusableCell(
+          withIdentifier: "Cell", for: indexPath
+        ) as? Cell ?? Cell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "Cell")
         
         configureCell(cell)
         
