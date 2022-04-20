@@ -27,6 +27,15 @@ class TransfersView: UIView {
        return label
     }()
     
+    private lazy var contactLabel: UILabel = {
+       let label = UILabel()
+        label.text = "Choose contact"
+        label.textColor = .black
+        label.font = UIFont(name: "Helvetica-Bold", size: 14)
+        label.translatesAutoresizingMaskIntoConstraints = false
+       return label
+    }()
+    
     private lazy var contactView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(hexaString: "#E5E5EA")
@@ -35,12 +44,11 @@ class TransfersView: UIView {
        return view
     }()
     
-    private lazy var statusImage: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor(hexaString: "#34C759")
-        view.layer.cornerRadius = 20
-        view.translatesAutoresizingMaskIntoConstraints = false
-       return view
+    private lazy var statusImage: UIImageView = {
+        let image = UIImageView()
+        image.image = UIImage(named: "statusImage")
+        image.translatesAutoresizingMaskIntoConstraints = false
+       return image
     }()
     
     private lazy var transferButton: UIButton = {
@@ -73,6 +81,7 @@ private extension TransfersView {
     func configureSubviews() {
         self.addSubview(self.transferTextField)
         self.addSubview(self.contactView)
+        self.contactView.addSubview(contactLabel)
         self.contactView.addSubview(statusImage)
         self.addSubview(self.label)
         self.addSubview(self.transferButton)
@@ -92,10 +101,16 @@ private extension TransfersView {
         ])
         
         NSLayoutConstraint.activate([
-            statusImage.leadingAnchor.constraint(equalTo: contactView.leadingAnchor, constant: -7),
+            contactLabel.centerYAnchor.constraint(equalTo: contactView.centerYAnchor),
+            contactLabel.leftAnchor.constraint(equalTo: contactView.leftAnchor, constant: 30)
+        ])
+        
+        
+        NSLayoutConstraint.activate([
+            statusImage.leftAnchor.constraint(equalTo: contactView.leftAnchor, constant: 10),
             statusImage.centerYAnchor.constraint(equalTo: contactView.centerYAnchor),
-            statusImage.heightAnchor.constraint(equalToConstant: 10),
-            statusImage.widthAnchor.constraint(equalToConstant: 10)
+            statusImage.heightAnchor.constraint(equalToConstant: 13),
+            statusImage.widthAnchor.constraint(equalToConstant: 13)
         ])
         
         NSLayoutConstraint.activate([
