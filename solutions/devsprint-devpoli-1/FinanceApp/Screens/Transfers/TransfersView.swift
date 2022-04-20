@@ -18,6 +18,31 @@ class TransfersView: UIView {
         return textField
     }()
     
+    private lazy var label: UILabel = {
+       let label = UILabel()
+        label.text = "To"
+        label.textColor = .lightGray
+        label.font = UIFont(name: "Helvetica-Bold", size: 14)
+        label.translatesAutoresizingMaskIntoConstraints = false
+       return label
+    }()
+    
+    private lazy var contactView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(hexaString: "#E5E5EA")
+        view.layer.cornerRadius = 19
+        view.translatesAutoresizingMaskIntoConstraints = false
+       return view
+    }()
+    
+    private lazy var statusImage: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(hexaString: "#34C759")
+        view.layer.cornerRadius = 20
+        view.translatesAutoresizingMaskIntoConstraints = false
+       return view
+    }()
+    
     private lazy var transferButton: UIButton = {
         let button = UIButton()
         button.setTitle("Transfer", for: .normal)
@@ -37,6 +62,7 @@ class TransfersView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
 private extension TransfersView {
     
     func setupViews() {
@@ -46,6 +72,9 @@ private extension TransfersView {
     
     func configureSubviews() {
         self.addSubview(self.transferTextField)
+        self.addSubview(self.contactView)
+        self.contactView.addSubview(statusImage)
+        self.addSubview(self.label)
         self.addSubview(self.transferButton)
     }
     
@@ -56,6 +85,26 @@ private extension TransfersView {
         ])
         
         NSLayoutConstraint.activate([
+            contactView.topAnchor.constraint(equalTo: transferTextField.bottomAnchor, constant: 10),
+            contactView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            contactView.heightAnchor.constraint(equalToConstant: 38),
+            contactView.widthAnchor.constraint(equalToConstant: 157)
+        ])
+        
+        NSLayoutConstraint.activate([
+            statusImage.leadingAnchor.constraint(equalTo: contactView.leadingAnchor, constant: -7),
+            statusImage.centerYAnchor.constraint(equalTo: contactView.centerYAnchor),
+            statusImage.heightAnchor.constraint(equalToConstant: 10),
+            statusImage.widthAnchor.constraint(equalToConstant: 10)
+        ])
+        
+        NSLayoutConstraint.activate([
+            label.topAnchor.constraint(equalTo: transferTextField.bottomAnchor, constant: 8),
+            label.trailingAnchor.constraint(equalTo: contactView.leadingAnchor, constant: -13),
+            label.centerYAnchor.constraint(equalTo: contactView.centerYAnchor, constant: 0)
+        ])
+        
+        NSLayoutConstraint.activate([
             transferButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15),
             transferButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15),
             transferButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -100),
@@ -63,4 +112,13 @@ private extension TransfersView {
             transferButton.centerXAnchor.constraint(equalTo: self.centerXAnchor)
         ])
     }
+}
+
+extension UIColor {
+    convenience init(hexaString: String, alpha: CGFloat = 1) {
+        let chars = Array(hexaString.dropFirst())
+        self.init(red:   .init(strtoul(String(chars[0...1]),nil,16))/255,
+                  green: .init(strtoul(String(chars[2...3]),nil,16))/255,
+                  blue:  .init(strtoul(String(chars[4...5]),nil,16))/255,
+                  alpha: alpha)}
 }
