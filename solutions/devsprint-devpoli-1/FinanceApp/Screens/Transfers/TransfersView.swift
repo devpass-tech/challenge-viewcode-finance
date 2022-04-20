@@ -9,8 +9,11 @@ import UIKit
 
 class TransfersView: UIView {
     private lazy var transferTextField: UITextField = {
-       let textField = UITextField()
-        textField.text = "$0"
+        let textField = UITextField()
+        textField.attributedPlaceholder = NSAttributedString(
+            string: "$0",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+        )
         textField.font = UIFont.boldSystemFont(ofSize: 34)
         textField.borderStyle = .none
         textField.keyboardType = .asciiCapableNumberPad
@@ -19,36 +22,37 @@ class TransfersView: UIView {
     }()
     
     private lazy var label: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "To"
         label.textColor = .lightGray
         label.font = UIFont(name: "Helvetica-Bold", size: 14)
         label.translatesAutoresizingMaskIntoConstraints = false
-       return label
+        return label
     }()
     
     private lazy var contactLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "Choose contact"
         label.textColor = .black
         label.font = UIFont(name: "Helvetica-Bold", size: 14)
         label.translatesAutoresizingMaskIntoConstraints = false
-       return label
+        return label
     }()
     
     private lazy var contactView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(hexaString: "#E5E5EA")
         view.layer.cornerRadius = 19
+        view.isUserInteractionEnabled = true
         view.translatesAutoresizingMaskIntoConstraints = false
-       return view
+        return view
     }()
     
     private lazy var statusImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "statusImage")
         image.translatesAutoresizingMaskIntoConstraints = false
-       return image
+        return image
     }()
     
     private lazy var transferButton: UIButton = {
@@ -64,8 +68,27 @@ class TransfersView: UIView {
     init() {
         super.init(frame: .zero)
         self.setupViews()
+        configureTextField()
     }
-
+    
+    func configureTextField() {
+        transferTextField.addTarget(self, action: #selector(textFieldDidChange(_:)),
+                                    for: .editingChanged)
+        transferTextField.addTarget(self, action: #selector(myTargetFunction), for: .touchDown)
+    }
+    
+    @objc func myTargetFunction(textField: UITextField) {
+        if textField.text == "" {
+            transferTextField.text = "$\(textField.text!)"
+        }
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        if textField.text == "" {
+            transferTextField.text = "$\(textField.text!)"
+        }
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
