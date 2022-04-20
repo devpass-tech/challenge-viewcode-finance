@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8BED8282280E400D00729159 /* ContactCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BED8281280E400D00729159 /* ContactCellView.swift */; };
 		8BED8283280E400D00729159 /* ContactCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BED8281280E400D00729159 /* ContactCellView.swift */; };
+		8BED82842810AA6400729159 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8A4E227C819DE00A630ED /* Contact.swift */; };
+		8BED828A2810ABDC00729159 /* ContactCellViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BED82892810ABDC00729159 /* ContactCellViewTests.swift */; };
 		98584A6D277E32C30028DBEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584A6C277E32C30028DBEA /* AppDelegate.swift */; };
 		98584A6F277E32C30028DBEA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584A6E277E32C30028DBEA /* SceneDelegate.swift */; };
 		98584A76277E32C50028DBEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98584A75277E32C50028DBEA /* Assets.xcassets */; };
@@ -64,6 +66,7 @@
 		3643BD9A89ED4A3441A44DE1 /* Pods-FinanceApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinanceApp.release.xcconfig"; path = "Target Support Files/Pods-FinanceApp/Pods-FinanceApp.release.xcconfig"; sourceTree = "<group>"; };
 		4A0CD1724DDB98D5D9860885 /* Pods-FinanceAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinanceAppTests.release.xcconfig"; path = "Target Support Files/Pods-FinanceAppTests/Pods-FinanceAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		8BED8281280E400D00729159 /* ContactCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContactCellView.swift; path = FinanceAppUITests/ContactCellView.swift; sourceTree = SOURCE_ROOT; };
+		8BED82892810ABDC00729159 /* ContactCellViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCellViewTests.swift; sourceTree = "<group>"; };
 		98584A69277E32C30028DBEA /* FinanceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98584A6C277E32C30028DBEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98584A6E277E32C30028DBEA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +132,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8BED82852810AB1500729159 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8BED82892810ABDC00729159 /* ContactCellViewTests.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		98584A60277E32C30028DBEA = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +179,7 @@
 		98584A82277E32C60028DBEA /* FinanceAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				8BED82852810AB1500729159 /* Components */,
 				98584A83277E32C60028DBEA /* FinanceAppTests.swift */,
 			);
 			path = FinanceAppTests;
@@ -546,8 +558,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BED82842810AA6400729159 /* Contact.swift in Sources */,
 				98584A84277E32C60028DBEA /* FinanceAppTests.swift in Sources */,
 				8BED8283280E400D00729159 /* ContactCellView.swift in Sources */,
+				8BED828A2810ABDC00729159 /* ContactCellViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
