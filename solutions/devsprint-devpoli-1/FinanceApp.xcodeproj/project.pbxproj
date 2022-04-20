@@ -38,6 +38,7 @@
 		BDE0E8A89D7FFF1CC94643AC /* libPods-FinanceAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5BFC91AE9B49CEE26BF5DD2 /* libPods-FinanceAppTests.a */; };
 		D7DAADB109E6F66081E2B5B3 /* Pods_FinanceApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7B8A5915310018E095F3A29 /* Pods_FinanceApp.framework */; };
 		E47ED6C2280730D6007EA1B6 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47ED6C1280730D6007EA1B6 /* TabBarViewController.swift */; };
+		E4BEF54C2810A8F300549513 /* TransferViewSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BEF54B2810A8F300549513 /* TransferViewSnapshotTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		C5BFC91AE9B49CEE26BF5DD2 /* libPods-FinanceAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FinanceAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA948292C6E716FDEFAA5D9C /* Pods-FinanceApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinanceApp.debug.xcconfig"; path = "Target Support Files/Pods-FinanceApp/Pods-FinanceApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E47ED6C1280730D6007EA1B6 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		E4BEF54B2810A8F300549513 /* TransferViewSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferViewSnapshotTests.swift; sourceTree = "<group>"; };
 		F7B8A5915310018E095F3A29 /* Pods_FinanceApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinanceApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				98584A83277E32C60028DBEA /* FinanceAppTests.swift */,
+				E4BEF54B2810A8F300549513 /* TransferViewSnapshotTests.swift */,
 			);
 			path = FinanceAppTests;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98584A84277E32C60028DBEA /* FinanceAppTests.swift in Sources */,
+				E4BEF54C2810A8F300549513 /* TransferViewSnapshotTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
