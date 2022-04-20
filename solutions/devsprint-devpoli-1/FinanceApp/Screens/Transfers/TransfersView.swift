@@ -71,23 +71,6 @@ class TransfersView: UIView {
         configureTextField()
     }
     
-    func configureTextField() {
-        transferTextField.addTarget(self, action: #selector(textFieldDidChange(_:)),
-                                    for: .editingChanged)
-        transferTextField.addTarget(self, action: #selector(myTargetFunction), for: .touchDown)
-    }
-    
-    @objc func myTargetFunction(textField: UITextField) {
-        if textField.text == "" {
-            transferTextField.text = "$\(textField.text!)"
-        }
-    }
-    
-    @objc func textFieldDidChange(_ textField: UITextField) {
-        if textField.text == "" {
-            transferTextField.text = "$\(textField.text!)"
-        }
-    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -95,6 +78,23 @@ class TransfersView: UIView {
 }
 
 private extension TransfersView {
+    func configureTextField() {
+        self.transferTextField.addTarget(self, action: #selector(textFieldDidChange(_:)),
+                                    for: .editingChanged)
+        self.transferTextField.addTarget(self, action: #selector(myTargetFunction), for: .touchDown)
+    }
+    
+    @objc func myTargetFunction(textField: UITextField) {
+        if textField.text == "" {
+            self.transferTextField.text = "$\(textField.text!)"
+        }
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        if textField.text == "" {
+            self.transferTextField.text = "$\(textField.text!)"
+        }
+    }
     
     func setupViews() {
         self.configureSubviews()
