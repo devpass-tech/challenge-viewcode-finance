@@ -71,6 +71,11 @@ extension ContactCellView {
         configureConstraints()
     }
     
+    func populateCell(contact: Contact) {
+        contactNameLabel.text = contact.name
+        contactPhoneLabel.text = contact.phone
+    }
+    
     func configureSubviews() {
         addSubview(contactMainStack)
         
