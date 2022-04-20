@@ -13,7 +13,11 @@ struct HomeViewConfiguration {
 }
 
 final class HomeView: UIView {
-
+    
+    struct Action {
+        let onItenSelect: () -> Void
+    }
+    private let action: Action
     private let listViewCellIdentifier = "ListViewCellIdentifier"
 
     private var activities: [Activity] = []
@@ -24,13 +28,13 @@ final class HomeView: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.listViewCellIdentifier)
         tableView.dataSource = self
+        tableView.delegate = self
         return tableView
     }()
 
-    init() {
-
+    init(action: Action) {
+        self.action = action
         super.init(frame: .zero)
-
         self.setupViews()
     }
 
@@ -72,7 +76,7 @@ private extension HomeView {
     }
 }
 
-extension HomeView: UITableViewDataSource {
+extension HomeView: UITableViewDataSource, UITableViewDelegate {
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
@@ -84,6 +88,10 @@ extension HomeView: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: self.listViewCellIdentifier)!
         cell.textLabel?.text = self.activities[indexPath.row].name
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        action.onItenSelect()
     }
 }
 

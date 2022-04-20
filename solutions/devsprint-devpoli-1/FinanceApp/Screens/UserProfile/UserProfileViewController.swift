@@ -9,12 +9,18 @@ import UIKit
 
 class UserProfileViewController: UIViewController {
 
+    private var contentView: UserProfileView = .init()
+    
     override func loadView() {
-        self.view = UserProfileView()
+        super.loadView()
+        view = contentView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         
     }
+    
+   
 }
