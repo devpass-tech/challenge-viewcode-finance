@@ -20,7 +20,6 @@ class ActivityCellViewTests: XCTestCase {
         sut.frame.size.width = 375
         sut.frame.size.height = 64
     }
-    
 
     func testDefaultState() {
         sut.backgroundColor = .white

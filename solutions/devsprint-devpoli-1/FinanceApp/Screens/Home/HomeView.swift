@@ -79,9 +79,11 @@ extension HomeView: UITableViewDataSource {
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(
+        guard let cell = tableView.dequeueReusableCell(
           withIdentifier: ActivityCellView.identifier
-        ) as? ActivityCellView ?? ActivityCellView(style: UITableViewCell.CellStyle.default, reuseIdentifier: ActivityCellView.identifier)
+        ) as? ActivityCellView else {
+            return UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: ActivityCellView.identifier)
+        }
         cell.setupActivity(activity: self.activities[indexPath.row])
         return cell
     }
