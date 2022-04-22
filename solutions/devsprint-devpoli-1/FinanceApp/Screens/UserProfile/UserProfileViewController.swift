@@ -11,6 +11,7 @@ class UserProfileViewController: UIViewController {
 
     private var contentView: UserProfileView = .init()
     
+    
     override func loadView() {
         super.loadView()
         view = contentView
