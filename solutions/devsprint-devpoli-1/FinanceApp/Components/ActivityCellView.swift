@@ -71,8 +71,7 @@ class ActivityCellView: UITableViewCell {
 
 }
 
-extension ActivityCellView {
-    
+private extension ActivityCellView {
     // MARK: View and Constraint Settings
     
     func setupViews() {
@@ -96,12 +95,15 @@ extension ActivityCellView {
             activityMainStack.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 8),
             activityMainStack.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -8),
             activityMainStack.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            activityMainStack.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+            activityMainStack.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
 
             activityCategoryIcon.widthAnchor.constraint(equalToConstant: 48),
             activityCategoryIcon.heightAnchor.constraint(equalToConstant: 48),
         ])
     }
+}
+
+extension ActivityCellView {
     
     // MARK: Populate Cell
     
@@ -112,19 +114,19 @@ extension ActivityCellView {
     
     func setupActivityCategoryIcon(activityName: String) {
         switch activityName {
-        case "Mall":
+        case _ where activityName.contains("Mall"):
             activityCategoryIcon.image =  UIImage(named: "bag.circle.fill")
             activityCategoryIcon.tintColor = .systemPurple
-        case "Food Court":
+        case _ where activityName.contains("Food"):
             activityCategoryIcon.image =  UIImage(named: "fork.knife.circle.fill")
             activityCategoryIcon.tintColor = .systemBlue
-        case "Oceanic Airlines":
+        case _ where activityName.contains("Airlines"):
             activityCategoryIcon.image =  UIImage(named: "airplane.circle.fill")
             activityCategoryIcon.tintColor = .systemOrange
-        case "Gym Membership":
+        case _ where activityName.contains("Gym"):
             activityCategoryIcon.image =  UIImage(named: "heart.circle.fill")
             activityCategoryIcon.tintColor = .systemRed
-        case "Private Transport":
+        case _ where activityName.contains("Transport"):
             activityCategoryIcon.image =  UIImage(named: "car.circle.fill")
             activityCategoryIcon.tintColor = .systemGreen
         default:

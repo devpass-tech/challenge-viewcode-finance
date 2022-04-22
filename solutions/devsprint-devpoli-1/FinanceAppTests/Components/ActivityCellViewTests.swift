@@ -22,18 +22,11 @@ class ActivityCellViewTests: XCTestCase {
     }
 
     func testDefaultState() {
-        assertSnapshot(matching: sut, as: .image)
+        assertSnapshot(matching: sut, as: .image, named: "Default", record: false, testName: "ActivityTableCell")
     }
     
     func testLongTitleActivityState() {
-        sut.setupActivity(activity: Activity(name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie nisl mi, nec accumsan ex blandit vitae. Aliquam volutpat orci vitae venenatis consectetur. Nullam facilisis lorem eu justo posuere, sed efficitur purus interdum.", price: 100, time: "8:57 AM"))
-        assertSnapshot(matching: sut, as: .image)
+        sut.setupActivity(activity: Activity(name: "Gym lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie nisl mi, nec accumsan ex blandit vitae. Aliquam volutpat orci vitae venenatis consectetur. Nullam facilisis lorem eu justo posuere, sed efficitur purus interdum.", price: 100, time: "8:57 AM"))
+        assertSnapshot(matching: sut, as: .image, named: "LongTitle", record: false, testName: "ActivityTableCell")
     }
-    
-    func testDarkMode() {
-        sut.overrideUserInterfaceStyle = .dark
-        assertSnapshot(matching: sut, as: .image)
-    }
-    
-
 }
