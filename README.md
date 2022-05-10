@@ -1,9 +1,9 @@
 
 # ViewCode Challenge - Finance App 💰
 
-No Desafio ViewCode, temos apenas tarefas de implementação de interfaces via código (ViewCode). Nosso objetivo é implementar a interface de um app de finanças, seguindo todas as boas práticas de desenvolvimento ágil e Git.
+In the ViewCode Challenge, we only have tasks of implementing code-based interfaces via code (ViewCode). Our goal is to implement the interface of a finance app, following all the best practices of agile development and Git.
 
-Nesse desafio, você terá a oportunidade de trabalhar com UIScrollView, UIStackView, UITableView, UIImageView, e outros componentes utilizados no desenvolvimento iOS.
+In this challenge, you will have the opportunity to work with UIScrollView, UIStackView, UITableView, UIImageView, and other components used in iOS development.
 
 <p float="left">
 <img src="screenshots/screenshot-1.png" alt="drawing" width="200"/>
@@ -12,15 +12,15 @@ Nesse desafio, você terá a oportunidade de trabalhar com UIScrollView, UIStack
 <img src="screenshots/screenshot-8.png" alt="drawing" width="200"/>
 </p>
 
-# Iniciando os trabalhos
+# Contributing
 
+1. Clone this repository.
+2. Start a new feature branch. 
+3. Open `solutions` folder and access your Dev Sprint's project.
+4. Build, run and code! 👩‍💻
 
-1. Clone este repositório na sua máquina.
-2. Abra a pasta `solutions` e acesse o projeto referente à sua Sprint.
-3. Faça um build e rode o projeto. ▶️
+# About Devpass
 
-# Sobre a Devpass
+Devpass is a diverse community of high-potential software developers accelerating their careers through real-world product development and mentorship from tech leaders of the best tech companies.
 
-A Devpass é uma comunidade de pessoas desenvolvedoras de alto potencial acelerando suas carreiras através de desenvolvimento de produtos reais, como o Hereminders, e conexões com as principais lideranças de tecnologia do país, através de mentorias particulares e Tech Talks.
-
-Se interessou? Acesse www.devpass.com.br e se inscreva na nossa lista para ficar por dentro das novidades!
+Interested? Access www.devpass.com.br for more information!
