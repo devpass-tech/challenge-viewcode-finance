@@ -17,15 +17,16 @@ final class TabBarViewController: UITabBarController {
     
     private func setup() {
         viewControllers = [
-            create(with: TabItemModel(viewController: HomeViewController(), title: "Home", name: "house.fill")),
-            create(with: TabItemModel(viewController: TransfersViewController(), title: "Transfers", name: "arrow.up.arrow.down"))
+            createViewController(with: TabItemModel(viewController: HomeViewController(), title: "Home", name: "house.fill")),
+            createViewController(with: TabItemModel(viewController: TransfersViewController(), title: "Transfers", name: "arrow.up.arrow.down"))
         ]
     }
     
-    private func create(with model: TabItemModel) -> UINavigationController {
+    private func createViewController(with model: TabItemModel) -> UINavigationController {
         let viewController = model.viewController
         viewController.title = model.title
         viewController.tabBarItem.image = UIImage(named: model.name)
+        
         return UINavigationController(rootViewController: viewController)
     }
 }
