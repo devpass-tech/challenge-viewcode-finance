@@ -21,6 +21,7 @@ class HomeViewController: UIViewController {
 
         navigationItem.title = "Finance App 💰"
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.rightBarButtonItem = homeView.profileButton
 
         service.fetchHomeData { homeData in
 
