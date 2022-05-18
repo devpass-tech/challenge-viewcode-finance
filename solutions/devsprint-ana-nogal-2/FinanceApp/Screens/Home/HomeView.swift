@@ -8,7 +8,7 @@
 import UIKit
 
 struct HomeViewConfiguration {
-    
+
     let homeData: HomeData
 }
 
