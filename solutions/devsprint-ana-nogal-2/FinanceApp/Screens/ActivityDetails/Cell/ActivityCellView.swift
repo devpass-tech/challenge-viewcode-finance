@@ -15,5 +15,11 @@ class ActivityCellView: UITableViewCell {
         return icon
     }()
     
+    private lazy var category: UILabel = {
+        let category = UILabel()
+        
+        return category
+    }()
+    
 
 }
