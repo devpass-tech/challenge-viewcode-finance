@@ -9,16 +9,16 @@ import UIKit
 
 class ActivityCellView: UITableViewCell {
     
-    private lazy var icon: UIImageView = {
-        let icon = UIImageView()
+    private lazy var image: UIImageView = {
+        let image = UIImageView()
         
-        return icon
+        return image
     }()
     
-    private lazy var category: UILabel = {
-        let category = UILabel()
+    private lazy var name: UILabel = {
+        let name = UILabel()
         
-        return category
+        return name
     }()
     
 
