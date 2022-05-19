@@ -16,12 +16,21 @@ class HomeViewController: UIViewController {
         let homeView = HomeView()
         return homeView
     }()
+    
+    private (set) lazy var profileButton: UIBarButtonItem = {
+        let image = UIImage(named: "profile-icon")
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        button.setImage(image, for: .normal)
+        button.addTarget(self, action: #selector(profileButtonTapped), for: .touchUpInside)
+        let barButton = UIBarButtonItem(customView: button)
+        return barButton
+    }()
 
     override func viewDidLoad() {
 
         navigationItem.title = "Finance App 💰"
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.rightBarButtonItem = homeView.profileButton
+        navigationItem.rightBarButtonItem = profileButton
 
         service.fetchHomeData { homeData in
 
@@ -41,4 +50,15 @@ class HomeViewController: UIViewController {
     override func loadView() {
         self.view = homeView
     }
+}
+
+extension HomeViewController: ProfileButtonProtocol {
+    @objc func profileButtonTapped(_ sender:UIBarButtonItem!) {
+        print("profileButtonTapped")
+    }
+}
+
+
+protocol ProfileButtonProtocol {
+    func profileButtonTapped(_ sender:UIBarButtonItem!)
 }

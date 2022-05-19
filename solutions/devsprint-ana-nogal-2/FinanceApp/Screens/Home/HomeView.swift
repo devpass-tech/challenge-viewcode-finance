@@ -27,14 +27,7 @@ final class HomeView: UIView {
         return tableView
     }()
     
-    private (set) lazy var profileButton: UIBarButtonItem = {
-        let image = UIImage(named: "profile-icon")
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-        button.setImage(image, for: .normal)
-        button.addTarget(self, action: #selector(profileButtonTapped), for: .touchUpInside)	
-        let barButton = UIBarButtonItem(customView: button)
-        return barButton
-    }()
+   
     
     init() {
         
@@ -54,9 +47,7 @@ final class HomeView: UIView {
     }
     
     
-    @objc func profileButtonTapped(_ sender:UIBarButtonItem!) {
-        print("profileButtonTapped")
-    }
+    
     
 }
 
