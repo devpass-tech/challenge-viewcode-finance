@@ -8,5 +8,12 @@
 import UIKit
 
 class ActivityCellView: UITableViewCell {
+    
+    private lazy var icon: UIImageView = {
+        let icon = UIImageView()
+        
+        return icon
+    }()
+    
 
 }
