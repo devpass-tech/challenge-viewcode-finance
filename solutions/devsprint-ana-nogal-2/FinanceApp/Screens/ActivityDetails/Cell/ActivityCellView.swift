@@ -93,20 +93,3 @@ extension ActivityCellView {
         ])
     }
 }
-
-#if DEBUG
-
-import SwiftUI
-
-struct ActivityCellView_Preview: PreviewProvider {
-    static var previews: some View {
-        return SwiftUIPreView { _ in
-            let cell = ActivityCellView()
-            let configuration = ActivityCellConfiguration(icon: "bag.circle.fill", name: "Mall", price: 100.00, time: "8:75")
-            cell.updateView(with: configuration)
-            
-            return cell
-        }
-    }
-}
-#endif
