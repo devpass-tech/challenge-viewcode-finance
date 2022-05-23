@@ -7,22 +7,18 @@
 
 import UIKit
 
-struct ActivityCellConfiguration {
-    let icon: String
-    let name: String
-    let information: String
-}
-
 class ActivityCellView: UITableViewCell {
     private lazy var iconView: UIImageView = {
         let iconView = UIImageView()
-        
+        iconView.translatesAutoresizingMaskIntoConstraints = false
+
         return iconView
     }()
     
     private lazy var nameLabel: UILabel = {
         let nameLabel = UILabel()
         nameLabel.font = .boldSystemFont(ofSize: 15)
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
         
         return nameLabel
     }()
@@ -31,7 +27,8 @@ class ActivityCellView: UITableViewCell {
         let descriptionLabel = UILabel()
         descriptionLabel.font =  .systemFont(ofSize: 13)
         descriptionLabel.textColor = UIColor(red: 0.235, green: 0.235, blue: 0.263, alpha: 0.6)
-        
+        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+
         return descriptionLabel
     }()
     
@@ -60,7 +57,7 @@ extension ActivityCellView {
     func updateView(with configuration: ActivityCellConfiguration) {
         self.iconView.image = UIImage(named: configuration.icon)
         self.nameLabel.text = configuration.name
-        self.descriptionLabel.text = configuration.information
+        self.descriptionLabel.text = String.activityDetails(with: configuration.price, and: configuration.time)
     }
 }
 
@@ -79,10 +76,6 @@ extension ActivityCellView {
     }
     
     private func configureSubviewsConstraints() {
-        self.iconView.translatesAutoresizingMaskIntoConstraints = false
-        self.nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([
             self.iconView.widthAnchor.constraint(equalToConstant: 48),
             self.iconView.heightAnchor.constraint(equalToConstant: CGFloat(48)),
@@ -109,7 +102,7 @@ struct ActivityCellView_Preview: PreviewProvider {
     static var previews: some View {
         return SwiftUIPreView { _ in
             let cell = ActivityCellView()
-            let configuration = ActivityCellConfiguration(icon: "bag.circle.fill", name: "Mall", information: "$100.00 • 8:57 AM")
+            let configuration = ActivityCellConfiguration(icon: "bag.circle.fill", name: "Mall", price: 100.00, time: "8:75")
             cell.updateView(with: configuration)
             
             return cell
