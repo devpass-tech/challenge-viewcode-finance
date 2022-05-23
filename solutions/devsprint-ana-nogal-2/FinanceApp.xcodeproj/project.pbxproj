@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5E275BD2C879B1A4A2C25D54 /* Pods_FinanceApp_FinanceAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAB427C3B8441C7224079F47 /* Pods_FinanceApp_FinanceAppUITests.framework */; };
 		7977839C283BD99D0030E52E /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7977839B283BD99D0030E52E /* Color.swift */; };
+		7977839E283BDB830030E52E /* ActivityDetailsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7977839D283BDB830030E52E /* ActivityDetailsConstants.swift */; };
 		7A73E08E283408B300E4A344 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73E08D283408B300E4A344 /* TabBarViewController.swift */; };
 		88CC9F5A01F256F3DC01AA41 /* Pods_FinanceAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E00ABCBF95489815A59C6989 /* Pods_FinanceAppTests.framework */; };
 		98584A6D277E32C30028DBEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584A6C277E32C30028DBEA /* AppDelegate.swift */; };
@@ -66,6 +67,7 @@
 		43473ACAD90F633BF720348E /* Pods_FinanceApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinanceApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E579709FDA3929B05424C49 /* Pods-FinanceAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinanceAppTests.debug.xcconfig"; path = "Target Support Files/Pods-FinanceAppTests/Pods-FinanceAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7977839B283BD99D0030E52E /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		7977839D283BDB830030E52E /* ActivityDetailsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsConstants.swift; sourceTree = "<group>"; };
 		7A73E08D283408B300E4A344 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		98584A69277E32C30028DBEA /* FinanceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98584A6C277E32C30028DBEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 			children = (
 				98584B0E277E605F0028DBEA /* ActivityDetailsView.swift */,
 				98584B0A277E605F0028DBEA /* ActivityDetailsViewController.swift */,
+				7977839D283BDB830030E52E /* ActivityDetailsConstants.swift */,
 			);
 			path = ActivityDetails;
 			sourceTree = "<group>";
@@ -597,6 +600,7 @@
 				7A73E08E283408B300E4A344 /* TabBarViewController.swift in Sources */,
 				98584A6F277E32C30028DBEA /* SceneDelegate.swift in Sources */,
 				7977839C283BD99D0030E52E /* Color.swift in Sources */,
+				7977839E283BDB830030E52E /* ActivityDetailsConstants.swift in Sources */,
 				98584AA7277E35F10028DBEA /* HomeView.swift in Sources */,
 				98584B1F277E60740028DBEA /* ContactListView.swift in Sources */,
 				989627E027ADC2F60009A07F /* DebugViewController.swift in Sources */,
