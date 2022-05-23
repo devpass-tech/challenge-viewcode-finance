@@ -12,7 +12,7 @@ import SnapshotTesting
 class ConfirmationViewTests: XCTestCase {
 
     func test_defaultApperance() {
-        let view = ConfirmationView()
-        assertSnapshot(matching: view, as: .image)
+        let controller = ConfirmationViewController()
+        assertSnapshot(matching: controller, as: .image)
     }
 }
