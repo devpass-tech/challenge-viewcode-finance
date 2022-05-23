@@ -109,4 +109,5 @@ struct ActivityCellView_Preview: PreviewProvider {
         }
     }
 }
+
 #endif

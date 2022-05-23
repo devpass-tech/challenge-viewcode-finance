@@ -11,6 +11,7 @@
 		2A84E53B9FDFBE24F1186AA7 /* libPods-FinanceAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 454ED7665D5D3690957247E2 /* libPods-FinanceAppTests.a */; };
 		7A4ABDF22836886E00CAD20D /* ActivityCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4ABDF12836886E00CAD20D /* ActivityCellView.swift */; };
 		7A4ABDF428368CB200CAD20D /* SwiftUIPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4ABDF328368CB200CAD20D /* SwiftUIPreview.swift */; };
+		7A659D67283BCC4600DFE625 /* ConfirmationViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A659D66283BCC4600DFE625 /* ConfirmationViewTests.swift */; };
 		7A73E08E283408B300E4A344 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73E08D283408B300E4A344 /* TabBarViewController.swift */; };
 		7AA7AB492836A50200DADDC7 /* ActivityCellViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA7AB482836A50200DADDC7 /* ActivityCellViewTests.swift */; };
 		7AB558DF283BB15A005671C9 /* ActivityCellConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB558DE283BB15A005671C9 /* ActivityCellConfiguration.swift */; };
@@ -67,6 +68,7 @@
 		5C856E43D6A72B25445A9C8E /* Pods-FinanceAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinanceAppTests.release.xcconfig"; path = "Target Support Files/Pods-FinanceAppTests/Pods-FinanceAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		7A4ABDF12836886E00CAD20D /* ActivityCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCellView.swift; sourceTree = "<group>"; };
 		7A4ABDF328368CB200CAD20D /* SwiftUIPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPreview.swift; sourceTree = "<group>"; };
+		7A659D66283BCC4600DFE625 /* ConfirmationViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewTests.swift; sourceTree = "<group>"; };
 		7A73E08D283408B300E4A344 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		7A961F212837803D0082480C /* SnapshotTesting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapshotTesting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AA7AB482836A50200DADDC7 /* ActivityCellViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCellViewTests.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 		7A4ABDF528369BBE00CAD20D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				7A659D65283BCC3000DFE625 /* Confirmation */,
 				7A4ABDF628369BC900CAD20D /* ActivityDetails */,
 			);
 			path = Screens;
@@ -176,6 +179,14 @@
 				7AA7AB482836A50200DADDC7 /* ActivityCellViewTests.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		7A659D65283BCC3000DFE625 /* Confirmation */ = {
+			isa = PBXGroup;
+			children = (
+				7A659D66283BCC4600DFE625 /* ConfirmationViewTests.swift */,
+			);
+			path = Confirmation;
 			sourceTree = "<group>";
 		};
 		7A73E08C283408A600E4A344 /* Components */ = {
@@ -592,6 +603,7 @@
 			files = (
 				98584A84277E32C60028DBEA /* FinanceAppTests.swift in Sources */,
 				7AA7AB492836A50200DADDC7 /* ActivityCellViewTests.swift in Sources */,
+				7A659D67283BCC4600DFE625 /* ConfirmationViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
