@@ -12,7 +12,7 @@ struct HomeData: Decodable {
     let balance: Float
     let savings: Float
     let spending: Float
-    let activity: [Activity]
+    let activities: [Activity]
 }
 
 struct Activity: Decodable {

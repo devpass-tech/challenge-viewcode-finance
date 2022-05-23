@@ -13,7 +13,7 @@ class HomeViewController: UIViewController {
 
     private let homeView: HomeView = {
 
-        let homeView = HomeView()
+        let homeView = HomeView(homeData: HomeViewConfiguration(homeData: HomeData(balance: 0, savings: 0, spending: 0, activities: [])))
         return homeView
     }()
 
@@ -21,7 +21,6 @@ class HomeViewController: UIViewController {
 
         navigationItem.title = "Finance App 💰"
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.rightBarButtonItem = homeView.profileButton
 
         service.fetchHomeData { homeData in
 
