@@ -20,10 +20,12 @@ class ConfirmationView: UIView {
     }()
     
     private lazy var imageView: UIImageView = {
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 106, height: 89))
+        let imageView = UIImageView()
         imageView.image = UIImage(named: "checkmark.circle.fill")
         imageView.tintColor = UIColor(red: 0.196, green: 0.843, blue: 0.294, alpha: 1)
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor).isActive = true
         
         return imageView
     }()
@@ -87,19 +89,3 @@ extension ConfirmationView {
         ])
     }
 }
-
-#if DEBUG
-
-import SwiftUI
-
-struct ConfirmationView_Preview: PreviewProvider {
-    static var previews: some View {
-        return SwiftUIPreView { _ in
-            let view = ConfirmationView()
-            
-            return view
-        }
-    }
-}
-
-#endif
