@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		11D0D416AC1B6F468EC84879 /* Pods_FinanceApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE2480493C6641359C45C79D /* Pods_FinanceApp.framework */; };
 		2A84E53B9FDFBE24F1186AA7 /* libPods-FinanceAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 454ED7665D5D3690957247E2 /* libPods-FinanceAppTests.a */; };
+		799A806D283D3B0800EBB3EE /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799A806C283D3B0800EBB3EE /* Color.swift */; };
+		799A8075283D3B2300EBB3EE /* ActivityCellConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799A806F283D3B2300EBB3EE /* ActivityCellConfiguration.swift */; };
+		799A8076283D3B2300EBB3EE /* ActivityDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799A8070283D3B2300EBB3EE /* ActivityDetailsView.swift */; };
+		799A8077283D3B2300EBB3EE /* ActivityCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799A8072283D3B2300EBB3EE /* ActivityCellView.swift */; };
+		799A8078283D3B2300EBB3EE /* ActivityDetailsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799A8073283D3B2300EBB3EE /* ActivityDetailsConstants.swift */; };
+		799A8079283D3B2300EBB3EE /* ActivityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799A8074283D3B2300EBB3EE /* ActivityDetailsViewController.swift */; };
+		799A807C283D3B5600EBB3EE /* ActivityDetailsViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799A807B283D3B5600EBB3EE /* ActivityDetailsViewTest.swift */; };
 		7A4ABDF22836886E00CAD20D /* ActivityCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4ABDF12836886E00CAD20D /* ActivityCellView.swift */; };
 		7A4ABDF428368CB200CAD20D /* SwiftUIPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4ABDF328368CB200CAD20D /* SwiftUIPreview.swift */; };
 		7A73E08E283408B300E4A344 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73E08D283408B300E4A344 /* TabBarViewController.swift */; };
@@ -65,6 +72,13 @@
 		326F8DC426267DE0DD9F79CA /* Pods-FinanceApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinanceApp.debug.xcconfig"; path = "Target Support Files/Pods-FinanceApp/Pods-FinanceApp.debug.xcconfig"; sourceTree = "<group>"; };
 		454ED7665D5D3690957247E2 /* libPods-FinanceAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FinanceAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C856E43D6A72B25445A9C8E /* Pods-FinanceAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinanceAppTests.release.xcconfig"; path = "Target Support Files/Pods-FinanceAppTests/Pods-FinanceAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		799A806C283D3B0800EBB3EE /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		799A806F283D3B2300EBB3EE /* ActivityCellConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCellConfiguration.swift; sourceTree = "<group>"; };
+		799A8070283D3B2300EBB3EE /* ActivityDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailsView.swift; sourceTree = "<group>"; };
+		799A8072283D3B2300EBB3EE /* ActivityCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCellView.swift; sourceTree = "<group>"; };
+		799A8073283D3B2300EBB3EE /* ActivityDetailsConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailsConstants.swift; sourceTree = "<group>"; };
+		799A8074283D3B2300EBB3EE /* ActivityDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailsViewController.swift; sourceTree = "<group>"; };
+		799A807B283D3B5600EBB3EE /* ActivityDetailsViewTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailsViewTest.swift; sourceTree = "<group>"; };
 		7A4ABDF12836886E00CAD20D /* ActivityCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCellView.swift; sourceTree = "<group>"; };
 		7A4ABDF328368CB200CAD20D /* SwiftUIPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPreview.swift; sourceTree = "<group>"; };
 		7A73E08D283408B300E4A344 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +160,43 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		799A806A283D3B0800EBB3EE /* DesingSystem */ = {
+			isa = PBXGroup;
+			children = (
+				799A806B283D3B0800EBB3EE /* Colors */,
+			);
+			name = DesingSystem;
+			path = FinanceApp/DesingSystem;
+			sourceTree = "<group>";
+		};
+		799A806B283D3B0800EBB3EE /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				799A806C283D3B0800EBB3EE /* Color.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		799A806E283D3B2300EBB3EE /* ActivityDetails */ = {
+			isa = PBXGroup;
+			children = (
+				799A806F283D3B2300EBB3EE /* ActivityCellConfiguration.swift */,
+				799A8070283D3B2300EBB3EE /* ActivityDetailsView.swift */,
+				799A8071283D3B2300EBB3EE /* Cell */,
+				799A8073283D3B2300EBB3EE /* ActivityDetailsConstants.swift */,
+				799A8074283D3B2300EBB3EE /* ActivityDetailsViewController.swift */,
+			);
+			path = ActivityDetails;
+			sourceTree = "<group>";
+		};
+		799A8071283D3B2300EBB3EE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				799A8072283D3B2300EBB3EE /* ActivityCellView.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		7A4ABDF02836885E00CAD20D /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +216,7 @@
 		7A4ABDF628369BC900CAD20D /* ActivityDetails */ = {
 			isa = PBXGroup;
 			children = (
+				799A807B283D3B5600EBB3EE /* ActivityDetailsViewTest.swift */,
 				7A4ABDF728369BD000CAD20D /* Cell */,
 			);
 			path = ActivityDetails;
@@ -200,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				98584A6B277E32C30028DBEA /* FinanceApp */,
+				799A806A283D3B0800EBB3EE /* DesingSystem */,
 				98584A82277E32C60028DBEA /* FinanceAppTests */,
 				98584A8C277E32C60028DBEA /* FinanceAppUITests */,
 				98584A6A277E32C30028DBEA /* Products */,
@@ -272,6 +325,7 @@
 		98584A9E277E35700028DBEA /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				799A806E283D3B2300EBB3EE /* ActivityDetails */,
 				7A73E08C283408A600E4A344 /* Components */,
 				98584B08277E602C0028DBEA /* ContactList */,
 				98584ADF277E50430028DBEA /* Confirmation */,
@@ -557,23 +611,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A4ABDF428368CB200CAD20D /* SwiftUIPreview.swift in Sources */,
+				799A8077283D3B2300EBB3EE /* ActivityCellView.swift in Sources */,
 				98584AC3277E42E80028DBEA /* FinanceService.swift in Sources */,
 				98584B10277E605F0028DBEA /* ActivityDetailsViewController.swift in Sources */,
 				98584B20277E60740028DBEA /* ContactListViewController.swift in Sources */,
+				799A8076283D3B2300EBB3EE /* ActivityDetailsView.swift in Sources */,
 				98584AF4277E50430028DBEA /* ConfirmationViewController.swift in Sources */,
 				98C8A4DD27C818A800A630ED /* HomeData.swift in Sources */,
 				98C8A4D927C8152200A630ED /* String+Extensions.swift in Sources */,
+				799A8078283D3B2300EBB3EE /* ActivityDetailsConstants.swift in Sources */,
 				98C8A4E727C81A9C00A630ED /* UserProfile.swift in Sources */,
 				98C8A4E327C819DE00A630ED /* Contact.swift in Sources */,
+				799A806D283D3B0800EBB3EE /* Color.swift in Sources */,
 				98C8A4E527C81A3F00A630ED /* TransferResult.swift in Sources */,
 				98584AE8277E50430028DBEA /* TransfersViewController.swift in Sources */,
 				98584B14277E605F0028DBEA /* ActivityDetailsView.swift in Sources */,
+				799A8079283D3B2300EBB3EE /* ActivityDetailsViewController.swift in Sources */,
 				98584AE7277E50430028DBEA /* TransfersView.swift in Sources */,
 				98C8A4DB27C815C000A630ED /* UITableViewCell+Extensions.swift in Sources */,
 				98584AF3277E50430028DBEA /* ConfirmationView.swift in Sources */,
 				98584AEE277E50430028DBEA /* UserProfileViewController.swift in Sources */,
 				98584A6D277E32C30028DBEA /* AppDelegate.swift in Sources */,
 				7A73E08E283408B300E4A344 /* TabBarViewController.swift in Sources */,
+				799A8075283D3B2300EBB3EE /* ActivityCellConfiguration.swift in Sources */,
 				98584A6F277E32C30028DBEA /* SceneDelegate.swift in Sources */,
 				7A4ABDF22836886E00CAD20D /* ActivityCellView.swift in Sources */,
 				98584AA7277E35F10028DBEA /* HomeView.swift in Sources */,
@@ -592,6 +652,7 @@
 			files = (
 				98584A84277E32C60028DBEA /* FinanceAppTests.swift in Sources */,
 				7AA7AB492836A50200DADDC7 /* ActivityCellViewTests.swift in Sources */,
+				799A807C283D3B5600EBB3EE /* ActivityDetailsViewTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

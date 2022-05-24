@@ -17,7 +17,7 @@ final class TabBarViewController: UITabBarController {
     
     private func setup() {
         viewControllers = [
-            configure(with: TabItemModel(viewController: ActivityDetailsViewController       (), title: "Home", name: "house.fill")),
+            configure(with: TabItemModel(viewController: HomeViewController(), title: "Home", name: "house.fill")),
             configure(with: TabItemModel(viewController: TransfersViewController(), title: "Transfers", name: "arrow.up.arrow.down"))
         ]
     }
