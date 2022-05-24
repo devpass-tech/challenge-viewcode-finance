@@ -92,27 +92,27 @@ class ActivityDetailsView: UIView {
         }
         
         NSLayoutConstraint.activate([
-            activityDetailsImage.topAnchor.constraint(equalTo: topAnchor, constant: 70),
+            activityDetailsImage.topAnchor.constraint(equalTo: topAnchor, constant: 34),
             activityDetailsImage.centerXAnchor.constraint(equalTo: centerXAnchor),
-            activityDetailsImage.heightAnchor.constraint(equalToConstant: 100.0),
-            activityDetailsImage.widthAnchor.constraint(equalToConstant: 100.0),
+            activityDetailsImage.heightAnchor.constraint(equalToConstant: 100),
+            activityDetailsImage.widthAnchor.constraint(equalToConstant: 100),
             
-            titleActivityLabel.topAnchor.constraint(equalTo: activityDetailsImage.bottomAnchor, constant: 8.0),
+            titleActivityLabel.topAnchor.constraint(equalTo: activityDetailsImage.bottomAnchor, constant: 8),
             titleActivityLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             
-            typeActivityLabel.topAnchor.constraint(equalTo: titleActivityLabel.bottomAnchor, constant: 8.0),
+            typeActivityLabel.topAnchor.constraint(equalTo: titleActivityLabel.bottomAnchor, constant: 8),
             typeActivityLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             
             priceActivityLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             priceActivityLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             
-            timeActivityLabel.topAnchor.constraint(equalTo: priceActivityLabel.bottomAnchor, constant: 8.0),
+            timeActivityLabel.topAnchor.constraint(equalTo: priceActivityLabel.bottomAnchor, constant: 8),
             timeActivityLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             
-            reportButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20.0),
-            reportButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20.0),
-            reportButton.heightAnchor.constraint(equalToConstant: 56.0),
-            reportButton.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor, constant: -20)
+            reportButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            reportButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            reportButton.heightAnchor.constraint(equalToConstant: 56),
+            reportButton.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor, constant: -17)
         ])
     }
 }
