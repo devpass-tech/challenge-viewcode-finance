@@ -9,10 +9,11 @@ import XCTest
 import SnapshotTesting
 @testable import FinanceApp
 
-class ConfirmationViewTests: XCTestCase {
+class ActivityDetailsViewTest: XCTestCase {
 
-    func test_defaultApperance() {
-        let view = ActivityDetailsView()
-        assertSnapshot(matching: view, as: .image)
+    func test_activityDetailsViewTest() {
+        let view = ActivityDetailsViewController()
+        view.loadViewIfNeeded()
+        assertSnapshot(matching: view, as: .image, named: "ActivityDetailsView", record: false)
     }
 }
