@@ -13,7 +13,7 @@ class HomeViewController: UIViewController {
 
     private let homeView: HomeView = {
 
-        let homeView = HomeView(homeData: HomeViewConfiguration(homeData: HomeData(balance: 0, savings: 0, spending: 0, activities: [])))
+        let homeView = HomeView(homeData: HomeViewConfiguration(homeData: HomeData(balance: 0, savings: 0, spending: 0, activity: [])))
         return homeView
     }()
 

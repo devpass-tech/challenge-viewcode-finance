@@ -12,11 +12,11 @@ struct HomeViewConfiguration {
     let homeData: HomeData
 
     var count: Int {
-        return homeData.activities.count
+        return homeData.activity.count
     }
 
     func getName(at index: Int) -> String {
-        return homeData.activities[index].name
+        return homeData.activity[index].name
     }
 
     private func formatNumber(value: Float) -> String {
@@ -93,10 +93,13 @@ private extension HomeView {
         NSLayoutConstraint.activate([
 
             //TODO define contrains of balanceview
+            self.summaryView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            self.summaryView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            self.summaryView.topAnchor.constraint(equalTo: self.topAnchor,constant: 170.00),
 
             self.tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            self.tableView.topAnchor.constraint(equalTo: self.topAnchor),
+            self.tableView.topAnchor.constraint(equalTo: self.summaryView.bottomAnchor),
             self.tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
