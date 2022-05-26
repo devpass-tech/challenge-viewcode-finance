@@ -91,11 +91,9 @@ private extension HomeView {
     func configureSubviewsConstraints() {
 
         NSLayoutConstraint.activate([
-
-            //TODO define contrains of balanceview
-            self.summaryView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            self.summaryView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            self.summaryView.topAnchor.constraint(equalTo: self.topAnchor,constant: 170.00),
+            self.summaryView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
+            self.summaryView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
+            self.summaryView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
 
             self.tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),

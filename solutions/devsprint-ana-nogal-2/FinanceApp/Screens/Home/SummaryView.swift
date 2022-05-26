@@ -23,14 +23,24 @@ class SummaryView: UIView {
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
         stack.distribution = .fill
-        stack.backgroundColor = .lightGray
+        stack.alignment = .leading
+        stack.spacing = 10.0
+
         return stack
     }()
     
-    private lazy var greenCircle: UIImageView = {
+    private func creteCircle(with color: UIColor) -> UIImageView {
         let imageView = UIImageView(image: UIImage(systemName: "circle.fill"))
-        imageView.tintColor = .green
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.tintColor = color
+        imageView.contentMode = .scaleAspectFit
+        imageView.heightAnchor.constraint(equalToConstant: 16.0).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: 16.0).isActive = true
         return imageView
+    }
+    
+    private lazy var greenCircle: UIImageView = {
+        return creteCircle(with: .green)
     }()
     
     private lazy var savingsTitleLabel: UILabel = {
@@ -38,7 +48,9 @@ class SummaryView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 17)
+        label.setContentCompressionResistancePriority(.required, for: .vertical)
         label.text = "Savings"
+        label.heightAnchor.constraint(equalToConstant: 22.0).isActive = true
         return label
     }()
      
@@ -55,25 +67,24 @@ class SummaryView: UIView {
         let stack = UIStackView(arrangedSubviews: [redCircle, spendingTitleLabel, spendingLabel])
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
-        stack.distribution = .equalSpacing
-        stack.backgroundColor = .gray
+        stack.distribution = .fill
+        stack.alignment = .leading
+        stack.spacing = 10.0
         return stack
     }()
     
     private lazy var redCircle: UIImageView = {
-        let imageView = UIImageView(image: UIImage(systemName: "circle.fill"))
-        imageView.tintColor = .red
-        return imageView
+        creteCircle(with: .red)
     }()
-    
-    
     
     private lazy var spendingTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 17)
+        label.setContentCompressionResistancePriority(.required, for: .vertical)
         label.text = "Spending"
+        label.heightAnchor.constraint(equalToConstant: 22.0).isActive = true
         return label
     }()
 
@@ -110,26 +121,17 @@ class SummaryView: UIView {
             //balanceLabel.bottomAnchor.constraint(equalTo: savingsLabel.topAnchor, constant: 20),
             balanceLabel.heightAnchor.constraint(equalToConstant: 80.0),
 
-            greenCircle.widthAnchor.constraint(equalToConstant: 15.0),
-            greenCircle.heightAnchor.constraint(equalTo: greenCircle.widthAnchor),
             savingsStack.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
             savingsStack.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
             savingsStack.topAnchor.constraint(equalTo: self.balanceLabel.bottomAnchor, constant: 20),
             
-            
-            spendingTitleLabel.heightAnchor.constraint(equalToConstant: 36),
             spendingStack.leadingAnchor.constraint(equalTo: savingsStack.leadingAnchor),
             spendingStack.trailingAnchor.constraint(equalTo: savingsStack.trailingAnchor),
             spendingStack.topAnchor.constraint(equalTo: self.savingsStack.bottomAnchor, constant: 10),
-            spendingStack.heightAnchor.constraint(equalToConstant: 32.0),
-            redCircle.widthAnchor.constraint(equalToConstant: 15.0),
-            redCircle.heightAnchor.constraint(equalToConstant: 15.0),
-            redCircle.centerYAnchor.constraint(equalTo: spendingStack.centerYAnchor),
-//            redCircle.topAnchor.constraint(equalTo: spendingStack.topAnchor, constant: 2.0),
-//            redCircle.bottomAnchor.constraint(equalTo: spendingStack.bottomAnchor, constant: -5.0),
+            redCircle.centerYAnchor.constraint(equalTo: self.spendingStack.centerYAnchor),
 
+            spendingStack.heightAnchor.constraint(equalToConstant: 22.0)
         ])
-// TODO create a stack view for savings and spanding
     }
 
     func updateView(summaryData: (balance: String, savings: String, spending: String)) {
