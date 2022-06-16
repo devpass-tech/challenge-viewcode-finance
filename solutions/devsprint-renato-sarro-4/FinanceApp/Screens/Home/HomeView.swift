@@ -13,17 +13,15 @@ struct HomeViewConfiguration {
 }
 
 final class HomeView: UIView {
-
-    private let listViewCellIdentifier = "ListViewCellIdentifier"
-
     private var activities: [Activity] = []
 
     private lazy var tableView: UITableView = {
 
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.listViewCellIdentifier)
+        tableView.register(ActivityListTableViewCell.self, forCellReuseIdentifier: ActivityListTableViewCell.reuseId)
         tableView.dataSource = self
+        tableView.delegate = self
         return tableView
     }()
 
@@ -39,7 +37,6 @@ final class HomeView: UIView {
     }
 
     func updateView(with configuration: HomeViewConfiguration) {
-
         self.activities = configuration.homeData.activity
         self.tableView.reloadData()
     }
@@ -48,7 +45,6 @@ final class HomeView: UIView {
 private extension HomeView {
 
     func setupViews() {
-
         self.backgroundColor = .white
 
         self.configureSubviews()
@@ -56,14 +52,11 @@ private extension HomeView {
     }
 
     func configureSubviews() {
-
         self.addSubview(self.tableView)
     }
 
     func configureSubviewsConstraints() {
-
         NSLayoutConstraint.activate([
-
             self.tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             self.tableView.topAnchor.constraint(equalTo: self.topAnchor),
@@ -73,17 +66,22 @@ private extension HomeView {
 }
 
 extension HomeView: UITableViewDataSource {
-
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
         return self.activities.count
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.listViewCellIdentifier)!
-        cell.textLabel?.text = self.activities[indexPath.row].name
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ActivityListTableViewCell.reuseId) as? ActivityListTableViewCell else { return UITableViewCell() }
+        
+        cell.setupCell(model: activities[indexPath.row])
+        
         return cell
+    }
+}
+
+extension HomeView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90
     }
 }
 
