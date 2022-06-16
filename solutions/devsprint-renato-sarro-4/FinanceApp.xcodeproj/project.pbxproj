@@ -39,6 +39,7 @@
 		98C8A4E327C819DE00A630ED /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8A4E227C819DE00A630ED /* Contact.swift */; };
 		98C8A4E527C81A3F00A630ED /* TransferResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8A4E427C81A3F00A630ED /* TransferResult.swift */; };
 		98C8A4E727C81A9C00A630ED /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8A4E627C81A9C00A630ED /* UserProfile.swift */; };
+		B9F2F8EA285AC38100B69EB3 /* ContactListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F2F8E9285AC38100B69EB3 /* ContactListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		98C8A4E627C81A9C00A630ED /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		A4C040213CFEF1FFC296D7C0 /* Pods_FinanceApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinanceApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B22D55985DB8E35E9BC27317 /* Pods-FinanceAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinanceAppTests.debug.xcconfig"; path = "Target Support Files/Pods-FinanceAppTests/Pods-FinanceAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B9F2F8E9285AC38100B69EB3 /* ContactListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListTableViewCell.swift; sourceTree = "<group>"; };
 		EDA21BAAF3EA747A3F7DE4BC /* Pods-FinanceAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinanceAppTests.release.xcconfig"; path = "Target Support Files/Pods-FinanceAppTests/Pods-FinanceAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		F4CEFEC40354FFB651F178DB /* Pods-FinanceApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinanceApp.debug.xcconfig"; path = "Target Support Files/Pods-FinanceApp/Pods-FinanceApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F8322B23BC60AD04CCDBB238 /* Pods-FinanceApp-FinanceAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinanceApp-FinanceAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-FinanceApp-FinanceAppUITests/Pods-FinanceApp-FinanceAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 			children = (
 				98584B19277E60740028DBEA /* ContactListView.swift */,
 				98584B1A277E60740028DBEA /* ContactListViewController.swift */,
+				B9F2F8E9285AC38100B69EB3 /* ContactListTableViewCell.swift */,
 			);
 			path = ContactList;
 			sourceTree = "<group>";
@@ -560,6 +563,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98584AC3277E42E80028DBEA /* FinanceService.swift in Sources */,
+				B9F2F8EA285AC38100B69EB3 /* ContactListTableViewCell.swift in Sources */,
 				98584B10277E605F0028DBEA /* ActivityDetailsViewController.swift in Sources */,
 				98584B20277E60740028DBEA /* ContactListViewController.swift in Sources */,
 				98584AF4277E50430028DBEA /* ConfirmationViewController.swift in Sources */,
