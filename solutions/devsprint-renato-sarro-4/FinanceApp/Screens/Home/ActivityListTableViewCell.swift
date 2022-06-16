@@ -10,13 +10,6 @@ import UIKit
 class ActivityListTableViewCell: UITableViewCell {
     static var reuseId: String = "ActivityListTableViewCell"
     
-    private var view2: UIView = {
-        let view = UIView()
-        view.backgroundColor = .blue
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
     private var categoryIcon: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
