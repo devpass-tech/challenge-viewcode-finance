@@ -18,7 +18,6 @@ class ContactListView: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(ContactListTableViewCell.self, forCellReuseIdentifier: ContactListTableViewCell.reuseId)
         tableView.dataSource = self
-        tableView.delegate = self
         return tableView
     }()
     
@@ -65,8 +64,4 @@ extension ContactListView: UITableViewDataSource {
         
         return cell
     }
-}
-
-extension ContactListView: UITableViewDelegate {
-
 }
