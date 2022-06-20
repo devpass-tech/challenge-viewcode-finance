@@ -45,7 +45,7 @@ class ActivityListTableViewCell: UITableViewCell {
         return stack
     }()
 
-    func setupCell(model: Activity) {
+    func setupViews(model: Activity) {
         configViews()
         getIcon(model: model)
         storeLb.text = model.name

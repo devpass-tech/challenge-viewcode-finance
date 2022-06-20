@@ -73,7 +73,7 @@ extension HomeView: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ActivityListTableViewCell.reuseId) as? ActivityListTableViewCell else { return UITableViewCell() }
         
-        cell.setupCell(model: activities[indexPath.row])
+        cell.setupViews(model: activities[indexPath.row])
         
         return cell
     }
