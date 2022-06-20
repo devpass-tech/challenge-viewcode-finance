@@ -54,13 +54,13 @@ extension ContactListView: ViewConfiguration {
 
 extension ContactListView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return contact.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier:ContactListTableViewCell.reuseId, for: indexPath) as? ContactListTableViewCell else { return UITableViewCell() }
         
-        cell.setupCell(model: contact[indexPath.row])
+        cell.setupViews(model: contact[indexPath.row])
         
         return cell
     }

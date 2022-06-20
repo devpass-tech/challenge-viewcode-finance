@@ -40,7 +40,7 @@ class ContactListTableViewCell: UITableViewCell {
         return stack
     }()
     
-    func setupCell(model: Contact) {
+    func setupViews(model: Contact) {
         configViews()
         nameLb.text = model.name
         phoneLb.text = model.phone
