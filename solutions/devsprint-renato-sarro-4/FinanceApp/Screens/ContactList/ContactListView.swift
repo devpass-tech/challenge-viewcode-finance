@@ -12,8 +12,9 @@ class ContactListView: UIView {
     private var contact: [Contact] = [Contact(name: "julia", phone: "(11)0000-0000"), Contact(name: "Pedro", phone: "(11)0000-0000"), Contact(name: "Paula", phone: "(11)0000-0000")]
     
     private lazy var tableView: UITableView = {
-        
         let tableView = UITableView(frame: .zero)
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 90
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(ContactListTableViewCell.self, forCellReuseIdentifier: ContactListTableViewCell.reuseId)
         tableView.dataSource = self
@@ -67,7 +68,5 @@ extension ContactListView: UITableViewDataSource {
 }
 
 extension ContactListView: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
-    }
+
 }
