@@ -11,5 +11,6 @@ class UserProfileViewController: UIViewController {
 
     override func loadView() {
         self.view = UserProfileView()
+        view.backgroundColor = .systemPink
     }
 }

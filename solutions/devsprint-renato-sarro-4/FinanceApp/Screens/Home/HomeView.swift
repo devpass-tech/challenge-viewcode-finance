@@ -58,6 +58,7 @@ private extension HomeView {
     func configureSubviews() {
 
         self.addSubview(self.tableView)
+        
     }
 
     func configureSubviewsConstraints() {
@@ -67,7 +68,8 @@ private extension HomeView {
             self.tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             self.tableView.topAnchor.constraint(equalTo: self.topAnchor),
-            self.tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            self.tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            
         ])
     }
 }
