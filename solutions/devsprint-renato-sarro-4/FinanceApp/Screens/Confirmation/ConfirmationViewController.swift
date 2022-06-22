@@ -11,5 +11,6 @@ class ConfirmationViewController: UIViewController {
 
     override func loadView() {
         self.view = ConfirmationView()
+        view.backgroundColor = .white
     }
 }
