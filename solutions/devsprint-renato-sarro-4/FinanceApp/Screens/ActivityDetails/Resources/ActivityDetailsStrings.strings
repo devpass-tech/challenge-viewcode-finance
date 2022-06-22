@@ -1,0 +1,15 @@
+/*
+  Localizable.strings
+  FinanceApp
+
+  Created by Jayme Caironi SIS on 21/06/22.
+  
+*/
+
+//MARK: DETAILSVIEW
+"spendingLocal" = "Mall";
+"spendingTipe" = "Shopping";
+"spendingValue" = "$100.00";
+"spendingTime" = "8:57 AM";
+"buttonText" = "Report a issue";
+
