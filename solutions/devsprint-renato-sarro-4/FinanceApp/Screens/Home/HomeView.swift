@@ -13,7 +13,6 @@ struct HomeViewConfiguration {
 }
 
 final class HomeView: UIView {
-
     private let listViewCellIdentifier = "ListViewCellIdentifier"
     private var activities: [Activity] = []
     private weak var delegate: HomeViewControllerProtocol?
@@ -22,7 +21,7 @@ final class HomeView: UIView {
 
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.listViewCellIdentifier)
+        tableView.register(ActivityListTableViewCell.self, forCellReuseIdentifier: ActivityListTableViewCell.reuseId)
         tableView.dataSource = self
         tableView.delegate = self
         return tableView
@@ -42,7 +41,6 @@ final class HomeView: UIView {
     }
 
     func updateView(with configuration: HomeViewConfiguration) {
-
         self.activities = configuration.homeData.activity
         self.tableView.reloadData()
     }
@@ -51,7 +49,6 @@ final class HomeView: UIView {
 private extension HomeView {
 
     func setupViews() {
-
         self.backgroundColor = .white
 
         self.configureSubviews()
@@ -59,23 +56,13 @@ private extension HomeView {
     }
 
     func configureSubviews() {
-//        [labelPrimary, labelSecondary].forEach(addSubview)
+
 
         self.addSubview(self.tableView)
     }
 
     func configureSubviewsConstraints() {
-
         NSLayoutConstraint.activate([
-            
-//            labelPrimary.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
-//            labelPrimary.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
-//            labelPrimary.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
-//
-//            labelSecondary.topAnchor.constraint(equalTo: labelPrimary.bottomAnchor, constant: 4),
-//            labelSecondary.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
-//            labelSecondary.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
-
             self.tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             self.tableView.topAnchor.constraint(equalTo: self.topAnchor),
@@ -91,18 +78,14 @@ extension HomeView: UITableViewDelegate {
 }
 
 extension HomeView: UITableViewDataSource {
-
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
         return self.activities.count
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ActivityListTableViewCell.reuseId) as? ActivityListTableViewCell else { return UITableViewCell() }
+        cell.setupViews(model: activities[indexPath.row])
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.listViewCellIdentifier)!
-        cell.textLabel?.text = self.activities[indexPath.row].name
-        
         return cell
     }
 }
-
