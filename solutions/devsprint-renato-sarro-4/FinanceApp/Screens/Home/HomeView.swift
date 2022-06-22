@@ -53,24 +53,14 @@ private extension HomeView {
     }
 
     func configureSubviews() {
-        [labelPrimary, labelSecondary].forEach(addSubview)
         self.addSubview(self.tableView)
     }
 
     func configureSubviewsConstraints() {
         NSLayoutConstraint.activate([
-            
-            labelPrimary.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
-            labelPrimary.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
-            labelPrimary.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
-            
-            labelSecondary.topAnchor.constraint(equalTo: labelPrimary.bottomAnchor, constant: 4),
-            labelSecondary.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
-            labelSecondary.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
-
             self.tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            self.tableView.topAnchor.constraint(equalTo: labelSecondary.bottomAnchor, constant: 24),
+            self.tableView.topAnchor.constraint(equalTo: self.topAnchor),
             self.tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
@@ -95,4 +85,3 @@ extension HomeView: UITableViewDelegate {
         return 90
     }
 }
-
