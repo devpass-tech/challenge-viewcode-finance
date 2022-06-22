@@ -10,6 +10,11 @@
 		12A36E8DB0625840EE3AD446 /* Pods_FinanceApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C040213CFEF1FFC296D7C0 /* Pods_FinanceApp.framework */; };
 		730928E7CE2E221A523C7B69 /* Pods_FinanceAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 323265574E35008E41AD817F /* Pods_FinanceAppTests.framework */; };
 		871BC18028592EF300C389A7 /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871BC17F28592EF300C389A7 /* ViewConfiguration.swift */; };
+		87F1594128611EA5004FF184 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F1594028611EA5004FF184 /* Color.swift */; };
+		87F15943286120F2004FF184 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87F15942286120F2004FF184 /* Color.xcassets */; };
+		87F15945286122C5004FF184 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F15944286122C5004FF184 /* Label.swift */; };
+		87F159472861253F004FF184 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F159462861253F004FF184 /* Button.swift */; };
+		87F1594C28612665004FF184 /* String+Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F1594B28612665004FF184 /* String+Resources.swift */; };
 		9647590BC304D00F9E14984C /* Pods_FinanceApp_FinanceAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366DE1354889DA4D3F33F94B /* Pods_FinanceApp_FinanceAppUITests.framework */; };
 		98584A6D277E32C30028DBEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584A6C277E32C30028DBEA /* AppDelegate.swift */; };
 		98584A6F277E32C30028DBEA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584A6E277E32C30028DBEA /* SceneDelegate.swift */; };
@@ -40,6 +45,7 @@
 		98C8A4E527C81A3F00A630ED /* TransferResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8A4E427C81A3F00A630ED /* TransferResult.swift */; };
 		98C8A4E727C81A9C00A630ED /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8A4E627C81A9C00A630ED /* UserProfile.swift */; };
 		B9EAB82B285936E300910851 /* ActivityListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EAB82A285936E300910851 /* ActivityListTableViewCell.swift */; };
+		B9F2F8EA285AC38100B69EB3 /* ContactListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F2F8E9285AC38100B69EB3 /* ContactListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +71,11 @@
 		366DE1354889DA4D3F33F94B /* Pods_FinanceApp_FinanceAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinanceApp_FinanceAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4494F43E6BE94F9573442090 /* Pods-FinanceApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinanceApp.release.xcconfig"; path = "Target Support Files/Pods-FinanceApp/Pods-FinanceApp.release.xcconfig"; sourceTree = "<group>"; };
 		871BC17F28592EF300C389A7 /* ViewConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
+		87F1594028611EA5004FF184 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		87F15942286120F2004FF184 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		87F15944286122C5004FF184 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		87F159462861253F004FF184 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		87F1594B28612665004FF184 /* String+Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Resources.swift"; sourceTree = "<group>"; };
 		98584A69277E32C30028DBEA /* FinanceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98584A6C277E32C30028DBEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98584A6E277E32C30028DBEA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +111,7 @@
 		A4C040213CFEF1FFC296D7C0 /* Pods_FinanceApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinanceApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B22D55985DB8E35E9BC27317 /* Pods-FinanceAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinanceAppTests.debug.xcconfig"; path = "Target Support Files/Pods-FinanceAppTests/Pods-FinanceAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B9EAB82A285936E300910851 /* ActivityListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityListTableViewCell.swift; sourceTree = "<group>"; };
+		B9F2F8E9285AC38100B69EB3 /* ContactListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListTableViewCell.swift; sourceTree = "<group>"; };
 		EDA21BAAF3EA747A3F7DE4BC /* Pods-FinanceAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinanceAppTests.release.xcconfig"; path = "Target Support Files/Pods-FinanceAppTests/Pods-FinanceAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		F4CEFEC40354FFB651F178DB /* Pods-FinanceApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinanceApp.debug.xcconfig"; path = "Target Support Files/Pods-FinanceApp/Pods-FinanceApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F8322B23BC60AD04CCDBB238 /* Pods-FinanceApp-FinanceAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinanceApp-FinanceAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-FinanceApp-FinanceAppUITests/Pods-FinanceApp-FinanceAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -133,6 +145,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		87F1593F28611E7F004FF184 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				87F1594028611EA5004FF184 /* Color.swift */,
+				87F15944286122C5004FF184 /* Label.swift */,
+				87F159462861253F004FF184 /* Button.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
 		98584A60277E32C30028DBEA = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +180,7 @@
 		98584A6B277E32C30028DBEA /* FinanceApp */ = {
 			isa = PBXGroup;
 			children = (
+				87F1593F28611E7F004FF184 /* DesignSystem */,
 				98584A9D277E351B0028DBEA /* Resources */,
 				98584A9C277E350D0028DBEA /* AppDelegate */,
 				98584A9E277E35700028DBEA /* Screens */,
@@ -201,6 +224,7 @@
 				98584A7A277E32C50028DBEA /* Info.plist */,
 				98584A75277E32C50028DBEA /* Assets.xcassets */,
 				98584A77277E32C50028DBEA /* LaunchScreen.storyboard */,
+				87F15942286120F2004FF184 /* Color.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -280,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				871BC17F28592EF300C389A7 /* ViewConfiguration.swift */,
+				87F1594B28612665004FF184 /* String+Resources.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -298,6 +323,7 @@
 			children = (
 				98584B19277E60740028DBEA /* ContactListView.swift */,
 				98584B1A277E60740028DBEA /* ContactListViewController.swift */,
+				B9F2F8E9285AC38100B69EB3 /* ContactListTableViewCell.swift */,
 			);
 			path = ContactList;
 			sourceTree = "<group>";
@@ -452,6 +478,7 @@
 			files = (
 				98584A79277E32C50028DBEA /* LaunchScreen.storyboard in Resources */,
 				98584A76277E32C50028DBEA /* Assets.xcassets in Resources */,
+				87F15943286120F2004FF184 /* Color.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,6 +590,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98584AC3277E42E80028DBEA /* FinanceService.swift in Sources */,
+				B9F2F8EA285AC38100B69EB3 /* ContactListTableViewCell.swift in Sources */,
 				98584B10277E605F0028DBEA /* ActivityDetailsViewController.swift in Sources */,
 				98584B20277E60740028DBEA /* ContactListViewController.swift in Sources */,
 				98584AF4277E50430028DBEA /* ConfirmationViewController.swift in Sources */,
@@ -578,8 +606,12 @@
 				98584AF3277E50430028DBEA /* ConfirmationView.swift in Sources */,
 				98584AEE277E50430028DBEA /* UserProfileViewController.swift in Sources */,
 				98584A6D277E32C30028DBEA /* AppDelegate.swift in Sources */,
+				87F159472861253F004FF184 /* Button.swift in Sources */,
 				98584A6F277E32C30028DBEA /* SceneDelegate.swift in Sources */,
+				87F1594C28612665004FF184 /* String+Resources.swift in Sources */,
 				98584AA7277E35F10028DBEA /* HomeView.swift in Sources */,
+				87F15945286122C5004FF184 /* Label.swift in Sources */,
+				87F1594128611EA5004FF184 /* Color.swift in Sources */,
 				98584B1F277E60740028DBEA /* ContactListView.swift in Sources */,
 				989627E027ADC2F60009A07F /* DebugViewController.swift in Sources */,
 				B9EAB82B285936E300910851 /* ActivityListTableViewCell.swift in Sources */,
