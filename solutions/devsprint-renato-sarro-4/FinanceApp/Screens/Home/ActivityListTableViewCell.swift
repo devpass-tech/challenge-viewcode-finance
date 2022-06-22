@@ -60,23 +60,23 @@ extension ActivityListTableViewCell: ViewConfiguration {
     }
     
     func buildViews() {
-        self.addSubview(stackView)
-        self.addSubview(categoryIcon)
-        self.addSubview(arrowIcon)
+        self.contentView.addSubview(stackView)
+        self.contentView.addSubview(categoryIcon)
+        self.contentView.addSubview(arrowIcon)
         self.stackView.addArrangedSubview(storeLb)
         self.stackView.addArrangedSubview(valueLb)
     }
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            self.categoryIcon.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
-            self.categoryIcon.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 15),
+            self.categoryIcon.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 20),
+            self.categoryIcon.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 15),
             self.categoryIcon.heightAnchor.constraint(equalToConstant: 48),
             self.categoryIcon.widthAnchor.constraint(equalToConstant: 48),
             
             self.stackView.leftAnchor.constraint(equalTo: categoryIcon.rightAnchor, constant: 10),
-            self.stackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
-            self.stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0),
+            self.stackView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 20),
+            self.stackView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -20),
 
             self.arrowIcon.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -15),
             self.arrowIcon.centerYAnchor.constraint(equalTo: stackView.centerYAnchor),

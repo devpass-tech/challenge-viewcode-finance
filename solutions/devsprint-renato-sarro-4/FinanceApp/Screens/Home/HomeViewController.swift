@@ -7,13 +7,16 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+protocol HomeViewControllerProtocol: AnyObject {
+    func showDetails()
+}
+
+class HomeViewController: UIViewController, HomeViewControllerProtocol {
 
     private let service = FinanceService()
 
-    private let homeView: HomeView = {
-
-        let homeView = HomeView()
+    private lazy var homeView: HomeView = {
+        let homeView = HomeView(delegate: self)
         return homeView
     }()
 
@@ -40,4 +43,13 @@ class HomeViewController: UIViewController {
     override func loadView() {
         self.view = homeView
     }
+    
+    func showDetails() {
+        
+        let viewController = ActivityDetailsViewController()
+        self.navigationController?.pushViewController(viewController, animated: true)
+        
+//        present(ActivityDetailsViewController(), animated: true)
+    }
+    
 }

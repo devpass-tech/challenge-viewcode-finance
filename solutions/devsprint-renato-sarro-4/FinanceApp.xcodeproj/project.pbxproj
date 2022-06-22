@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		12A36E8DB0625840EE3AD446 /* Pods_FinanceApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C040213CFEF1FFC296D7C0 /* Pods_FinanceApp.framework */; };
+		5BD1B49C2863630F00CC3355 /* ActivityDetailsStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BD1B49B2863630F00CC3355 /* ActivityDetailsStrings.strings */; };
+		5BD1B49E2863631A00CC3355 /* ActivityDetailsStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD1B49D2863631A00CC3355 /* ActivityDetailsStrings.swift */; };
+		5BD1B4A22863634800CC3355 /* ADButtton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD1B4A12863634800CC3355 /* ADButtton.swift */; };
+		5BD1B4A62863828600CC3355 /* ADColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD1B4A52863828600CC3355 /* ADColor.swift */; };
+		5BD1B4A8286382BD00CC3355 /* ADLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD1B4A7286382BD00CC3355 /* ADLabel.swift */; };
 		730928E7CE2E221A523C7B69 /* Pods_FinanceAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 323265574E35008E41AD817F /* Pods_FinanceAppTests.framework */; };
 		871BC18028592EF300C389A7 /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871BC17F28592EF300C389A7 /* ViewConfiguration.swift */; };
 		87F1594128611EA5004FF184 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F1594028611EA5004FF184 /* Color.swift */; };
@@ -70,6 +75,11 @@
 		323265574E35008E41AD817F /* Pods_FinanceAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinanceAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		366DE1354889DA4D3F33F94B /* Pods_FinanceApp_FinanceAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinanceApp_FinanceAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4494F43E6BE94F9573442090 /* Pods-FinanceApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinanceApp.release.xcconfig"; path = "Target Support Files/Pods-FinanceApp/Pods-FinanceApp.release.xcconfig"; sourceTree = "<group>"; };
+		5BD1B49B2863630F00CC3355 /* ActivityDetailsStrings.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = ActivityDetailsStrings.strings; sourceTree = "<group>"; };
+		5BD1B49D2863631A00CC3355 /* ActivityDetailsStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsStrings.swift; sourceTree = "<group>"; };
+		5BD1B4A12863634800CC3355 /* ADButtton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADButtton.swift; sourceTree = "<group>"; };
+		5BD1B4A52863828600CC3355 /* ADColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADColor.swift; sourceTree = "<group>"; };
+		5BD1B4A7286382BD00CC3355 /* ADLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADLabel.swift; sourceTree = "<group>"; };
 		871BC17F28592EF300C389A7 /* ViewConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
 		87F1594028611EA5004FF184 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		87F15942286120F2004FF184 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
@@ -145,6 +155,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5BD1B49A286362E900CC3355 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5BD1B49B2863630F00CC3355 /* ActivityDetailsStrings.strings */,
+				5BD1B49D2863631A00CC3355 /* ActivityDetailsStrings.swift */,
+				5BD1B4A12863634800CC3355 /* ADButtton.swift */,
+				5BD1B4A52863828600CC3355 /* ADColor.swift */,
+				5BD1B4A7286382BD00CC3355 /* ADLabel.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		87F1593F28611E7F004FF184 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,6 +334,7 @@
 		98584B07277E5FF60028DBEA /* ActivityDetails */ = {
 			isa = PBXGroup;
 			children = (
+				5BD1B49A286362E900CC3355 /* Resources */,
 				98584B0E277E605F0028DBEA /* ActivityDetailsView.swift */,
 				98584B0A277E605F0028DBEA /* ActivityDetailsViewController.swift */,
 			);
@@ -479,6 +502,7 @@
 				98584A79277E32C50028DBEA /* LaunchScreen.storyboard in Resources */,
 				98584A76277E32C50028DBEA /* Assets.xcassets in Resources */,
 				87F15943286120F2004FF184 /* Color.xcassets in Resources */,
+				5BD1B49C2863630F00CC3355 /* ActivityDetailsStrings.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,6 +618,7 @@
 				98584B10277E605F0028DBEA /* ActivityDetailsViewController.swift in Sources */,
 				98584B20277E60740028DBEA /* ContactListViewController.swift in Sources */,
 				98584AF4277E50430028DBEA /* ConfirmationViewController.swift in Sources */,
+				5BD1B4A62863828600CC3355 /* ADColor.swift in Sources */,
 				98C8A4DD27C818A800A630ED /* HomeData.swift in Sources */,
 				98C8A4D927C8152200A630ED /* String+Extensions.swift in Sources */,
 				98C8A4E727C81A9C00A630ED /* UserProfile.swift in Sources */,
@@ -612,7 +637,10 @@
 				98584AA7277E35F10028DBEA /* HomeView.swift in Sources */,
 				87F15945286122C5004FF184 /* Label.swift in Sources */,
 				87F1594128611EA5004FF184 /* Color.swift in Sources */,
+				5BD1B4A22863634800CC3355 /* ADButtton.swift in Sources */,
 				98584B1F277E60740028DBEA /* ContactListView.swift in Sources */,
+				5BD1B49E2863631A00CC3355 /* ActivityDetailsStrings.swift in Sources */,
+				5BD1B4A8286382BD00CC3355 /* ADLabel.swift in Sources */,
 				989627E027ADC2F60009A07F /* DebugViewController.swift in Sources */,
 				B9EAB82B285936E300910851 /* ActivityListTableViewCell.swift in Sources */,
 				98584AA5277E35E90028DBEA /* HomeViewController.swift in Sources */,

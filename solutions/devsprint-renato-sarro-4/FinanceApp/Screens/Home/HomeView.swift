@@ -15,6 +15,7 @@ struct HomeViewConfiguration {
 final class HomeView: UIView {
     private let listViewCellIdentifier = "ListViewCellIdentifier"
     private var activities: [Activity] = []
+    private weak var delegate: HomeViewControllerProtocol?
 
     private lazy var tableView: UITableView = {
 
@@ -26,7 +27,9 @@ final class HomeView: UIView {
         return tableView
     }()
 
-    init() {
+    init(delegate: HomeViewControllerProtocol) {
+        
+        self.delegate = delegate
 
         super.init(frame: .zero)
 
@@ -53,6 +56,8 @@ private extension HomeView {
     }
 
     func configureSubviews() {
+
+
         self.addSubview(self.tableView)
     }
 
@@ -66,6 +71,12 @@ private extension HomeView {
     }
 }
 
+extension HomeView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.showDetails()
+    }
+}
+
 extension HomeView: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.activities.count
@@ -73,15 +84,8 @@ extension HomeView: UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ActivityListTableViewCell.reuseId) as? ActivityListTableViewCell else { return UITableViewCell() }
-        
         cell.setupViews(model: activities[indexPath.row])
 
         return cell
-    }
-}
-
-extension HomeView: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
     }
 }
