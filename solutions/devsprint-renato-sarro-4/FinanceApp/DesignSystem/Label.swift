@@ -8,7 +8,8 @@
 import UIKit
 
 enum LabelStyle {
-    case bigTitle, footnote, subheadline
+    case bigTitle, footnote
+    case subheadline(weight: UIFont.Weight)
     
     var fontSize: CGFloat {
         switch self {
@@ -22,7 +23,7 @@ enum LabelStyle {
         switch self {
         case .bigTitle: return .bold
         case .footnote: return .regular
-        case .subheadline: return .regular
+        case .subheadline(let weight): return weight
         }
     }
 }

@@ -8,7 +8,7 @@
 import UIKit
 
 enum DSColor: String {
-    case primary, secondary, tertiary
+    case primary, secondary, tertiary, green
 
     var color: UIColor? {
         UIColor(named: rawValue)

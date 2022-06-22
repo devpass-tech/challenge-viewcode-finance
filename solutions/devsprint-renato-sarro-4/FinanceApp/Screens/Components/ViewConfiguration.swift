@@ -5,7 +5,7 @@
 //  Created by Renato Sarro on 13/06/22.
 //
 
-import Foundation
+import UIKit
 
 protocol ViewConfiguration {
     func setupViews()
@@ -19,5 +19,14 @@ extension ViewConfiguration {
         configViews()
         buildViews()
         setupConstraints()
+    }
+}
+
+extension UIView {
+    func addSubviews(_ subviews: [UIView]) {
+        subviews.forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            self.addSubview($0)
+        }
     }
 }
