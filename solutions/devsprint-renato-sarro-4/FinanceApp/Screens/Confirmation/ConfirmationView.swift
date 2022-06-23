@@ -10,9 +10,23 @@ import UIKit
 class ConfirmationView: UIView {
     
     // MARK: - Components
-    lazy var buttonNice = UIButtonDefault(text: "Nice", bgColor: .blue, colorTitle: .white, forColor: .normal)
-    lazy var labelSuccess = UILabelDefault(text: "Your Transfer was successfull")
-    lazy var imageLogo = UIImageDefault(imageName: "buttonSuccess")
+    lazy var buttonNice: UIButton = {
+        let button = UIButton.build(style: .primary)
+        button.setTitle("Nice", for: .normal)
+        return button
+    }()
+    lazy var labelSuccess: UILabel = {
+        let label = UILabel.build(style: .bigTitle, dsColor: .primary)
+        label.text = "Your Transfer was successfull"
+        return label
+    }()
+    
+    lazy var imageLogo: UIImageView = {
+        let image = UIImageView()
+        image.image = UIImage(named: "buttonSuccess")
+        image.translatesAutoresizingMaskIntoConstraints = false
+        return image
+    }()
     
     // MARK: - Initializers
     override init(frame: CGRect) {
