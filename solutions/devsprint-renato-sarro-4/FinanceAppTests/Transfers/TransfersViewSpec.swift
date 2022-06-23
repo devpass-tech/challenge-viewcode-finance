@@ -12,11 +12,17 @@ import SnapshotTesting
 @testable import FinanceApp
 
 final class TransfersViewSpec: XCTestCase {
-    func test_WhenInitTransfersView_ShouldHaveValidSnapshot() {
-        let sut = TransfersView()
-        sut.frame = UIScreen.main.bounds
-        sut.backgroundColor = .white
+    private var sut: TransfersView?
+    
+    override func setUp() {
+        sut = TransfersView()
         
-        assertSnapshot(matching: sut, as: .image)
+        sut?.frame = UIScreen.main.bounds
+        sut?.backgroundColor = .white
+    }
+    
+    func test_WhenInitTransfersView_ShouldHaveValidSnapshot() throws {
+        let unwrappedSut = try XCTUnwrap(sut)
+        assertSnapshot(matching: unwrappedSut, as: .image)
     }
 }

@@ -10,7 +10,11 @@ import UIKit
 class TransfersView: UIView, ViewConfiguration {
     
     private lazy var valueLabel: UILabel = {
-        UILabel()
+        let label = UILabel.build(style: .largeTitle, adColor: .secondary)
+        label.textAlignment = .center
+        label.text = "R$ 0,00"
+        
+        return label
     }()
     
     private lazy var contactSelectorView: TransferContactSelectorView = {
@@ -18,7 +22,11 @@ class TransfersView: UIView, ViewConfiguration {
     }()
     
     lazy var transferButton: UIButton = {
-        UIButton()
+        let button = UIButton.build(buttonStyle: .issueButtonBackground, buttonText: .issueButtonTitle)
+        button.setTitle("Transfer", for: .normal)
+        button.addTarget(self, action: #selector(actionButton), for: .touchUpInside)
+        
+        return button
     }()
     
     // MARK: Initialization
@@ -32,19 +40,32 @@ class TransfersView: UIView, ViewConfiguration {
         nil
     }
     
+    // MARK: Actions
+    @objc private func actionButton() {
+        print("transfer")
+    }
+    
     // MARK: ViewConfiguration
     func configViews() {
         backgroundColor = .white
     }
     
     func buildViews() {
-        addSubviews([contactSelectorView])
+        addSubviews([valueLabel, contactSelectorView, transferButton])
     }
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
+            valueLabel.bottomAnchor.constraint(equalTo: contactSelectorView.topAnchor, constant: -14),
+            valueLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            valueLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            
             contactSelectorView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            contactSelectorView.centerYAnchor.constraint(equalTo: centerYAnchor)
+            contactSelectorView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            
+            transferButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -17),
+            transferButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            transferButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
         ])
     }
 }

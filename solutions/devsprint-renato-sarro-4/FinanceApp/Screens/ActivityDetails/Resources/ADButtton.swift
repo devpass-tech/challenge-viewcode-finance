@@ -27,6 +27,9 @@ extension UIButton {
         button.clipsToBounds = true
         button.layer.cornerRadius = 14
         
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.heightAnchor.constraint(equalToConstant: 56).isActive = true
+        
         return button
     }
 }
