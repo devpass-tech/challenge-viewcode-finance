@@ -29,36 +29,24 @@ class ActivityDetailsView: UIView {
     
     lazy var screenTitleLabel:UILabel = {
         let label = UILabel.build(style: .semiBold, adColor: .primary)
-//        label.translatesAutoresizingMaskIntoConstraints = false
-//        label.font = UIFont.boldSystemFont(ofSize: 20)
-//        label.textColor = .black
         label.text = ActivityDetailsStrings.spendingLocal.localized
         return label
     }()
     
     lazy var screenSubTitleLabel:UILabel = {
-        let label = UILabel.build(style: .regular, adColor: .secundary)
-//        label.translatesAutoresizingMaskIntoConstraints = false
-//        label.font = UIFont.systemFont(ofSize: 16)
-//        label.textColor = .lightGray
+        let label = UILabel.build(style: .regular, adColor: .secondary)
         label.text = ActivityDetailsStrings.spendingTipe.localized
         return label
     }()
     
     lazy var transactionValueLabel:UILabel = {
         let label = UILabel.build(style: .largeTitle, adColor: .primary)
-//        label.translatesAutoresizingMaskIntoConstraints = false
-//        label.font = UIFont.boldSystemFont(ofSize: 40)
-//        label.textColor = .black
         label.text = ActivityDetailsStrings.spendingValue.localized
         return label
     }()
     
     lazy var transactionTimeLabel:UILabel = {
-        let label = UILabel.build(style: .regular, adColor: .secundary)
-//        label.translatesAutoresizingMaskIntoConstraints = false
-//        label.font = UIFont.systemFont(ofSize: 20)
-//        label.textColor = .lightGray
+        let label = UILabel.build(style: .regular, adColor: .secondary)
         label.text = ActivityDetailsStrings.spendingTime.localized
         return label
     }()
@@ -105,19 +93,15 @@ class ActivityDetailsView: UIView {
 
             self.screenTitleLabel.topAnchor.constraint(equalTo: self.imageLogo.bottomAnchor, constant: 8),
             self.screenTitleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-//            self.screeTitleLabel.bottomAnchor.constraint(equalTo: self.screenSubTitleLabel.topAnchor, constant: 16),
             
             self.screenSubTitleLabel.topAnchor.constraint(equalTo: self.screenTitleLabel.bottomAnchor, constant: 8),
             self.screenSubTitleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-//            self.screenSubTitleLabel.bottomAnchor.constraint(equalTo: self.transactionValueLabel.topAnchor, constant: 16),
             
             self.transactionValueLabel.topAnchor.constraint(equalTo: self.screenSubTitleLabel.bottomAnchor, constant: 132),
             self.transactionValueLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-//            self.transactionValueLabel.bottomAnchor.constraint(equalTo: self.transactionTimeLabel.topAnchor, constant: 8),
             
             self.transactionTimeLabel.topAnchor.constraint(equalTo: self.transactionValueLabel.bottomAnchor,constant: 8),
             self.transactionTimeLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-//            self.transactionTimeLabel.bottomAnchor.constraint(equalTo: self.reportIssueButton.topAnchor, constant: 16),
             
             self.reportIssueButton.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 19),
             self.reportIssueButton.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -20),

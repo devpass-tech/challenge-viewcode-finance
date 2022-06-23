@@ -8,9 +8,7 @@
 import UIKit
 
 enum ADColor: String {
-    case backgroundScreen, primary, secundary
-    
-//    issueButtonBackground, issueButtonTitle,
+    case backgroundScreen, primary, secondary
     
     var color: UIColor? {
         UIColor(named: rawValue)

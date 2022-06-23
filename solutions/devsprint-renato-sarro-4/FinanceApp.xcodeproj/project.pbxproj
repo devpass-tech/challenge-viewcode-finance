@@ -15,6 +15,10 @@
 		5BD1B4A8286382BD00CC3355 /* ADLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD1B4A7286382BD00CC3355 /* ADLabel.swift */; };
 		730928E7CE2E221A523C7B69 /* Pods_FinanceAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 323265574E35008E41AD817F /* Pods_FinanceAppTests.framework */; };
 		871BC18028592EF300C389A7 /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871BC17F28592EF300C389A7 /* ViewConfiguration.swift */; };
+		874C08272865117200C5AA3D /* Notification+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874C08262865117200C5AA3D /* Notification+Keyboard.swift */; };
+		87CD81E42863C75800482F92 /* TransferContactSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CD81E32863C75800482F92 /* TransferContactSelectorView.swift */; };
+		87CD81E72863CB0D00482F92 /* TransferContactSelectorViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CD81E62863CB0D00482F92 /* TransferContactSelectorViewSpec.swift */; };
+		87CD81E92863CE8B00482F92 /* TransfersViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CD81E82863CE8B00482F92 /* TransfersViewSpec.swift */; };
 		87F1594128611EA5004FF184 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F1594028611EA5004FF184 /* Color.swift */; };
 		87F15943286120F2004FF184 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87F15942286120F2004FF184 /* Color.xcassets */; };
 		87F15945286122C5004FF184 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F15944286122C5004FF184 /* Label.swift */; };
@@ -81,6 +85,10 @@
 		5BD1B4A52863828600CC3355 /* ADColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADColor.swift; sourceTree = "<group>"; };
 		5BD1B4A7286382BD00CC3355 /* ADLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADLabel.swift; sourceTree = "<group>"; };
 		871BC17F28592EF300C389A7 /* ViewConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
+		874C08262865117200C5AA3D /* Notification+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Keyboard.swift"; sourceTree = "<group>"; };
+		87CD81E32863C75800482F92 /* TransferContactSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferContactSelectorView.swift; sourceTree = "<group>"; };
+		87CD81E62863CB0D00482F92 /* TransferContactSelectorViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferContactSelectorViewSpec.swift; sourceTree = "<group>"; };
+		87CD81E82863CE8B00482F92 /* TransfersViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransfersViewSpec.swift; sourceTree = "<group>"; };
 		87F1594028611EA5004FF184 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		87F15942286120F2004FF184 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		87F15944286122C5004FF184 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
@@ -167,6 +175,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		87CD81E52863CAE900482F92 /* Transfers */ = {
+			isa = PBXGroup;
+			children = (
+				87CD81E62863CB0D00482F92 /* TransferContactSelectorViewSpec.swift */,
+				87CD81E82863CE8B00482F92 /* TransfersViewSpec.swift */,
+			);
+			path = Transfers;
+			sourceTree = "<group>";
+		};
 		87F1593F28611E7F004FF184 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +234,7 @@
 		98584A82277E32C60028DBEA /* FinanceAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				87CD81E52863CAE900482F92 /* Transfers */,
 				98584A83277E32C60028DBEA /* FinanceAppTests.swift */,
 			);
 			path = FinanceAppTests;
@@ -300,6 +318,7 @@
 			children = (
 				98584AD3277E50430028DBEA /* TransfersView.swift */,
 				98584AD4277E50430028DBEA /* TransfersViewController.swift */,
+				87CD81E32863C75800482F92 /* TransferContactSelectorView.swift */,
 			);
 			path = Transfers;
 			sourceTree = "<group>";
@@ -364,6 +383,7 @@
 			children = (
 				98C8A4D827C8152200A630ED /* String+Extensions.swift */,
 				98C8A4DA27C815C000A630ED /* UITableViewCell+Extensions.swift */,
+				874C08262865117200C5AA3D /* Notification+Keyboard.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -616,6 +636,7 @@
 				98584AC3277E42E80028DBEA /* FinanceService.swift in Sources */,
 				B9F2F8EA285AC38100B69EB3 /* ContactListTableViewCell.swift in Sources */,
 				98584B10277E605F0028DBEA /* ActivityDetailsViewController.swift in Sources */,
+				87CD81E42863C75800482F92 /* TransferContactSelectorView.swift in Sources */,
 				98584B20277E60740028DBEA /* ContactListViewController.swift in Sources */,
 				98584AF4277E50430028DBEA /* ConfirmationViewController.swift in Sources */,
 				5BD1B4A62863828600CC3355 /* ADColor.swift in Sources */,
@@ -641,6 +662,7 @@
 				98584B1F277E60740028DBEA /* ContactListView.swift in Sources */,
 				5BD1B49E2863631A00CC3355 /* ActivityDetailsStrings.swift in Sources */,
 				5BD1B4A8286382BD00CC3355 /* ADLabel.swift in Sources */,
+				874C08272865117200C5AA3D /* Notification+Keyboard.swift in Sources */,
 				989627E027ADC2F60009A07F /* DebugViewController.swift in Sources */,
 				B9EAB82B285936E300910851 /* ActivityListTableViewCell.swift in Sources */,
 				98584AA5277E35E90028DBEA /* HomeViewController.swift in Sources */,
@@ -654,6 +676,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87CD81E92863CE8B00482F92 /* TransfersViewSpec.swift in Sources */,
+				87CD81E72863CB0D00482F92 /* TransferContactSelectorViewSpec.swift in Sources */,
 				98584A84277E32C60028DBEA /* FinanceAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
