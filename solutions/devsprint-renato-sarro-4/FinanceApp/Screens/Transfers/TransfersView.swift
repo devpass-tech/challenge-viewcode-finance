@@ -17,11 +17,20 @@ class TransfersView: UIView, ViewConfiguration {
         return label
     }()
     
+    private lazy var valueTextField: UITextField = {
+        let textField = UITextField()
+        textField.keyboardType = .numberPad
+        textField.isHidden = true
+        textField.addTarget(self, action: #selector(didUpdateValue), for: .editingChanged)
+        
+        return textField
+    }()
+    
     private lazy var contactSelectorView: TransferContactSelectorView = {
         TransferContactSelectorView()
     }()
     
-    lazy var transferButton: UIButton = {
+    private lazy var transferButton: UIButton = {
         let button = UIButton.build(buttonStyle: .issueButtonBackground, buttonText: .issueButtonTitle)
         button.setTitle("Transfer", for: .normal)
         button.addTarget(self, action: #selector(actionButton), for: .touchUpInside)
@@ -32,7 +41,11 @@ class TransfersView: UIView, ViewConfiguration {
     // MARK: Initialization
     init() {
         super.init(frame: .zero)
+        
         setupViews()
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTap))
+        addGestureRecognizer(tap)
     }
     
     @available(*, unavailable)
@@ -40,7 +53,29 @@ class TransfersView: UIView, ViewConfiguration {
         nil
     }
     
+    // MARK: Life cycle
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        
+        valueTextField.becomeFirstResponder()
+    }
+    
     // MARK: Actions
+    @objc private func didTap() {
+        valueTextField.isFirstResponder ?
+        valueTextField.resignFirstResponder() :
+        valueTextField.becomeFirstResponder()
+    }
+    
+    @objc private func didUpdateValue() {
+        guard let value = valueTextField.text, !value.isEmpty else {
+            valueLabel.text = "R$ 0,00"
+            return
+        }
+        
+        valueLabel.text = value.currencyFormat
+    }
+    
     @objc private func actionButton() {
         print("transfer")
     }
@@ -51,7 +86,7 @@ class TransfersView: UIView, ViewConfiguration {
     }
     
     func buildViews() {
-        addSubviews([valueLabel, contactSelectorView, transferButton])
+        addSubviews([valueTextField, valueLabel, contactSelectorView, transferButton])
     }
     
     func setupConstraints() {
