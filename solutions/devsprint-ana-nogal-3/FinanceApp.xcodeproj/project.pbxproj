@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20D024812887061800F9633D /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D024802887061800F9633D /* TabBarViewController.swift */; };
 		37C6E37F21517F6CD8D459C5 /* Pods_FinanceApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3625D60260334EE70469D3D6 /* Pods_FinanceApp.framework */; };
 		56E25BF52AE5457FD6ED2083 /* Pods_FinanceApp_FinanceAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51B193B85AF0973D2B61D77E /* Pods_FinanceApp_FinanceAppUITests.framework */; };
 		98584A6D277E32C30028DBEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584A6C277E32C30028DBEA /* AppDelegate.swift */; };
@@ -59,6 +60,7 @@
 
 /* Begin PBXFileReference section */
 		1C773202DFE04F91EBF01565 /* Pods_FinanceAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinanceAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		20D024802887061800F9633D /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		3625D60260334EE70469D3D6 /* Pods_FinanceApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinanceApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		514E451E9563B362B56969A4 /* Pods-FinanceApp-FinanceAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinanceApp-FinanceAppUITests.release.xcconfig"; path = "Target Support Files/Pods-FinanceApp-FinanceAppUITests/Pods-FinanceApp-FinanceAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		51B193B85AF0973D2B61D77E /* Pods_FinanceApp_FinanceAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinanceApp_FinanceAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,7 +141,6 @@
 				E6EE1116E3609495EA27DFFE /* Pods-FinanceAppTests.debug.xcconfig */,
 				932D99FA318FAE31BCE7C7D0 /* Pods-FinanceAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -234,6 +235,7 @@
 			children = (
 				98584AA6277E35F10028DBEA /* HomeView.swift */,
 				98584AA4277E35E90028DBEA /* HomeViewController.swift */,
+				20D024802887061800F9633D /* TabBarViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -573,6 +575,7 @@
 				98584AF3277E50430028DBEA /* ConfirmationView.swift in Sources */,
 				98584AEE277E50430028DBEA /* UserProfileViewController.swift in Sources */,
 				98584A6D277E32C30028DBEA /* AppDelegate.swift in Sources */,
+				20D024812887061800F9633D /* TabBarViewController.swift in Sources */,
 				98584A6F277E32C30028DBEA /* SceneDelegate.swift in Sources */,
 				98584AA7277E35F10028DBEA /* HomeView.swift in Sources */,
 				98584B1F277E60740028DBEA /* ContactListView.swift in Sources */,
