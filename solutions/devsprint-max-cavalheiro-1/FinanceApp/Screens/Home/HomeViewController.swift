@@ -7,10 +7,14 @@
 
 import UIKit
 
+protocol goToProfileViewDelegate: AnyObject {
+    func onClickAvatarButton()
+}
+
 class HomeViewController: UIViewController {
 
+    weak var delegate: goToProfileViewDelegate?
     private let service = FinanceService()
-
     private let homeView: HomeView = {
 
         let homeView = HomeView()
@@ -20,8 +24,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
 
         navigationItem.title = "Finance App 💰"
-        navigationController?.navigationBar.prefersLargeTitles = true
-
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "Photo")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(clickOnAvatar))
+        
         service.fetchHomeData { homeData in
 
             guard let homeData = homeData else {
@@ -39,5 +43,19 @@ class HomeViewController: UIViewController {
 
     override func loadView() {
         self.view = homeView
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        recurseViews(view: (navigationController?.navigationBar)!)
+    }
+    
+    func recurseViews(view:UIView) {
+            view.layer.cornerRadius = 20
+        for viewAvatar in view.subviews { recurseViews(view: viewAvatar) }
+    }
+    
+    @objc func clickOnAvatar() {
+        delegate?.onClickAvatarButton()
+        print("Clicou no avatar")
     }
 }
