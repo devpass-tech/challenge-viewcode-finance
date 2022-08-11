@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84B3A86A28A2975200284B12 /* UserProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B3A86928A2975200284B12 /* UserProfileHeaderView.swift */; };
 		489DFC5789A70DBE7FA8071D /* Pods_FinanceAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 725848B158BA65327CF7D7C4 /* Pods_FinanceAppTests.framework */; };
 		918900D0642AD336C97034D4 /* Pods_FinanceApp_FinanceAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F621DF98370EDD4D2E01F20 /* Pods_FinanceApp_FinanceAppUITests.framework */; };
 		98584A6D277E32C30028DBEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584A6C277E32C30028DBEA /* AppDelegate.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		84B3A86928A2975200284B12 /* UserProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileHeaderView.swift; sourceTree = SOURCE_ROOT; };
 		0F621DF98370EDD4D2E01F20 /* Pods_FinanceApp_FinanceAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinanceApp_FinanceAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		634B7CB6F3BCAD8EB810B781 /* Pods-FinanceApp-FinanceAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinanceApp-FinanceAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-FinanceApp-FinanceAppUITests/Pods-FinanceApp-FinanceAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		704722698224B4B2B03AA6E1 /* Pods_FinanceApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinanceApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -274,6 +276,7 @@
 		98584AF8277E511C0028DBEA /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				84B3A86928A2975200284B12 /* UserProfileHeaderView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -558,6 +561,7 @@
 			files = (
 				98584AC3277E42E80028DBEA /* FinanceService.swift in Sources */,
 				98584B10277E605F0028DBEA /* ActivityDetailsViewController.swift in Sources */,
+				84B3A86A28A2975200284B12 /* UserProfileHeaderView.swift in Sources */,
 				98584B20277E60740028DBEA /* ContactListViewController.swift in Sources */,
 				98584AF4277E50430028DBEA /* ConfirmationViewController.swift in Sources */,
 				98C8A4DD27C818A800A630ED /* HomeData.swift in Sources */,
