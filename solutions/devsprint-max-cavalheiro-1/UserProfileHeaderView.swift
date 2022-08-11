@@ -20,7 +20,7 @@ class UserProfileHeaderView: UIView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-
+    
     var userProfileName: UILabel = {
         let userName = UILabel()
         userName.text = "Irma Flores"
@@ -29,7 +29,7 @@ class UserProfileHeaderView: UIView {
         userName.translatesAutoresizingMaskIntoConstraints = false
         return userName
     }()
-
+    
     var userBankAgency: UILabel = {
         let userBankAgency = UILabel()
         userBankAgency.text = "Agency 0001"
@@ -38,7 +38,7 @@ class UserProfileHeaderView: UIView {
         userBankAgency.translatesAutoresizingMaskIntoConstraints = false
         return userBankAgency
     }()
-
+    
     var userBankAccount: UILabel = {
         let userBankAccount = UILabel()
         userBankAccount.text = "Account 123456-7"
@@ -47,7 +47,7 @@ class UserProfileHeaderView: UIView {
         userBankAccount.translatesAutoresizingMaskIntoConstraints = false
         return userBankAccount
     }()
-
+    
     var userBankName: UILabel = {
         let userBankName = UILabel()
         userBankName.text = "Devpass Bank"
@@ -60,15 +60,18 @@ class UserProfileHeaderView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
-        setupConstraints()
-        
+        setupUserImage()
+        setupUserProfileName()
+        setupUserBankAgency()
+        setupUserBankAccount()
+        setupUserBankName()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupViews() {
+    private func setupViews() {
         addSubview(userImage)
         addSubview(userProfileName)
         addSubview(userBankAgency)
@@ -76,22 +79,38 @@ class UserProfileHeaderView: UIView {
         addSubview(userBankName)
     }
     
-    func setupConstraints() {
+    private func setupUserImage() {
         NSLayoutConstraint.activate([
             userImage.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             userImage.centerXAnchor.constraint(equalTo: centerXAnchor),
             userImage.heightAnchor.constraint(equalToConstant: 100),
-            userImage.widthAnchor.constraint(equalToConstant: 100),
-
+            userImage.widthAnchor.constraint(equalToConstant: 100)
+        ])
+    }
+    
+    private func setupUserProfileName() {
+        NSLayoutConstraint.activate([
             userProfileName.topAnchor.constraint(equalTo: userImage.bottomAnchor, constant: 10),
-            userProfileName.centerXAnchor.constraint(equalTo: userImage.centerXAnchor),
-            
+            userProfileName.centerXAnchor.constraint(equalTo: userImage.centerXAnchor)
+        ])
+    }
+    
+    private func setupUserBankAgency() {
+        NSLayoutConstraint.activate([
             userBankAgency.topAnchor.constraint(equalTo: userProfileName.bottomAnchor, constant: 5),
-            userBankAgency.centerXAnchor.constraint(equalTo: userProfileName.centerXAnchor),
-            
+            userBankAgency.centerXAnchor.constraint(equalTo: userProfileName.centerXAnchor)
+        ])
+    }
+    
+    private func setupUserBankAccount() {
+        NSLayoutConstraint.activate([
             userBankAccount.topAnchor.constraint(equalTo: userBankAgency.bottomAnchor),
-            userBankAccount.centerXAnchor.constraint(equalTo: userBankAgency.centerXAnchor),
-            
+            userBankAccount.centerXAnchor.constraint(equalTo: userBankAgency.centerXAnchor)
+        ])
+    }
+    
+    private func setupUserBankName() {
+        NSLayoutConstraint.activate([
             userBankName.topAnchor.constraint(equalTo: userBankAccount.bottomAnchor),
             userBankName.centerXAnchor.constraint(equalTo: userBankAccount.centerXAnchor)
         ])
