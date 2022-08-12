@@ -4,17 +4,13 @@
 //
 //  Created by Rodrigo Borges on 07/01/22.
 //
-
 import UIKit
 
 /**
-
  Use this ViewController to debug your View components.
-
  1) Change `myView` type to your UIView subclass
  2) Set `myViewHeight` according to your View
  3) Set an instance of DebugViewController as window's rootViewController in `SceneDelegate.swift` file
-
  */
 
 class DebugViewController: UIViewController {
