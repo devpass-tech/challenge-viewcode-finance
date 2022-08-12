@@ -7,13 +7,10 @@
 
 import UIKit
 
-protocol goToProfileViewDelegate: AnyObject {
-    func onClickAvatarButton()
-}
 
 class HomeViewController: UIViewController {
 
-    weak var delegate: goToProfileViewDelegate?
+    
     private let service = FinanceService()
     private let avatarImageSize: CGFloat = 34
     
@@ -60,11 +57,6 @@ class HomeViewController: UIViewController {
 
     override func loadView() {
         self.view = homeView
-    }
-    
-    @objc func clickOnAvatar() {
-        delegate?.onClickAvatarButton()
-        print("Clicou no avatar")
     }
 }
 
