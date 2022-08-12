@@ -15,16 +15,33 @@ class HomeViewController: UIViewController {
 
     weak var delegate: goToProfileViewDelegate?
     private let service = FinanceService()
+    private let avatarImageSize: CGFloat = 34
+    
     private let homeView: HomeView = {
 
         let homeView = HomeView()
+        
         return homeView
     }()
 
     override func viewDidLoad() {
-
+        
         navigationItem.title = "Finance App 💰"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "Photo")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(clickOnAvatar))
+       
+        let avatarImage = UIImage(named: "Photo")?.withRenderingMode(.alwaysOriginal)
+        let avatarImageView = UIImageView()
+        avatarImageView.image = avatarImage
+        
+        avatarImageView.layer.cornerRadius = avatarImageSize / 2
+        avatarImageView.layer.masksToBounds = true
+        
+        NSLayoutConstraint.activate([
+            avatarImageView.widthAnchor.constraint(equalToConstant: avatarImageSize),
+            avatarImageView.heightAnchor.constraint(equalToConstant: avatarImageSize)
+        ])
+        
+        let avatarBarButton = UIBarButtonItem(customView: avatarImageView)
+        navigationItem.setRightBarButton(avatarBarButton, animated: false)
         
         service.fetchHomeData { homeData in
 
@@ -45,17 +62,12 @@ class HomeViewController: UIViewController {
         self.view = homeView
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        recurseViews(view: (navigationController?.navigationBar)!)
-    }
-    
-    func recurseViews(view:UIView) {
-            view.layer.cornerRadius = 20
-        for viewAvatar in view.subviews { recurseViews(view: viewAvatar) }
-    }
-    
     @objc func clickOnAvatar() {
         delegate?.onClickAvatarButton()
         print("Clicou no avatar")
     }
 }
+
+
+
+
