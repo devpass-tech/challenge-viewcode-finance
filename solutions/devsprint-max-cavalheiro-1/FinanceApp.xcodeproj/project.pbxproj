@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2EC6BC1F28AC02A400CC08AB /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC6BC1E28AC02A400CC08AB /* TabBarController.swift */; };
 		98584A6D277E32C30028DBEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584A6C277E32C30028DBEA /* AppDelegate.swift */; };
 		98584A6F277E32C30028DBEA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584A6E277E32C30028DBEA /* SceneDelegate.swift */; };
 		98584A76277E32C50028DBEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98584A75277E32C50028DBEA /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2EC6BC1E28AC02A400CC08AB /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		98584A69277E32C30028DBEA /* FinanceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98584A6C277E32C30028DBEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98584A6E277E32C30028DBEA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 			children = (
 				98584ADA277E50430028DBEA /* UserProfileView.swift */,
 				98584ADB277E50430028DBEA /* UserProfileViewController.swift */,
+				2EC6BC1E28AC02A400CC08AB /* TabBarController.swift */,
 			);
 			path = UserProfile;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 				98C8A4E727C81A9C00A630ED /* UserProfile.swift in Sources */,
 				98C8A4E327C819DE00A630ED /* Contact.swift in Sources */,
 				98C8A4E527C81A3F00A630ED /* TransferResult.swift in Sources */,
+				2EC6BC1F28AC02A400CC08AB /* TabBarController.swift in Sources */,
 				98584AE8277E50430028DBEA /* TransfersViewController.swift in Sources */,
 				98584B14277E605F0028DBEA /* ActivityDetailsView.swift in Sources */,
 				98584AE7277E50430028DBEA /* TransfersView.swift in Sources */,
