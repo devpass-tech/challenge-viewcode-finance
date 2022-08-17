@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2EC6BC1F28AC02A400CC08AB /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC6BC1E28AC02A400CC08AB /* TabBarController.swift */; };
 		84B3A86A28A2975200284B12 /* UserProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B3A86928A2975200284B12 /* UserProfileHeaderView.swift */; };
 		489DFC5789A70DBE7FA8071D /* Pods_FinanceAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 725848B158BA65327CF7D7C4 /* Pods_FinanceAppTests.framework */; };
 		918900D0642AD336C97034D4 /* Pods_FinanceApp_FinanceAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F621DF98370EDD4D2E01F20 /* Pods_FinanceApp_FinanceAppUITests.framework */; };
@@ -59,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2EC6BC1E28AC02A400CC08AB /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		84B3A86928A2975200284B12 /* UserProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileHeaderView.swift; sourceTree = SOURCE_ROOT; };
 		0F621DF98370EDD4D2E01F20 /* Pods_FinanceApp_FinanceAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinanceApp_FinanceAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		634B7CB6F3BCAD8EB810B781 /* Pods-FinanceApp-FinanceAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinanceApp-FinanceAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-FinanceApp-FinanceAppUITests/Pods-FinanceApp-FinanceAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 			children = (
 				98584ADA277E50430028DBEA /* UserProfileView.swift */,
 				98584ADB277E50430028DBEA /* UserProfileViewController.swift */,
+				2EC6BC1E28AC02A400CC08AB /* TabBarController.swift */,
 			);
 			path = UserProfile;
 			sourceTree = "<group>";
@@ -569,6 +572,7 @@
 				98C8A4E727C81A9C00A630ED /* UserProfile.swift in Sources */,
 				98C8A4E327C819DE00A630ED /* Contact.swift in Sources */,
 				98C8A4E527C81A3F00A630ED /* TransferResult.swift in Sources */,
+				2EC6BC1F28AC02A400CC08AB /* TabBarController.swift in Sources */,
 				98584AE8277E50430028DBEA /* TransfersViewController.swift in Sources */,
 				98584B14277E605F0028DBEA /* ActivityDetailsView.swift in Sources */,
 				98584AE7277E50430028DBEA /* TransfersView.swift in Sources */,
