@@ -7,21 +7,39 @@
 
 import UIKit
 
+
 class HomeViewController: UIViewController {
 
+    
     private let service = FinanceService()
-
+    private let avatarImageSize: CGFloat = 34
+    
     private let homeView: HomeView = {
 
         let homeView = HomeView()
+        
         return homeView
     }()
 
     override func viewDidLoad() {
-
+        
         navigationItem.title = "Finance App 💰"
-        navigationController?.navigationBar.prefersLargeTitles = true
-
+       
+        let avatarImage = UIImage(named: "Photo")?.withRenderingMode(.alwaysOriginal)
+        let avatarImageView = UIImageView()
+        avatarImageView.image = avatarImage
+        
+        avatarImageView.layer.cornerRadius = avatarImageSize / 2
+        avatarImageView.layer.masksToBounds = true
+        
+        NSLayoutConstraint.activate([
+            avatarImageView.widthAnchor.constraint(equalToConstant: avatarImageSize),
+            avatarImageView.heightAnchor.constraint(equalToConstant: avatarImageSize)
+        ])
+        
+        let avatarBarButton = UIBarButtonItem(customView: avatarImageView)
+        navigationItem.setRightBarButton(avatarBarButton, animated: false)
+        
         service.fetchHomeData { homeData in
 
             guard let homeData = homeData else {
@@ -41,3 +59,7 @@ class HomeViewController: UIViewController {
         self.view = homeView
     }
 }
+
+
+
+
