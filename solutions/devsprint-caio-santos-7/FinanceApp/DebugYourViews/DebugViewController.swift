@@ -19,9 +19,8 @@ import UIKit
 
 class DebugViewController: UIViewController {
 
-    private let myView: UIView = {
-
-        let view = UIView()
+    private let myView: AccountSummaryView = {
+        let view = AccountSummaryView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -30,18 +29,14 @@ class DebugViewController: UIViewController {
 
     init() {
         super.init(nibName: nil, bundle: nil)
-
         view.backgroundColor = .white
-
         view.addSubview(myView)
 
         NSLayoutConstraint.activate([
-
-            myView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            myView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            myView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            myView.heightAnchor.constraint(equalToConstant: myViewHeight),
-
+            myView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            myView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            myView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
+//            myView.heightAnchor.constraint(equalToConstant: myViewHeight)
         ])
     }
 

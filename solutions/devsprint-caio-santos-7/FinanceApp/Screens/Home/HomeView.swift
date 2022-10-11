@@ -8,18 +8,15 @@
 import UIKit
 
 struct HomeViewConfiguration {
-
     let homeData: HomeData
 }
 
 final class HomeView: UIView {
-
     private let listViewCellIdentifier = "ListViewCellIdentifier"
 
     private var activities: [Activity] = []
 
     private lazy var tableView: UITableView = {
-
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.listViewCellIdentifier)
@@ -48,41 +45,33 @@ final class HomeView: UIView {
 private extension HomeView {
 
     func setupViews() {
-
-        self.backgroundColor = .white
-
-        self.configureSubviews()
-        self.configureSubviewsConstraints()
+        backgroundColor = .white
+        configureSubviews()
+        configureSubviewsConstraints()
     }
 
     func configureSubviews() {
-
-        self.addSubview(self.tableView)
+        addSubview(tableView)
     }
 
     func configureSubviewsConstraints() {
-
         NSLayoutConstraint.activate([
-
-            self.tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            self.tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            self.tableView.topAnchor.constraint(equalTo: self.topAnchor),
-            self.tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            tableView.topAnchor.constraint(equalTo: topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 }
 
 extension HomeView: UITableViewDataSource {
-
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-        return self.activities.count
+        return activities.count
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
         let cell = tableView.dequeueReusableCell(withIdentifier: self.listViewCellIdentifier)!
-        cell.textLabel?.text = self.activities[indexPath.row].name
+        cell.textLabel?.text = activities[indexPath.row].name
         return cell
     }
 }

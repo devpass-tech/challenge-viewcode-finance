@@ -12,18 +12,15 @@ class HomeViewController: UIViewController {
     private let service = FinanceService()
 
     private let homeView: HomeView = {
-
         let homeView = HomeView()
         return homeView
     }()
 
     override func viewDidLoad() {
-
         navigationItem.title = "Finance App 💰"
         navigationController?.navigationBar.prefersLargeTitles = true
 
         service.fetchHomeData { homeData in
-
             guard let homeData = homeData else {
                 return
             }
@@ -31,7 +28,6 @@ class HomeViewController: UIViewController {
             let configuration = HomeViewConfiguration(homeData: homeData)
 
             DispatchQueue.main.async {
-
                 self.homeView.updateView(with: configuration)
             }
         }
