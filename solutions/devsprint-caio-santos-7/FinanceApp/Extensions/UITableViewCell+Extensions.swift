@@ -9,12 +9,13 @@ import Foundation
 import UIKit
 
 extension UITableViewCell {
-
-    class func classIdentifier() -> String {
-        guard let className = String(describing: self).components(separatedBy: ".").last else {
-            return ""
-        }
-
-        return className
+    public static var reuseIdentifier: String {
+        String(describing: self)
+    }
+    
+    public class func createCell<T: UITableViewCell>(for tableView: UITableView,
+                                                     at indexPath: IndexPath) -> T? {
+        return tableView.dequeueReusableCell(withIdentifier: String(describing: T.self),
+                                             for: indexPath) as? T
     }
 }

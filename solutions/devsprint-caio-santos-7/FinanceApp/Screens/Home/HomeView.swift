@@ -16,6 +16,12 @@ final class HomeView: UIView {
 
     private var activities: [Activity] = []
 
+    private lazy var accountSummaryView: AccountSummaryView = {
+        let element = AccountSummaryView()
+        element.translatesAutoresizingMaskIntoConstraints = false
+        return element
+    }()
+    
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -25,9 +31,7 @@ final class HomeView: UIView {
     }()
 
     init() {
-
         super.init(frame: .zero)
-
         self.setupViews()
     }
 
@@ -36,9 +40,11 @@ final class HomeView: UIView {
     }
 
     func updateView(with configuration: HomeViewConfiguration) {
-
-        self.activities = configuration.homeData.activity
-        self.tableView.reloadData()
+        activities = configuration.homeData.activity
+        accountSummaryView.updateValues(balance: configuration.homeData.balance,
+                                        savings: configuration.homeData.savings,
+                                        spending: configuration.homeData.spending)
+        tableView.reloadData()
     }
 }
 
@@ -51,15 +57,20 @@ private extension HomeView {
     }
 
     func configureSubviews() {
+        addSubview(accountSummaryView)
         addSubview(tableView)
     }
 
     func configureSubviewsConstraints() {
         NSLayoutConstraint.activate([
-            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            tableView.topAnchor.constraint(equalTo: topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            accountSummaryView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            accountSummaryView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            accountSummaryView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
+
+            tableView.topAnchor.constraint(equalTo: accountSummaryView.bottomAnchor, constant: 16),
+            tableView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
         ])
     }
 }

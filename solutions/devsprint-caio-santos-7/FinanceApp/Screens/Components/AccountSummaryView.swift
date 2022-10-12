@@ -8,11 +8,13 @@
 import UIKit
 
 class AccountSummaryView: UIStackView {
+    let valuePlaceholder = "$--.--"
+    
     // MARK: Private Properties
     private lazy var balanceLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "$15,459.27"
+        label.text = valuePlaceholder
         label.font = UIFont.boldSystemFont(ofSize: 34)
         return label
     }()
@@ -46,7 +48,7 @@ class AccountSummaryView: UIStackView {
     private lazy var savingsValueLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "$100.00"
+        label.text = valuePlaceholder
         label.textColor = .lightGray
         label.textAlignment = .right
         return label
@@ -81,7 +83,7 @@ class AccountSummaryView: UIStackView {
     private lazy var spendingValueLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "$100.00"
+        label.text = valuePlaceholder
         label.textColor = .lightGray
         label.textAlignment = .right
         return label
@@ -95,6 +97,13 @@ class AccountSummaryView: UIStackView {
     
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: Public Methods
+    func updateValues(balance: Float, savings: Float, spending: Float) {
+        balanceLabel.text = "$\(balance)"
+        savingsValueLabel.text = "$\(savings)"
+        spendingValueLabel.text = "$\(spending)"
     }
 }
 
@@ -128,7 +137,6 @@ extension AccountSummaryView: ViewCodable {
     func applyAdditionalChanges() {
         axis = .vertical
         spacing = 40
-        backgroundColor = .systemGray6
 
         savingsLabel.setContentHuggingPriority(.fittingSizeLevel, for: .horizontal)
         spendingLabel.setContentHuggingPriority(.fittingSizeLevel, for: .horizontal)
