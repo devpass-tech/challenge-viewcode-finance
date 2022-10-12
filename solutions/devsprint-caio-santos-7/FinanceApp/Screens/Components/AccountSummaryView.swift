@@ -37,6 +37,7 @@ class AccountSummaryView: UIStackView {
 
     private lazy var savingsLabel: UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Savings"
         label.font = UIFont.boldSystemFont(ofSize: 17)
         return label
@@ -44,6 +45,7 @@ class AccountSummaryView: UIStackView {
 
     private lazy var savingsValueLabel: UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "$100.00"
         label.textColor = .lightGray
         label.textAlignment = .right
@@ -70,6 +72,7 @@ class AccountSummaryView: UIStackView {
     
     private lazy var spendingLabel: UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Spending"
         label.font = UIFont.boldSystemFont(ofSize: 17)
         return label
@@ -77,6 +80,7 @@ class AccountSummaryView: UIStackView {
 
     private lazy var spendingValueLabel: UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "$100.00"
         label.textColor = .lightGray
         label.textAlignment = .right
@@ -123,8 +127,10 @@ extension AccountSummaryView: ViewCodable {
     
     func applyAdditionalChanges() {
         axis = .vertical
-        distribution = .fill
         spacing = 40
         backgroundColor = .systemGray6
+
+        savingsLabel.setContentHuggingPriority(.fittingSizeLevel, for: .horizontal)
+        spendingLabel.setContentHuggingPriority(.fittingSizeLevel, for: .horizontal)
     }
 }
