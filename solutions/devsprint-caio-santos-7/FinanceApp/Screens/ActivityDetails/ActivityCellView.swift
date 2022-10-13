@@ -20,6 +20,15 @@ class ActivityCellView: UITableViewCell {
         return image
     }()
     
+    private lazy var stackView: UIStackView = {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .vertical
+        stack.spacing = 4
+        
+        return stack
+    }()
+    
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -56,14 +65,13 @@ extension ActivityCellView: ViewCodable {
     
     func buildHierarchy() {
         contentView.addSubview(icon)
-        contentView.addSubview(titleLabel)
-        contentView.addSubview(titleDescription)
+        contentView.addSubview(stackView)
+        stackView.addArrangedSubview(titleLabel)
+        stackView.addArrangedSubview(titleDescription)
     }
     
     
     func setupConstraints() {
-        let bottomConstraint = icon.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)
-        bottomConstraint.priority = .defaultLow
         
         NSLayoutConstraint.activate([
             icon.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
@@ -71,14 +79,15 @@ extension ActivityCellView: ViewCodable {
             icon.heightAnchor.constraint(equalToConstant: 48),
             icon.widthAnchor.constraint(equalToConstant: 48),
             
-            titleLabel.bottomAnchor.constraint(equalTo: contentView.centerYAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: icon.trailingAnchor, constant: 12),
-            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+            stackView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            stackView.leadingAnchor.constraint(equalTo: icon.trailingAnchor, constant: 8),
+            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
             
-            titleDescription.topAnchor.constraint(equalTo: contentView.centerYAnchor),
+            titleLabel.leadingAnchor.constraint(equalTo: stackView.trailingAnchor),
+            titleLabel.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
+            
             titleDescription.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             titleDescription.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
-            bottomConstraint
         ])
     }
 }
