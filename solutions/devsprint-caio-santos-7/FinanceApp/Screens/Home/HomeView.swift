@@ -63,7 +63,7 @@ private extension HomeView {
 
     func configureSubviewsConstraints() {
         NSLayoutConstraint.activate([
-            accountSummaryView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            accountSummaryView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
             accountSummaryView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
             accountSummaryView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
 

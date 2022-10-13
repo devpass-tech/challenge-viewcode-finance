@@ -17,8 +17,8 @@ class HomeViewController: UIViewController {
     }()
 
     override func viewDidLoad() {
-        navigationItem.title = "Finance App 💰"
-        navigationController?.navigationBar.prefersLargeTitles = true
+        customNavBar()
+        profilePictureNavBar()
 
         service.fetchHomeData { homeData in
             guard let homeData = homeData else {
@@ -35,5 +35,24 @@ class HomeViewController: UIViewController {
 
     override func loadView() {
         self.view = homeView
+    }
+    
+    private func customNavBar() {
+        let configNavBar = UINavigationBarAppearance()
+        configNavBar.backgroundColor = UIColor.systemBackground
+        navigationController?.navigationBar.standardAppearance = configNavBar
+        navigationController?.navigationBar.scrollEdgeAppearance = configNavBar
+    }
+    
+    private func profilePictureNavBar() {
+        let profilePicture = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        let image = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        image.image = UIImage(named: "avatar-placeholder")
+        image.contentMode = .scaleAspectFit
+        image.layer.cornerRadius = 22.5
+        image.layer.masksToBounds = true
+        profilePicture.addSubview(image)
+        let rightBarButton = UIBarButtonItem(customView: profilePicture)
+        navigationItem.rightBarButtonItem = rightBarButton
     }
 }
