@@ -12,6 +12,7 @@
 		25C8174D28F60A0C003127C0 /* ViewCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C8174C28F60A0C003127C0 /* ViewCodable.swift */; };
 		25C8175528F772FD003127C0 /* AccountSummaryViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C8175428F772FD003127C0 /* AccountSummaryViewTests.swift */; };
 		65424F8C28F8CF8A00F7E8D4 /* ActivityDetailsViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65424F8B28F8CF8A00F7E8D4 /* ActivityDetailsViewTests.swift */; };
+		65424F9428F99E8700F7E8D4 /* ContactListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65424F9328F99E8700F7E8D4 /* ContactListView.swift */; };
 		98584A6D277E32C30028DBEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584A6C277E32C30028DBEA /* AppDelegate.swift */; };
 		98584A6F277E32C30028DBEA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584A6E277E32C30028DBEA /* SceneDelegate.swift */; };
 		98584A76277E32C50028DBEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98584A75277E32C50028DBEA /* Assets.xcassets */; };
@@ -27,7 +28,7 @@
 		98584AF4277E50430028DBEA /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584AE2277E50430028DBEA /* ConfirmationViewController.swift */; };
 		98584B10277E605F0028DBEA /* ActivityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584B0A277E605F0028DBEA /* ActivityDetailsViewController.swift */; };
 		98584B14277E605F0028DBEA /* ActivityDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584B0E277E605F0028DBEA /* ActivityDetailsView.swift */; };
-		98584B1F277E60740028DBEA /* ContactListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584B19277E60740028DBEA /* ContactListView.swift */; };
+		98584B1F277E60740028DBEA /* ContactListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584B19277E60740028DBEA /* ContactListTableViewCell.swift */; };
 		98584B20277E60740028DBEA /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584B1A277E60740028DBEA /* ContactListViewController.swift */; };
 		989627E027ADC2F60009A07F /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989627DF27ADC2F60009A07F /* DebugViewController.swift */; };
 		98C8A4D927C8152200A630ED /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8A4D827C8152200A630ED /* String+Extensions.swift */; };
@@ -61,6 +62,7 @@
 		55C4E25CA63BCFCC105EC051 /* Pods_FinanceApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinanceApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		61A71CDF7B0095F152A3CD4E /* Pods-FinanceApp-FinanceAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinanceApp-FinanceAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-FinanceApp-FinanceAppUITests/Pods-FinanceApp-FinanceAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		65424F8B28F8CF8A00F7E8D4 /* ActivityDetailsViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsViewTests.swift; sourceTree = "<group>"; };
+		65424F9328F99E8700F7E8D4 /* ContactListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListView.swift; sourceTree = "<group>"; };
 		6989344458FFDBA154C3EC32 /* Pods-FinanceApp-FinanceAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinanceApp-FinanceAppUITests.release.xcconfig"; path = "Target Support Files/Pods-FinanceApp-FinanceAppUITests/Pods-FinanceApp-FinanceAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		98584A69277E32C30028DBEA /* FinanceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98584A6C277E32C30028DBEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,7 +82,7 @@
 		98584AE2277E50430028DBEA /* ConfirmationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
 		98584B0A277E605F0028DBEA /* ActivityDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailsViewController.swift; sourceTree = "<group>"; };
 		98584B0E277E605F0028DBEA /* ActivityDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailsView.swift; sourceTree = "<group>"; };
-		98584B19277E60740028DBEA /* ContactListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListView.swift; sourceTree = "<group>"; };
+		98584B19277E60740028DBEA /* ContactListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListTableViewCell.swift; sourceTree = "<group>"; };
 		98584B1A277E60740028DBEA /* ContactListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListViewController.swift; sourceTree = "<group>"; };
 		989627DF27ADC2F60009A07F /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
 		98C8A4D827C8152200A630ED /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
@@ -159,6 +161,14 @@
 				65424F8B28F8CF8A00F7E8D4 /* ActivityDetailsViewTests.swift */,
 			);
 			path = ActivityDetails;
+			sourceTree = "<group>";
+		};
+		65424F9228F99E6400F7E8D4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				98584B19277E60740028DBEA /* ContactListTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		820E387591A4D6261F2D6AF5 /* Frameworks */ = {
@@ -314,8 +324,9 @@
 		98584B08277E602C0028DBEA /* ContactList */ = {
 			isa = PBXGroup;
 			children = (
-				98584B19277E60740028DBEA /* ContactListView.swift */,
 				98584B1A277E60740028DBEA /* ContactListViewController.swift */,
+				65424F9328F99E8700F7E8D4 /* ContactListView.swift */,
+				65424F9228F99E6400F7E8D4 /* Cells */,
 			);
 			path = ContactList;
 			sourceTree = "<group>";
@@ -505,6 +516,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				25C8174D28F60A0C003127C0 /* ViewCodable.swift in Sources */,
+				65424F9428F99E8700F7E8D4 /* ContactListView.swift in Sources */,
 				98584AC3277E42E80028DBEA /* FinanceService.swift in Sources */,
 				25C8174B28F608BF003127C0 /* AccountSummaryView.swift in Sources */,
 				98584B10277E605F0028DBEA /* ActivityDetailsViewController.swift in Sources */,
@@ -524,7 +536,7 @@
 				98584A6D277E32C30028DBEA /* AppDelegate.swift in Sources */,
 				98584A6F277E32C30028DBEA /* SceneDelegate.swift in Sources */,
 				98584AA7277E35F10028DBEA /* HomeView.swift in Sources */,
-				98584B1F277E60740028DBEA /* ContactListView.swift in Sources */,
+				98584B1F277E60740028DBEA /* ContactListTableViewCell.swift in Sources */,
 				989627E027ADC2F60009A07F /* DebugViewController.swift in Sources */,
 				98584AA5277E35E90028DBEA /* HomeViewController.swift in Sources */,
 				98584AED277E50430028DBEA /* UserProfileView.swift in Sources */,

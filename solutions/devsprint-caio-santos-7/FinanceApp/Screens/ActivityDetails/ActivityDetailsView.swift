@@ -20,7 +20,7 @@ final class ActivityDetailsView: UIView {
         return nil
     }
     
-    // MARK: Interface Elements
+    // MARK: Visual Components
     private lazy var vStack: UIStackView = {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false

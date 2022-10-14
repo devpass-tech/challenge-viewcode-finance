@@ -8,8 +8,11 @@
 import UIKit
 
 class ContactListViewController: UIViewController {
-
+    let container = ContactListView()
+    
     override func loadView() {
-        self.view = ContactListView()
+        self.view = container
     }
 }
+
+
