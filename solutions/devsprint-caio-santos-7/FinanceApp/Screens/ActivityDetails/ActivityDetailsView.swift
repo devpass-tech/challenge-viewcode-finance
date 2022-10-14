@@ -27,9 +27,7 @@ final class ActivityDetailsView: UIView {
         stack.alignment = .center
         stack.spacing = 10
         stack.axis = .vertical
-        stack.addArrangedSubview(bagImage)
-        stack.addArrangedSubview(mallLabel)
-        stack.addArrangedSubview(shoppingLabel)
+        
         return stack
     }()
     
@@ -39,8 +37,7 @@ final class ActivityDetailsView: UIView {
         stack.alignment = .center
         stack.spacing = 10
         stack.axis = .vertical
-        stack.addArrangedSubview(valueLabel)
-        stack.addArrangedSubview(hourLabel)
+        
         return stack
     }()
     
@@ -114,6 +111,11 @@ extension ActivityDetailsView: ViewCodable {
         addSubview(vStack)
         addSubview(vCenterStack)
         addSubview(reportIssueButton)
+        vStack.addArrangedSubview(bagImage)
+        vStack.addArrangedSubview(mallLabel)
+        vStack.addArrangedSubview(shoppingLabel)
+        vCenterStack.addArrangedSubview(valueLabel)
+        vCenterStack.addArrangedSubview(hourLabel)
     }
     
     // MARK: Interface Constraints

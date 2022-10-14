@@ -17,13 +17,11 @@ final class ActivityDetailsViewTests: XCTestCase {
     
     func testLoadingComponent() {
         let component = ActivityDetailsViewController()
-        //component.backgroundColor = .yellow
         assertSnapshot(matching: component, as: .image(on: .iPhoneX))
     }
     
-    func testLoadedComponent() {
+    func testRenderView() {
         let component = ActivityDetailsViewController()
-        //component.backgroundColor = .yellow
         assertSnapshot(matching: component, as: .image(on: .iPhoneX))
     }
 }
