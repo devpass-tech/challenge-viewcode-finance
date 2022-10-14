@@ -69,3 +69,7 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
+
+### Projects ###
+solutions/devsprint-caio-santos-7/*.xcodeproj
+solutions/devsprint-caio-santos-7/*.xcworkspace
