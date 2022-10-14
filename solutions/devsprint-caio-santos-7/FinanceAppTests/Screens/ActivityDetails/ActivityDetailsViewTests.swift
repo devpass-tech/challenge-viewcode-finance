@@ -15,13 +15,14 @@ final class ActivityDetailsViewTests: XCTestCase {
 //        SnapshotTesting.isRecording = true
     }
     
-    func testLoadingComponent() {
-        let component = ActivityDetailsViewController()
-        assertSnapshot(matching: component, as: .image(on: .iPhoneX))
+    func testRenderDefaultContent() {
+        let component = ActivityDetailsView()
+        assertSnapshot(matching: component, as: .image(size: .init(width: 414, height: 896)))
     }
     
-    func testRenderView() {
-        let component = ActivityDetailsViewController()
-        assertSnapshot(matching: component, as: .image(on: .iPhoneX))
+    func testRenderUpdatedActivity() {
+        let component = ActivityDetailsView()
+        component.updateValues(activity: Activity(name: "TESTE", price: 0, time: "TESTE"))
+        assertSnapshot(matching: component, as: .image(size: .init(width: 414, height: 896)))
     }
 }

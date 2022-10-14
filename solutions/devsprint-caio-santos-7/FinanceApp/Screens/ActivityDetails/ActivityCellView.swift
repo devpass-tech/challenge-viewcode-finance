@@ -7,6 +7,20 @@
 
 import UIKit
 
+enum ActivityTypes: String {
+    case mall = "Mall"
+    case foodCourt = "Food Court"
+    
+    func getColor() -> UIColor {
+        switch self {
+        case .mall:
+            return .red
+        case .foodCourt:
+            return .blue
+        }
+    }
+}
+
 class ActivityCellView: UITableViewCell {
     
     private lazy var icon: UIImageView = {
@@ -16,7 +30,6 @@ class ActivityCellView: UITableViewCell {
         image.contentMode = .scaleAspectFit
         image.layer.cornerRadius = 24
         image.clipsToBounds = true
-        
         return image
     }()
     
@@ -34,7 +47,7 @@ class ActivityCellView: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Food court"
         label.font = .systemFont(ofSize: 16, weight: .semibold)
-        
+        label.numberOfLines = 0
         return label
     }()
     
@@ -51,6 +64,17 @@ class ActivityCellView: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupView()
         configViews()
+    }
+    
+    // MARK: Public Methods
+    func updateValues(activity: Activity) {
+        titleLabel.text = activity.name
+        
+        if let type = ActivityTypes(rawValue: activity.name) {
+            icon.tintColor = type.getColor()
+        }
+
+        titleDescription.text = String.activityDetails(with: activity.price, and: activity.time)
     }
 
     @available(*, unavailable)

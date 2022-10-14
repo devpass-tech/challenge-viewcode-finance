@@ -50,7 +50,7 @@ final class ActivityDetailsView: UIView {
         return image
     }()
     
-    private lazy var mallLabel: UILabel = {
+    private lazy var activityNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Mall"
@@ -103,6 +103,13 @@ final class ActivityDetailsView: UIView {
     @objc func tappedButton(sender: UIButton) {
         print("action disparada")
     }
+    
+    // MARK: Public Methods
+    func updateValues(activity: Activity) {
+        activityNameLabel.text = activity.name
+        valueLabel.text = "\(activity.price)"
+        hourLabel.text = activity.time
+    }
 }
 
 extension ActivityDetailsView: ViewCodable {
@@ -112,7 +119,7 @@ extension ActivityDetailsView: ViewCodable {
         addSubview(vCenterStack)
         addSubview(reportIssueButton)
         vStack.addArrangedSubview(bagImage)
-        vStack.addArrangedSubview(mallLabel)
+        vStack.addArrangedSubview(activityNameLabel)
         vStack.addArrangedSubview(shoppingLabel)
         vCenterStack.addArrangedSubview(valueLabel)
         vCenterStack.addArrangedSubview(hourLabel)

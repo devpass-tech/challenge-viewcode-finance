@@ -35,7 +35,10 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
 
         tabTransfers.tabBarItem = tabTransfersBarItem
 
-        self.viewControllers = [tabHome, tabTransfers]
+        self.viewControllers = [
+            UINavigationController(rootViewController: tabHome),
+            tabTransfers
+        ]
     }
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
