@@ -7,8 +7,9 @@
 
 import UIKit
 
-class ContactListViewController: UIViewController {
-    let container = ContactListView()
+final class ContactListViewController: UIViewController {
+    
+    private let container = ContactListView()
     
     override func loadView() {
         self.view = container
