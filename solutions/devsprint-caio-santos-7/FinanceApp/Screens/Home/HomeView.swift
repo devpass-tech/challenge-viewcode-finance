@@ -11,9 +11,14 @@ struct HomeViewConfiguration {
     let homeData: HomeData
 }
 
+protocol HomeViewDelegate: AnyObject {
+    func didSelectActivity()
+}
+
 final class HomeView: UIView {
     private var activities: [Activity] = []
-
+    var delegate: HomeViewDelegate?
+    
     private lazy var accountSummaryView: AccountSummaryView = {
         let element = AccountSummaryView()
         element.translatesAutoresizingMaskIntoConstraints = false
@@ -26,6 +31,7 @@ final class HomeView: UIView {
         tableView.register(ActivityCellView.self, forCellReuseIdentifier: ActivityCellView.reuseIdentifier)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: UITableViewCell.reuseIdentifier)
         tableView.dataSource = self
+        tableView.delegate = self
         return tableView
     }()
 
@@ -74,7 +80,7 @@ private extension HomeView {
     }
 }
 
-extension HomeView: UITableViewDataSource {
+extension HomeView: UITableViewDataSource, UITableViewDelegate {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return activities.count
     }
@@ -88,6 +94,11 @@ extension HomeView: UITableViewDataSource {
         
         cell.updateValues(activity: activities[indexPath.row])
         return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.didSelectActivity()
     }
 }
 
