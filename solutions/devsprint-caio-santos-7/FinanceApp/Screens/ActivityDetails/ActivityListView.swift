@@ -8,15 +8,11 @@
 import UIKit
 
 class ActivityListView: UIView {
-    
-    private var activities: [Activity] = []
-    
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(ActivityCellView.self, forCellReuseIdentifier: ActivityCellView.reuseIdentifier)
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: UITableViewCell.reuseIdentifier)
-
+        tableView.separatorStyle = .none
         return tableView
     }()
     
@@ -31,16 +27,15 @@ class ActivityListView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func updateTableView(with configuration: HomeViewConfiguration) {
-        activities = configuration.homeData.activity
+    func reloadData() {
         tableView.reloadData()
     }
     
-    public func configTableViewProtocol(delegate: UITableViewDelegate, dataSource: UITableViewDataSource){
+    public func configTableViewProtocol(delegate: UITableViewDelegate,
+                                        dataSource: UITableViewDataSource) {
         self.tableView.delegate = delegate
         self.tableView.dataSource = dataSource
     }
-    
 }
 
 extension ActivityListView: ViewCodable {
@@ -60,5 +55,4 @@ extension ActivityListView: ViewCodable {
             tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
-    
 }

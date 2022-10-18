@@ -42,12 +42,12 @@ final class HomeView: UIView {
     }
 
     func updateView(with configuration: HomeViewConfiguration) {
+        activities = configuration.homeData.activity
         accountSummaryView.updateValues(balance: configuration.homeData.balance,
                                         savings: configuration.homeData.savings,
                                         spending: configuration.homeData.spending)
-        activityListView.updateTableView(with: configuration)
+        activityListView.reloadData()
     }
-
 }
 
 private extension HomeView {
@@ -79,8 +79,8 @@ private extension HomeView {
 
 extension HomeView: UITableViewDataSource, UITableViewDelegate {
 
-public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return activities.count
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        activities.count
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -95,5 +95,8 @@ public func tableView(_ tableView: UITableView, numberOfRowsInSection section: I
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         delegate?.didSelectActivity()
     }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        "Activity"
+    }
 }
-
