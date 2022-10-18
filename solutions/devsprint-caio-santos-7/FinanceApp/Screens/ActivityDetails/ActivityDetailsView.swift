@@ -131,7 +131,7 @@ extension ActivityDetailsView: ViewCodable {
         let bagImageSize: CGFloat = 150
         
         NSLayoutConstraint.activate([
-            vStack.topAnchor.constraint(equalTo: topAnchor, constant: 48),
+            vStack.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
             vStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 4),
             vStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -4),
             
