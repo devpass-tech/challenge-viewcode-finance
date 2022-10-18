@@ -15,13 +15,8 @@ final class ContactListViewTests: XCTestCase {
 //        SnapshotTesting.isRecording = true
     }
     
-    func testLoadingComponent() {
-        let component = ContactListViewController()
-        assertSnapshot(matching: component, as: .image(on: .iPhoneX))
-    }
-    
     func testRenderView() {
-        let component = ContactListViewController()
-        assertSnapshot(matching: component, as: .image(on: .iPhoneX))
+        let component = ContactListView()
+        assertSnapshot(matching: component, as: .image(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)))
     }
 }

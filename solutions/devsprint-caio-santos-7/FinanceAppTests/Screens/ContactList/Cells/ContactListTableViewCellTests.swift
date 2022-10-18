@@ -11,17 +11,16 @@ import XCTest
 
 final class ContactListTableViewCellTests: XCTestCase {
     
+    let sut = ContactListTableViewCell()
+    
     override class func setUp() {
 //        SnapshotTesting.isRecording = true
     }
     
-    func testLoadingComponent() {
-        let component = ContactListTableViewCell()
-        assertSnapshot(matching: component, as: .image(on: .iPhoneX))
-    }
+
     
     func testRenderView() {
-        let component = ContactListTableViewCell()
-        assertSnapshot(matching: component, as: .image(on: .iPhoneX))
+        sut.backgroundColor = .white
+        assertSnapshot(matching: sut, as: .image(size: CGSize(width: UIScreen.main.bounds.width, height: 64)))
     }
 }
