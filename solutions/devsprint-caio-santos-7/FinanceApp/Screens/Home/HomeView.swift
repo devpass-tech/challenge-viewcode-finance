@@ -7,13 +7,20 @@
 
 import UIKit
 
+protocol HomeViewDelegate: AnyObject {
+    func showActivityDetails()
+}
+
 struct HomeViewConfiguration {
     let homeData: HomeData
 }
 
 final class HomeView: UIView {
+    
     private let listViewCellIdentifier = "ListViewCellIdentifier"
-
+    
+    weak var delegate: HomeViewDelegate?
+    
     private var activities: [Activity] = []
 
     private lazy var accountSummaryView: AccountSummaryView = {
@@ -27,6 +34,7 @@ final class HomeView: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.listViewCellIdentifier)
         tableView.dataSource = self
+        tableView.delegate = self
         return tableView
     }()
 
@@ -75,7 +83,8 @@ private extension HomeView {
     }
 }
 
-extension HomeView: UITableViewDataSource {
+    //MARK: - Tableview
+extension HomeView: UITableViewDataSource, UITableViewDelegate {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return activities.count
     }
@@ -84,6 +93,11 @@ extension HomeView: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: self.listViewCellIdentifier)!
         cell.textLabel?.text = activities[indexPath.row].name
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.showActivityDetails()
+        print("touched")
     }
 }
 

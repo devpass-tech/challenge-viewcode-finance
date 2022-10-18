@@ -10,13 +10,14 @@ import UIKit
 class HomeViewController: UIViewController {
 
     private let service = FinanceService()
-
+    
     private let homeView: HomeView = {
         let homeView = HomeView()
         return homeView
     }()
 
     override func viewDidLoad() {
+        homeView.delegate = self
         customNavBar()
         profilePictureNavBar()
 
@@ -55,4 +56,13 @@ class HomeViewController: UIViewController {
         let rightBarButton = UIBarButtonItem(customView: profilePicture)
         navigationItem.rightBarButtonItem = rightBarButton
     }
+}
+
+extension HomeViewController: HomeViewDelegate {
+    func showActivityDetails() {
+        let vc = ActivityDetailsViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
 }
