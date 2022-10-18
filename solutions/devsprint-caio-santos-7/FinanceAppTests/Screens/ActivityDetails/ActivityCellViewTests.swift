@@ -32,7 +32,7 @@ final class ActivityCellViewTests: XCTestCase {
         unwrappedSut.updateValues(activity: Activity(name: "TESTE TESTE TESTE TESTE TESTE TESTE TESTE",
                                                      price: 0,
                                                      time: "TESTE"))
-        assertSnapshot(matching: unwrappedSut, as: .image)
+        assertSnapshot(matching: unwrappedSut, as: .image(size: .init(width: UIScreen.main.bounds.width, height: 78)))
     }
     
     func test_WhenInitActivityCellViewWithMall_ThenView_ShouldHaveValidSnapshot() throws {

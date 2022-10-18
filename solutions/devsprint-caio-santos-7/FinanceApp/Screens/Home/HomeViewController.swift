@@ -64,5 +64,7 @@ extension HomeViewController: HomeViewDelegate {
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    
+    func didSelectActivity() {
+        present(ContactListViewController(), animated: true)
+    }
 }

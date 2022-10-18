@@ -10,13 +10,27 @@ import UIKit
 enum ActivityTypes: String {
     case mall = "Mall"
     case foodCourt = "Food Court"
+    case oceanicAirlines = "Oceanic Airlines"
     
     func getColor() -> UIColor {
         switch self {
         case .mall:
-            return .red
+            return UIColor(red: 190/255, green: 81/255, blue: 255/255, alpha: 1)
         case .foodCourt:
             return .blue
+        case .oceanicAirlines:
+            return .orange
+        }
+    }
+    
+    func getIcon() -> UIImage? {
+        switch self {
+        case .mall:
+            return UIImage(named: "bag.circle.fill")
+        case .foodCourt:
+            return UIImage(named: "fork.knife.circle.fill")
+        case .oceanicAirlines:
+            return UIImage(named: "airplane.circle.fill")
         }
     }
 }
@@ -72,6 +86,7 @@ class ActivityCellView: UITableViewCell {
         
         if let type = ActivityTypes(rawValue: activity.name) {
             icon.tintColor = type.getColor()
+            icon.image = type.getIcon()
         }
 
         titleDescription.text = String.activityDetails(with: activity.price, and: activity.time)
@@ -96,22 +111,17 @@ extension ActivityCellView: ViewCodable {
     
     
     func setupConstraints() {
-        
         NSLayoutConstraint.activate([
-            icon.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+            icon.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             icon.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
             icon.heightAnchor.constraint(equalToConstant: 48),
             icon.widthAnchor.constraint(equalToConstant: 48),
             
-            stackView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            stackView.heightAnchor.constraint(greaterThanOrEqualToConstant: 48),
+            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
             stackView.leadingAnchor.constraint(equalTo: icon.trailingAnchor, constant: 8),
-            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
-            
-            titleLabel.leadingAnchor.constraint(equalTo: stackView.trailingAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
-            
-            titleDescription.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            titleDescription.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8)
         ])
     }
 }

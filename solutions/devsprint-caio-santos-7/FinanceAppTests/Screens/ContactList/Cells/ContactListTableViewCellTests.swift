@@ -17,10 +17,9 @@ final class ContactListTableViewCellTests: XCTestCase {
 //        SnapshotTesting.isRecording = true
     }
     
-
-    
     private func testRenderView() {
         cell.backgroundColor = .white
-        assertSnapshot(matching: cell, as: .image(size: CGSize(width: UIScreen.main.bounds.width, height: 64)))
+        assertSnapshot(matching: cell, as: .image(size: CGSize(width: UIScreen.main.bounds.width,
+                                                               height: 64)))
     }
 }
