@@ -12,8 +12,6 @@ struct HomeViewConfiguration {
 }
 
 final class HomeView: UIView {
-    private let listViewCellIdentifier = "ListViewCellIdentifier"
-
     private var activities: [Activity] = []
 
     private lazy var accountSummaryView: AccountSummaryView = {
@@ -25,7 +23,8 @@ final class HomeView: UIView {
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.listViewCellIdentifier)
+        tableView.register(ActivityCellView.self, forCellReuseIdentifier: ActivityCellView.reuseIdentifier)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: UITableViewCell.reuseIdentifier)
         tableView.dataSource = self
         return tableView
     }()
@@ -81,8 +80,13 @@ extension HomeView: UITableViewDataSource {
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.listViewCellIdentifier)!
-        cell.textLabel?.text = activities[indexPath.row].name
+        guard let cell: ActivityCellView = .createCell(for: tableView, at: indexPath),
+              indexPath.row < activities.count else {
+            return .init()
+        }
+        
+        
+        cell.updateValues(activity: activities[indexPath.row])
         return cell
     }
 }
