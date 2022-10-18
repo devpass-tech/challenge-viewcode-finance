@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
     }()
 
     override func viewDidLoad() {
+        homeView.delegate = self
         customNavBar()
         profilePictureNavBar()
 
@@ -54,5 +55,12 @@ class HomeViewController: UIViewController {
         profilePicture.addSubview(image)
         let rightBarButton = UIBarButtonItem(customView: profilePicture)
         navigationItem.rightBarButtonItem = rightBarButton
+    }
+}
+
+
+extension HomeViewController: HomeViewDelegate {
+    func didSelectActivity() {
+        present(ContactListViewController(), animated: true)
     }
 }

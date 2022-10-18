@@ -7,13 +7,17 @@
 
 import UIKit
 
-    struct HomeViewConfiguration {
-        let homeData: HomeData
-    }
+struct HomeViewConfiguration {
+    let homeData: HomeData
+}
 
+protocol HomeViewDelegate: AnyObject {
+    func didSelectActivity()
+}
+
+final class HomeView: UIView {
     private var activities: [Activity] = []
-
-final class HomeView: UIView{
+    var delegate: HomeViewDelegate?
     
     private lazy var accountSummaryView: AccountSummaryView = {
         let element = AccountSummaryView()
@@ -73,8 +77,9 @@ private extension HomeView {
     }
 }
 
-extension HomeView: UITableViewDelegate, UITableViewDataSource {
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension HomeView: UITableViewDataSource, UITableViewDelegate {
+
+public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return activities.count
     }
 
@@ -88,7 +93,7 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Função para disparar ação de toque na atividade")
+        delegate?.didSelectActivity()
     }
 }
 
