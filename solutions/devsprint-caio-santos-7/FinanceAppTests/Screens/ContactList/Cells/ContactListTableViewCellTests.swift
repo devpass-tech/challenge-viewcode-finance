@@ -11,7 +11,7 @@ import XCTest
 
 final class ContactListTableViewCellTests: XCTestCase {
     
-    let sut = ContactListTableViewCell()
+    private let cell = ContactListTableViewCell()
     
     override class func setUp() {
 //        SnapshotTesting.isRecording = true
@@ -19,8 +19,8 @@ final class ContactListTableViewCellTests: XCTestCase {
     
 
     
-    func testRenderView() {
-        sut.backgroundColor = .white
-        assertSnapshot(matching: sut, as: .image(size: CGSize(width: UIScreen.main.bounds.width, height: 64)))
+    private func testRenderView() {
+        cell.backgroundColor = .white
+        assertSnapshot(matching: cell, as: .image(size: CGSize(width: UIScreen.main.bounds.width, height: 64)))
     }
 }

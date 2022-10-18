@@ -83,7 +83,6 @@ extension ContactListTableViewCell: ViewCodable {
         container.addArrangedSubview(labelStackView)
         labelStackView.addArrangedSubview(nameLabel)
         labelStackView.addArrangedSubview(phoneNumberLabel)
-        
     }
 
     func setupConstraints() {
@@ -100,4 +99,5 @@ extension ContactListTableViewCell: ViewCodable {
             userImage.widthAnchor.constraint(equalToConstant: userImageSize)
         ])
     }
+
 }
