@@ -25,18 +25,15 @@ final class HomeView: UIView {
         return element
     }()
     
-    private lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: .zero)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(ActivityCellView.self, forCellReuseIdentifier: ActivityCellView.reuseIdentifier)
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: UITableViewCell.reuseIdentifier)
-        tableView.dataSource = self
-        tableView.delegate = self
-        return tableView
+    private lazy var activityListView: ActivityListView = {
+        let element = ActivityListView()
+        element.translatesAutoresizingMaskIntoConstraints = false
+        return element
     }()
-
+    
     init() {
         super.init(frame: .zero)
+        self.activityListView.configTableViewProtocol(delegate: self, dataSource: self)
         self.setupViews()
     }
 
@@ -49,7 +46,7 @@ final class HomeView: UIView {
         accountSummaryView.updateValues(balance: configuration.homeData.balance,
                                         savings: configuration.homeData.savings,
                                         spending: configuration.homeData.spending)
-        tableView.reloadData()
+        activityListView.reloadData()
     }
 }
 
@@ -63,7 +60,7 @@ private extension HomeView {
 
     func configureSubviews() {
         addSubview(accountSummaryView)
-        addSubview(tableView)
+        addSubview(activityListView)
     }
 
     func configureSubviewsConstraints() {
@@ -72,17 +69,18 @@ private extension HomeView {
             accountSummaryView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
             accountSummaryView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
 
-            tableView.topAnchor.constraint(equalTo: accountSummaryView.bottomAnchor, constant: 16),
-            tableView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
+            activityListView.topAnchor.constraint(equalTo: accountSummaryView.bottomAnchor, constant: 16),
+            activityListView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+            activityListView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+            activityListView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
         ])
     }
 }
 
 extension HomeView: UITableViewDataSource, UITableViewDelegate {
+
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return activities.count
+        activities.count
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -90,15 +88,15 @@ extension HomeView: UITableViewDataSource, UITableViewDelegate {
               indexPath.row < activities.count else {
             return .init()
         }
-        
-        
         cell.updateValues(activity: activities[indexPath.row])
         return cell
     }
     
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         delegate?.didSelectActivity()
     }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        "Activity"
+    }
 }
-
