@@ -7,18 +7,8 @@
 
 import UIKit
 
-final class UserProfileHeaderView: UIView {
-    
-    private lazy var stackViewProfile: UIStackView = {
-        let stack = UIStackView()
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.axis = .vertical
-        stack.spacing = 8
-        stack.alignment = .center
+final class UserProfileHeaderView: UIStackView {
         
-        return stack
-    }()
-    
     private lazy var profileImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -77,33 +67,33 @@ final class UserProfileHeaderView: UIView {
     }
     
     @available(*, unavailable)
-    required init?(coder: NSCoder) {
+    required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
 }
 
 extension UserProfileHeaderView: ViewCodable {
     
     func buildHierarchy() {
-        addSubview(stackViewProfile)
-        stackViewProfile.addArrangedSubview(profileImage)
-        stackViewProfile.addArrangedSubview(titleLabel)
-        stackViewProfile.addArrangedSubview(agencyLabel)
-        stackViewProfile.addArrangedSubview(accountLabel)
-        stackViewProfile.addArrangedSubview(bankLabel)
+        addArrangedSubview(profileImage)
+        addArrangedSubview(titleLabel)
+        addArrangedSubview(agencyLabel)
+        addArrangedSubview(accountLabel)
+        addArrangedSubview(bankLabel)
     }
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            stackViewProfile.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
-            stackViewProfile.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
-            stackViewProfile.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
-            stackViewProfile.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -16),
-            
             profileImage.heightAnchor.constraint(equalToConstant: 80),
             profileImage.widthAnchor.constraint(equalToConstant: 80),
         ])
     }
     
-    
+    func applyAdditionalChanges() {
+        translatesAutoresizingMaskIntoConstraints = false
+        axis = .vertical
+        spacing = 8
+        alignment = .center
+    }
 }
