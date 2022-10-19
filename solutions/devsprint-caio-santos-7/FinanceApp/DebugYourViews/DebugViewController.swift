@@ -19,8 +19,8 @@ import UIKit
 
 class DebugViewController: UIViewController {
 
-    private let myView: AccountSummaryView = {
-        let view = AccountSummaryView()
+    private let myView: ConfirmationView = {
+        let view = ConfirmationView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -36,7 +36,7 @@ class DebugViewController: UIViewController {
             myView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
             myView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
             myView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
-//            myView.heightAnchor.constraint(equalToConstant: myViewHeight)
+//          myView.heightAnchor.constraint(equalToConstant: myViewHeight)
         ])
     }
 
