@@ -127,31 +127,24 @@ extension ActivityDetailsView: ViewCodable {
     
     // MARK: Interface Constraints
     func setupConstraints() {
-        
         let bagImageSize: CGFloat = 150
         
         NSLayoutConstraint.activate([
-            vStack.topAnchor.constraint(equalTo: topAnchor, constant: 48),
-            vStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 4),
-            vStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -4),
+            vStack.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
+            vStack.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 4),
+            vStack.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -4),
             
             //Inside vStack
             bagImage.widthAnchor.constraint(equalToConstant: bagImageSize),
             bagImage.heightAnchor.constraint(equalToConstant: bagImageSize),
-        ])
-        
-        NSLayoutConstraint.activate([
-            vCenterStack.centerXAnchor.constraint(equalTo: centerXAnchor),
-            vCenterStack.centerYAnchor.constraint(equalTo: centerYAnchor),
-        ])
-        
-        NSLayoutConstraint.activate([
+
+            vCenterStack.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
+            vCenterStack.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor),
+
             reportIssueButton.heightAnchor.constraint(equalToConstant: 44),
-            reportIssueButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            reportIssueButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            reportIssueButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -32),
+            reportIssueButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            reportIssueButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            reportIssueButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -32),
         ])
     }
-    
-    
 }

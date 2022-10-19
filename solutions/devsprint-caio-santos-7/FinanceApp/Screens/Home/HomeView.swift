@@ -7,17 +7,19 @@
 
 import UIKit
 
+protocol HomeViewDelegate: AnyObject {
+    func showActivityDetails()
+    func didSelectActivity()
+}
+
 struct HomeViewConfiguration {
     let homeData: HomeData
 }
 
-protocol HomeViewDelegate: AnyObject {
-    func didSelectActivity()
-}
-
 final class HomeView: UIView {
+
     private var activities: [Activity] = []
-    var delegate: HomeViewDelegate?
+    weak var delegate: HomeViewDelegate?
     
     private lazy var accountSummaryView: AccountSummaryView = {
         let element = AccountSummaryView()
@@ -77,8 +79,8 @@ private extension HomeView {
     }
 }
 
+//MARK: - Tableview
 extension HomeView: UITableViewDataSource, UITableViewDelegate {
-
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         activities.count
     }
@@ -93,7 +95,9 @@ extension HomeView: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.didSelectActivity()
+        delegate?.showActivityDetails()
+        print("touched")
+        //delegate?.didSelectActivity()
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

@@ -11,7 +11,7 @@ final class ActivityDetailsViewController: UIViewController {
     
     let container = ActivityDetailsView()
     
-        override func loadView() {
-            self.view = container
-        }
+    override func loadView() {
+        self.view = container
+    }
 }

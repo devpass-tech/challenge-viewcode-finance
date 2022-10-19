@@ -12,5 +12,5 @@ target 'FinanceApp' do
     # Pods for testing
     pod 'SnapshotTesting', '~> 1.9.0'
   end
-
+  
 end

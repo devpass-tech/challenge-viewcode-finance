@@ -10,7 +10,7 @@ import UIKit
 class HomeViewController: UIViewController {
 
     private let service = FinanceService()
-
+    
     private let homeView: HomeView = {
         let homeView = HomeView()
         return homeView
@@ -58,8 +58,12 @@ class HomeViewController: UIViewController {
     }
 }
 
-
 extension HomeViewController: HomeViewDelegate {
+    func showActivityDetails() {
+        let vc = ActivityDetailsViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func didSelectActivity() {
         present(ContactListViewController(), animated: true)
     }
