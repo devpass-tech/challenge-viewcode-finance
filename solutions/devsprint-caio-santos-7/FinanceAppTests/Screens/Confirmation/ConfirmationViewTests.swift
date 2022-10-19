@@ -17,8 +17,8 @@ final class ConfirmationViewTests: XCTestCase {
     
     func testRenderView() {
         let component = ConfirmationView()
-        component.backgroundColor = .green
+        component.backgroundColor = .white
         assertSnapshot(matching: component, as: .image(size: CGSize(width: UIScreen.main.bounds.width,
-                                                                   height: UIScreen.main.bounds.height)))
+                                                                    height: UIScreen.main.bounds.height)))
     }
 }
