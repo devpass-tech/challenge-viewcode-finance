@@ -117,7 +117,6 @@ extension ActivityCellView: ViewCodable {
             icon.heightAnchor.constraint(equalToConstant: 48),
             icon.widthAnchor.constraint(equalToConstant: 48),
             
-            stackView.heightAnchor.constraint(greaterThanOrEqualToConstant: 48),
             stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
             stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
             stackView.leadingAnchor.constraint(equalTo: icon.trailingAnchor, constant: 8),
