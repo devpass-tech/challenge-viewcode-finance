@@ -9,7 +9,12 @@ import UIKit
 
 class ConfirmationViewController: UIViewController {
 
+    private let confirmationView: ConfirmationView = {
+        let confirmationView = ConfirmationView()
+        return confirmationView
+    }()
+    
     override func loadView() {
-        self.view = ConfirmationView()
+        self.view = confirmationView
     }
 }
