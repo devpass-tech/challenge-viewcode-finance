@@ -12,9 +12,9 @@ class TransfersView: UIView {
     private lazy var stackViewPrincipal: UIStackView = {
         let sv = UIStackView()
         sv.translatesAutoresizingMaskIntoConstraints = false
-        sv.alignment = .center
         sv.spacing = 10
         sv.axis = .vertical
+        sv.distribution = .fill
         return sv
     }()
     
@@ -27,7 +27,6 @@ class TransfersView: UIView {
         return sv
     }()
     
-    
     lazy var centerLabel: UITextField = {
         var input = UITextField()
         input.translatesAutoresizingMaskIntoConstraints = false
@@ -37,6 +36,7 @@ class TransfersView: UIView {
             string: "$0",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor(red: 0.235, green: 0.235, blue: 0.263, alpha: 0.6)]
         )
+        input.textAlignment = .center
         
         return input
     }()
@@ -95,8 +95,6 @@ class TransfersView: UIView {
         stackViewSec.addArrangedSubview(buttonContact)
         buttonContact.addSubview(iconGreen)
         addSubview(buttonTransfer)
-        
-        
     }
     
     required init?(coder: NSCoder) {
@@ -104,8 +102,12 @@ class TransfersView: UIView {
     }
     
     private func setUpContraints(){
+        let lg = safeAreaLayoutGuide
+        
         NSLayoutConstraint.activate([
-            
+            stackViewPrincipal.centerYAnchor.constraint(equalTo: lg.centerYAnchor),
+            stackViewPrincipal.centerXAnchor.constraint(equalTo: lg.centerXAnchor),
+
             iconGreen.widthAnchor.constraint(equalToConstant: 10),
             iconGreen.heightAnchor.constraint(equalToConstant: 10),
             iconGreen.centerYAnchor.constraint(equalTo: buttonContact.centerYAnchor),
@@ -114,18 +116,10 @@ class TransfersView: UIView {
             buttonContact.widthAnchor.constraint(equalToConstant: 135),
             buttonContact.heightAnchor.constraint(equalToConstant: 30),
             
-            stackViewPrincipal.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor),
-            stackViewPrincipal.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
-            
-            
-            
-            buttonTransfer.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -45),
+            buttonTransfer.bottomAnchor.constraint(equalTo: lg.bottomAnchor, constant: -16),
             buttonTransfer.heightAnchor.constraint(equalToConstant: 45),
-            buttonTransfer.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 45),
-            buttonTransfer.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -45),
-            
-            
-            
+            buttonTransfer.leadingAnchor.constraint(equalTo: lg.leadingAnchor, constant: 45),
+            buttonTransfer.trailingAnchor.constraint(equalTo: lg.trailingAnchor, constant: -45)
         ])
     }
     
