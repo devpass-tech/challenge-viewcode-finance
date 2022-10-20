@@ -14,6 +14,10 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
 
         // Atribuir delegate para que a VC utilize os metodos do delegate
         self.delegate = self
+
+        let lineView = UIView(frame: CGRect(x: 0, y: 0, width: tabBar.frame.size.width, height: 0.5))
+        lineView.backgroundColor = UIColor.systemGray
+        tabBar.addSubview(lineView)
     }
 
     override func viewWillAppear(_ animated: Bool) {
