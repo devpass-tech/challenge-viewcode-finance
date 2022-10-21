@@ -97,7 +97,7 @@ extension HomeView: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         delegate?.showActivityDetails()
         print("touched")
-        //delegate?.didSelectActivity()
+        delegate?.didSelectActivity()
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
