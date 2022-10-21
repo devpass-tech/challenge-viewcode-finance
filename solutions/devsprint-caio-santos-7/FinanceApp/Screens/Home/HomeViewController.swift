@@ -46,16 +46,25 @@ class HomeViewController: UIViewController {
     }
     
     private func profilePictureNavBar() {
-        let profilePicture = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-        let image = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-        image.image = UIImage(named: "avatar-placeholder")
-        image.contentMode = .scaleAspectFit
-        image.layer.cornerRadius = 22.5
-        image.layer.masksToBounds = true
-        profilePicture.addSubview(image)
-        let rightBarButton = UIBarButtonItem(customView: profilePicture)
+//        let profilePicture = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+//        let image = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+//        image.image = UIImage(named: "avatar-placeholder")
+//        image.contentMode = .scaleAspectFit
+//        image.layer.cornerRadius = 22.5
+//        image.layer.masksToBounds = true
+//        profilePicture.addSubview(image)
+//        let rightBarButton = UIBarButtonItem(customView: profilePicture)
+        let rightBarButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector (showUserProfile))
         navigationItem.rightBarButtonItem = rightBarButton
+//        rightBarButton.target = self
+//        rightBarButton.action = #selector(showUserProfile)
     }
+    
+    @objc func showUserProfile() {
+        present(UserProfileViewController(), animated: true)
+        print("clicado")
+    }
+    
 }
 
 extension HomeViewController: HomeViewDelegate {

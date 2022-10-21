@@ -62,7 +62,7 @@ final class UserProfileHeaderView: UIStackView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .systemGray5
+        backgroundColor = .init(hexString: "#F2F2F7")
         setupView()
     }
     
