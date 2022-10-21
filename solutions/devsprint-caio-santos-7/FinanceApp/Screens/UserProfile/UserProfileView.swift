@@ -23,10 +23,11 @@ class UserProfileView: UIView {
     }()
     
     private lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: .zero)
+        let tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(UserProfileViewCell.self, forCellReuseIdentifier: UserProfileViewCell.identifier)
-        tableView.register(UserProfileViewGeneralCell.self, forCellReuseIdentifier: UserProfileViewGeneralCell.identifier)
+//        tableView.register(UserProfileViewGeneralCell.self, forCellReuseIdentifier: UserProfileViewGeneralCell.identifier)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: UITableViewCell.reuseIdentifier)
         return tableView
     }()
     
@@ -34,9 +35,7 @@ class UserProfileView: UIView {
         super.init(frame: frame)
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.configViews()
-        self.buildHierarchy()
-        self.setupConstraints()
+        self.setupView()
     }
     
     required init?(coder: NSCoder) {
@@ -46,26 +45,26 @@ class UserProfileView: UIView {
 
 extension UserProfileView: ViewCodable {
     
-    func configViews (){
-        backgroundColor = .white
-    }
-    
-    func buildHierarchy(){
+    func buildHierarchy() {
         addSubview(headerStackView)
         addSubview(tableView)
     }
     
-    func setupConstraints(){
+    func setupConstraints() {
         NSLayoutConstraint.activate([
-            headerStackView.topAnchor.constraint(equalTo: topAnchor),
+            headerStackView.topAnchor.constraint(equalTo: topAnchor, constant: 32),
             headerStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             headerStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
             
-            tableView.topAnchor.constraint(lessThanOrEqualTo: headerStackView.bottomAnchor, constant: 16),
+            tableView.topAnchor.constraint(lessThanOrEqualTo: headerStackView.bottomAnchor, constant: 8),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
+    }
+    
+    func applyAdditionalChanges() {
+        backgroundColor = .init(hexString: "#F2F2F7")
     }
 }
 
@@ -97,22 +96,25 @@ extension UserProfileView: UITableViewDelegate, UITableViewDataSource {
             cell.configure(leftLabel: userData[indexPath.row] , rightLabel: userModel[indexPath.row])
             return cell
         } else if indexPath.section == 0 && indexPath.row > 2 && indexPath.row < 6 {
-            let buttonCell = tableView.dequeueReusableCell(withIdentifier: UserProfileViewGeneralCell.identifier, for: indexPath) as! UserProfileViewGeneralCell
-            buttonCell.configure(generalLabel: self.testModel[indexPath.row - 3])
-            
+            let buttonCell: UITableViewCell = .createCell(for: tableView, at: indexPath)!
+            buttonCell.textLabel?.text = self.testModel[indexPath.row - 3]
+            buttonCell.accessoryType = .disclosureIndicator
             return buttonCell
-            
         } else if indexPath.section == 1 && indexPath.row < 2 {
-            let generalCell = tableView.dequeueReusableCell(withIdentifier: UserProfileViewGeneralCell.identifier, for: indexPath) as! UserProfileViewGeneralCell
-            generalCell.configure(generalLabel: generalModel[indexPath.row])
-            
-            return generalCell
-            
+            let buttonCell: UITableViewCell = .createCell(for: tableView, at: indexPath)!
+            buttonCell.textLabel?.text = generalModel[indexPath.row]
+            buttonCell.accessoryType = .disclosureIndicator
+            return buttonCell
         } else {
             let versionCell = tableView.dequeueReusableCell(withIdentifier: UserProfileViewCell.identifier, for: indexPath) as! UserProfileViewCell
             versionCell.configure(leftLabel: appModel[indexPath.row - 2], rightLabel: versionModel[indexPath.row - 2])
-            
             return versionCell
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Chamar um método
+        
+        tableView.deselectRow(at: indexPath, animated: false)
     }
 }

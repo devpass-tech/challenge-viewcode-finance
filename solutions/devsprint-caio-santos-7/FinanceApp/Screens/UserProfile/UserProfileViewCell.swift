@@ -14,10 +14,7 @@ class UserProfileViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.backgroundColor = .white
-        configViews()
-        buildHierarchy()
-        setupConstraints()
-        
+        setupView()
     }
     
     required init?(coder: NSCoder) {
@@ -55,11 +52,6 @@ extension UserProfileViewCell: ViewCodable {
     public func configure(leftLabel: String, rightLabel: String) {
         self.leftLabel.text = leftLabel
         self.rightLabel.text = rightLabel
-    }
-    
-    
-    func configViews() {
-        backgroundColor = .white
     }
     
     func buildHierarchy() {
