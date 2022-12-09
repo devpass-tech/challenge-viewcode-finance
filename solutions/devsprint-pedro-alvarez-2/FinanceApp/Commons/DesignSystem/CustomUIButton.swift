@@ -31,6 +31,7 @@ open class CustomUIButton: UIButton {
         setupUI()
     }
     
+    @available(*, unavailable)
     public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
