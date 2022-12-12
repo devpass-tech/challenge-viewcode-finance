@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1CD90C6F29475D1100237BD9 /* ProfileButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD90C6E29475D1100237BD9 /* ProfileButtonView.swift */; };
+		1CD90C7229475E6500237BD9 /* CodeBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD90C7129475E6500237BD9 /* CodeBaseView.swift */; };
+		1CD90C742947629000237BD9 /* HierarchyRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD90C732947629000237BD9 /* HierarchyRelation.swift */; };
 		1DBC0432294176F6000501FA /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBC0431294176F6000501FA /* TabBarController.swift */; };
 		98584A6D277E32C30028DBEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584A6C277E32C30028DBEA /* AppDelegate.swift */; };
 		98584A6F277E32C30028DBEA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584A6E277E32C30028DBEA /* SceneDelegate.swift */; };
@@ -71,6 +74,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1CD90C6E29475D1100237BD9 /* ProfileButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButtonView.swift; sourceTree = "<group>"; };
+		1CD90C7129475E6500237BD9 /* CodeBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeBaseView.swift; sourceTree = "<group>"; };
+		1CD90C732947629000237BD9 /* HierarchyRelation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HierarchyRelation.swift; sourceTree = "<group>"; };
 		1DBC0431294176F6000501FA /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		98584A69277E32C30028DBEA /* FinanceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98584A6C277E32C30028DBEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +152,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1CD90C6D29475CDF00237BD9 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				1CD90C6E29475D1100237BD9 /* ProfileButtonView.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		1CD90C7029475E2700237BD9 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				1CD90C7129475E6500237BD9 /* CodeBaseView.swift */,
+				1CD90C732947629000237BD9 /* HierarchyRelation.swift */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
 		1DBC043029417602000501FA /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +261,7 @@
 		98584A9E277E35700028DBEA /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				1CD90C7029475E2700237BD9 /* Commons */,
 				98906BEC29392209001D1975 /* Components */,
 				98584B08277E602C0028DBEA /* ContactList */,
 				98584ADF277E50430028DBEA /* Confirmation */,
@@ -252,6 +276,7 @@
 		98584A9F277E35780028DBEA /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				1CD90C6D29475CDF00237BD9 /* Subviews */,
 				98584AA6277E35F10028DBEA /* HomeView.swift */,
 				98584AA4277E35E90028DBEA /* HomeViewController.swift */,
 			);
@@ -486,6 +511,7 @@
 				98906BEE2939221B001D1975 /* AccountSummaryView.swift in Sources */,
 				98584B10277E605F0028DBEA /* ActivityDetailsViewController.swift in Sources */,
 				98584B20277E60740028DBEA /* ContactListViewController.swift in Sources */,
+				1CD90C6F29475D1100237BD9 /* ProfileButtonView.swift in Sources */,
 				98584AF4277E50430028DBEA /* ConfirmationViewController.swift in Sources */,
 				98C8A4DD27C818A800A630ED /* HomeData.swift in Sources */,
 				98C8A4D927C8152200A630ED /* String+Extensions.swift in Sources */,
@@ -496,6 +522,7 @@
 				98906BF42939225B001D1975 /* ContactCellView.swift in Sources */,
 				98584B14277E605F0028DBEA /* ActivityDetailsView.swift in Sources */,
 				98584AE7277E50430028DBEA /* TransfersView.swift in Sources */,
+				1CD90C742947629000237BD9 /* HierarchyRelation.swift in Sources */,
 				98906BF62939226B001D1975 /* UserProfileHeaderView.swift in Sources */,
 				98C8A4DB27C815C000A630ED /* UITableViewCell+Extensions.swift in Sources */,
 				98584AF3277E50430028DBEA /* ConfirmationView.swift in Sources */,
@@ -504,6 +531,7 @@
 				98584A6F277E32C30028DBEA /* SceneDelegate.swift in Sources */,
 				98906BF02939223C001D1975 /* ActivityCellView.swift in Sources */,
 				98584AA7277E35F10028DBEA /* HomeView.swift in Sources */,
+				1CD90C7229475E6500237BD9 /* CodeBaseView.swift in Sources */,
 				98584B1F277E60740028DBEA /* ContactListView.swift in Sources */,
 				1DBC0432294176F6000501FA /* TabBarController.swift in Sources */,
 				989627E027ADC2F60009A07F /* DebugViewController.swift in Sources */,

@@ -21,6 +21,7 @@ class HomeViewController: UIViewController {
 
         navigationItem.title = "Finance App 💰"
         navigationController?.navigationBar.prefersLargeTitles = true
+        setupProfileImage()
 
         service.fetchHomeData { homeData in
 
@@ -40,4 +41,11 @@ class HomeViewController: UIViewController {
     override func loadView() {
         self.view = homeView
     }
+
+    private func setupProfileImage() {
+        let barButton = UIBarButtonItem()
+        barButton.customView = ProfileButtonView()
+        self.navigationItem.rightBarButtonItem = barButton
+    }
+
 }
