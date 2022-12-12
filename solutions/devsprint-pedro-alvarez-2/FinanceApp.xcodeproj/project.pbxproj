@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1DBC0432294176F6000501FA /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBC0431294176F6000501FA /* TabBarController.swift */; };
+		7EFE570B2947C06900CEB30C /* ActivityDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFE570A2947C06900CEB30C /* ActivityDetailsViewModel.swift */; };
 		98584A6D277E32C30028DBEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584A6C277E32C30028DBEA /* AppDelegate.swift */; };
 		98584A6F277E32C30028DBEA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584A6E277E32C30028DBEA /* SceneDelegate.swift */; };
 		98584A76277E32C50028DBEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98584A75277E32C50028DBEA /* Assets.xcassets */; };
@@ -72,6 +73,7 @@
 
 /* Begin PBXFileReference section */
 		1DBC0431294176F6000501FA /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		7EFE570A2947C06900CEB30C /* ActivityDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsViewModel.swift; sourceTree = "<group>"; };
 		98584A69277E32C30028DBEA /* FinanceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98584A6C277E32C30028DBEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98584A6E277E32C30028DBEA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 			children = (
 				98584B0E277E605F0028DBEA /* ActivityDetailsView.swift */,
 				98584B0A277E605F0028DBEA /* ActivityDetailsViewController.swift */,
+				7EFE570A2947C06900CEB30C /* ActivityDetailsViewModel.swift */,
 			);
 			path = ActivityDetails;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 				98584AA5277E35E90028DBEA /* HomeViewController.swift in Sources */,
 				98906BF229392248001D1975 /* ActivityListView.swift in Sources */,
 				98584AED277E50430028DBEA /* UserProfileView.swift in Sources */,
+				7EFE570B2947C06900CEB30C /* ActivityDetailsViewModel.swift in Sources */,
 				98C8A4E127C8196100A630ED /* ActivityDetails.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
