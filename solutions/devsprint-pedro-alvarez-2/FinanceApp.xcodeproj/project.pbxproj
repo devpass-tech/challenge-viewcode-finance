@@ -50,6 +50,7 @@
 		98C8A4E327C819DE00A630ED /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8A4E227C819DE00A630ED /* Contact.swift */; };
 		98C8A4E527C81A3F00A630ED /* TransferResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8A4E427C81A3F00A630ED /* TransferResult.swift */; };
 		98C8A4E727C81A9C00A630ED /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8A4E627C81A9C00A630ED /* UserProfile.swift */; };
+		CCDA8BF12947F08A00E5410D /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = CCDA8BF02947F08A00E5410D /* SnapshotTesting */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCDA8BF12947F08A00E5410D /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +359,8 @@
 			dependencies = (
 			);
 			name = FinanceApp;
+			packageProductDependencies = (
+			);
 			productName = FinanceApp;
 			productReference = 98584A69277E32C30028DBEA /* FinanceApp.app */;
 			productType = "com.apple.product-type.application";
@@ -393,6 +397,9 @@
 				98584A8B277E32C60028DBEA /* PBXTargetDependency */,
 			);
 			name = FinanceAppUITests;
+			packageProductDependencies = (
+				CCDA8BF02947F08A00E5410D /* SnapshotTesting */,
+			);
 			productName = FinanceAppUITests;
 			productReference = 98584A89277E32C60028DBEA /* FinanceAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -429,6 +436,9 @@
 				Base,
 			);
 			mainGroup = 98584A60277E32C30028DBEA;
+			packageReferences = (
+				CCDA8BEF2947F08A00E5410D /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+			);
 			productRefGroup = 98584A6A277E32C30028DBEA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -679,7 +689,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = B8F644M47X;
+				DEVELOPMENT_TEAM = 35L88272GP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FinanceApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -707,7 +717,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = B8F644M47X;
+				DEVELOPMENT_TEAM = 35L88272GP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FinanceApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -844,6 +854,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CCDA8BEF2947F08A00E5410D /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CCDA8BF02947F08A00E5410D /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CCDA8BEF2947F08A00E5410D /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 98584A61277E32C30028DBEA /* Project object */;
 }
