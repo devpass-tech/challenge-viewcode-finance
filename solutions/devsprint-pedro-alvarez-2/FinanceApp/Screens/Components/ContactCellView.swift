@@ -9,4 +9,9 @@ import UIKit
 
 class ContactCellView {
     
+    private lazy var contactListView: ContactListView = {
+        let contactListView = ContactListView()
+        return contactListView
+    }()
+    
 }
