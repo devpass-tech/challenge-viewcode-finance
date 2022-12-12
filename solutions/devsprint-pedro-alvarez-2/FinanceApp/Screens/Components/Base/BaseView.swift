@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class BaseView<ViewModel>: UIView {
+public class BaseView: UIView {
     open var hierarchies: [BaseViewHierarchy] { [] }
     
     override init(frame: CGRect) {
@@ -19,12 +19,6 @@ public class BaseView<ViewModel>: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-//    public var viewModel: ViewModel? {
-//        didSet {
-//            configureView(viewModel)
-//        }
-//    }
     
     private func setupHierarchy() {
         for relation in hierarchies {
@@ -42,12 +36,9 @@ public class BaseView<ViewModel>: UIView {
         NSLayoutConstraint.activate(constraints)
     }
     
-//    open func configureView(_ viewModel: ViewModel?) { }
-    
     private func setupView() {
         for relation in hierarchies {
             relation.makeHierarchy()
         }
     }
-    
 }
