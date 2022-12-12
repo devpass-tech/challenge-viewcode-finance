@@ -45,7 +45,13 @@ class HomeViewController: UIViewController {
     private func setupProfileImage() {
         let barButton = UIBarButtonItem()
         barButton.customView = ProfileButtonView()
+        barButton.action = #selector(redirectToUserProfile)
         self.navigationItem.rightBarButtonItem = barButton
+    }
+    
+    @objc private func redirectToUserProfile(){
+        //TODO: Implement redirect to UserProfile
+        print("TODO: implementar redirect")
     }
 
 }

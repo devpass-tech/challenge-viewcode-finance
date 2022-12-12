@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileButtonView: CodeBaseView<ProfileButtonView.ViewModel> {
+final class ProfileButtonView: CodeBaseView<ProfileButtonView.ViewModel> {
     
     //MARK: - Custom Data
     struct ViewModel {
