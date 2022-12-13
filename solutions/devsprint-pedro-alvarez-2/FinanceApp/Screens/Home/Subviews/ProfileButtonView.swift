@@ -7,16 +7,7 @@
 
 import UIKit
 
-final class ProfileButtonView: CodeBaseView<ProfileButtonView.ViewModel> {
-    
-    //MARK: - Custom Data
-    struct ViewModel {
-        let image: String
-        
-        init(image: String) {
-            self.image = image
-        }
-    }
+final class ProfileButtonView: CodeBaseView<String> {
 
     enum Constants {
         static let imageName: String = "avatar-placeholder"
@@ -27,23 +18,7 @@ final class ProfileButtonView: CodeBaseView<ProfileButtonView.ViewModel> {
 
     private lazy var profileButton: UIButton = {
         let button = UIButton()
-        button.frame = CGRectMake(.zero, .zero, Constants.imageHeight, Constants.imageWidth)
-        let image = UIImage(named: Constants.imageName)
-        if let image = image {
-            UIGraphicsBeginImageContextWithOptions(button.frame.size, false, image.scale)
-            
-            let rect  = CGRectMake(.zero, .zero, button.frame.size.width, button.frame.size.height)
-            UIBezierPath(roundedRect: rect, cornerRadius: Constants.half * rect.width).addClip()
-            image.draw(in: rect)
-            
-            let newImage = UIGraphicsGetImageFromCurrentImageContext()
-            UIGraphicsEndImageContext()
-            
-            
-            let color = UIColor(patternImage: newImage!)
-            button.backgroundColor = color
-            button.layer.cornerRadius = Constants.half * button.bounds.size.width
-        }
+        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
@@ -66,14 +41,29 @@ final class ProfileButtonView: CodeBaseView<ProfileButtonView.ViewModel> {
     override public var constraints: [NSLayoutConstraint] {
         [
             profileButton.topAnchor.constraint(equalTo: topAnchor),
-            profileButton.leadingAnchor.constraint(equalTo: leadingAnchor),
             profileButton.trailingAnchor.constraint(equalTo: trailingAnchor),
+            profileButton.widthAnchor.constraint(equalToConstant: Constants.imageWidth),
+            profileButton.heightAnchor.constraint(equalToConstant: Constants.imageHeight),
             profileButton.bottomAnchor.constraint(equalTo: bottomAnchor)
         ]
     }
     
-    override public func configureView(_ viewModel: ViewModel?) {
-        // Configure
+    override public func configureView(_ viewModel: String?) {
+        let image = UIImage(named: viewModel ?? Constants.imageName)
+        DispatchQueue.main.async {
+            if let image = image {
+                UIGraphicsBeginImageContextWithOptions(self.profileButton.frame.size, false, image.scale)
+                let rect  = CGRectMake(.zero, .zero, self.profileButton.frame.size.width, self.profileButton.frame.size.height)
+                UIBezierPath(roundedRect: rect, cornerRadius: Constants.half * rect.width).addClip()
+                image.draw(in: rect)
+                let newImage = UIGraphicsGetImageFromCurrentImageContext()
+                UIGraphicsEndImageContext()
+                let color = UIColor(patternImage: newImage!)
+                self.profileButton.backgroundColor = color
+                self.profileButton.layer.cornerRadius = Constants.half * self.profileButton.bounds.size.width
+            }
+        }
+        
     }
 
 }

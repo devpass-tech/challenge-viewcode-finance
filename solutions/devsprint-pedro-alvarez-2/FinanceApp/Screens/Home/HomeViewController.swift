@@ -10,6 +10,15 @@ import UIKit
 class HomeViewController: UIViewController {
 
     private let service = FinanceService()
+    
+    private let barButton = { imageName in
+        let barButton = UIBarButtonItem()
+        let profileButton = ProfileButtonView()
+        profileButton.configureView(imageName)
+        barButton.customView = profileButton
+        barButton.action = #selector(redirectToUserProfile)
+        return barButton
+    }
 
     private let homeView: HomeView = {
 
@@ -20,8 +29,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
 
         navigationItem.title = "Finance App 💰"
+        navigationItem.rightBarButtonItem =  barButton("avatar-placeholder")
         navigationController?.navigationBar.prefersLargeTitles = true
-        setupProfileImage()
 
         service.fetchHomeData { homeData in
 
@@ -40,13 +49,6 @@ class HomeViewController: UIViewController {
 
     override func loadView() {
         self.view = homeView
-    }
-
-    private func setupProfileImage() {
-        let barButton = UIBarButtonItem()
-        barButton.customView = ProfileButtonView()
-        barButton.action = #selector(redirectToUserProfile)
-        self.navigationItem.rightBarButtonItem = barButton
     }
     
     @objc private func redirectToUserProfile(){
