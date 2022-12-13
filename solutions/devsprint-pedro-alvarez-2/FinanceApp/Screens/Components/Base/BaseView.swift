@@ -7,29 +7,16 @@
 
 import UIKit
 
-public class BaseView: UIView {
+class BaseView: UIView {
     open var hierarchies: [BaseViewHierarchy] { [] }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupHierarchy()
         setupConstraints()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func setupHierarchy() {
-        for relation in hierarchies {
-            for subView in relation.subViews {
-                if let stackView = relation.parentView as? UIStackView {
-                    stackView.addArrangedSubview(subView)
-                } else {
-                    relation.parentView.addSubview(subView)
-                }
-            }
-        }
     }
     
     private func setupConstraints() {

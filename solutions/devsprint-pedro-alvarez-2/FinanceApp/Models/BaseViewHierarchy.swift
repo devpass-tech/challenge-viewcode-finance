@@ -7,7 +7,7 @@
 
 import UIKit
 
-public struct BaseViewHierarchy {
+struct BaseViewHierarchy {
     let parentView: UIView
     let subViews: [UIView]
     
