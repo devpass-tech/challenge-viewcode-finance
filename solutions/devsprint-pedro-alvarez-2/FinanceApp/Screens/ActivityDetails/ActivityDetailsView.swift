@@ -1,6 +1,6 @@
 import UIKit
 
-final class ActivityDetailsView: UIView {
+final class ActivityDetailsView: BaseView {
     
     // MARK: - Private Properties UI
     
@@ -74,45 +74,15 @@ final class ActivityDetailsView: UIView {
         return button
     }()
     
-    private let viewModel: ActivityDetailsViewModel
-    
-    // MARK: - Init
-    
-    init(viewModel: ActivityDetailsViewModel) {
-        self.viewModel = viewModel
-        super.init(frame: .zero)
-        setup()
+    override var hierarchies: [BaseViewHierarchy] {
+        return [BaseViewHierarchy.init(parentView: self, subViews: [mainStack, reportButton]),
+                BaseViewHierarchy.init(parentView: mainStack, subViews: [productView, productValueView]),
+                BaseViewHierarchy.init(parentView: productView, subViews: [productImage, productNameLabel,categoryNameLabel]),
+                BaseViewHierarchy.init(parentView: productValueView, subViews: [productValue, purchaseTime])]
     }
     
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    // MARK: - Private Methods
-    
-    private func setup() {
-        setupHierarchy()
-        setupConstraints()
-        setupExtra()
-    }
-    
-    private func setupHierarchy() {
-        addSubview(mainStack)
-        mainStack.addArrangedSubview(productView)
-        productView.addSubview(productImage)
-        productView.addSubview(productNameLabel)
-        productView.addSubview(categoryNameLabel)
-        
-        mainStack.addArrangedSubview(productValueView)
-        productValueView.addSubview(productValue)
-        productValueView.addSubview(purchaseTime)
-        
-        addSubview(reportButton)
-    }
-    
-    private func setupConstraints() {
-        NSLayoutConstraint.activate([
+    override var constraints: [NSLayoutConstraint] {
+        [
             mainStack.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             mainStack.leadingAnchor.constraint(equalTo: leadingAnchor),
             mainStack.trailingAnchor.constraint(equalTo: trailingAnchor),
@@ -134,8 +104,25 @@ final class ActivityDetailsView: UIView {
             reportButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -15),
             reportButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             reportButton.heightAnchor.constraint(equalToConstant: 56)
-        ])
+        ]
     }
+    
+    private let viewModel: ActivityDetailsViewModel
+    
+    // MARK: - Init
+    
+    init(viewModel: ActivityDetailsViewModel) {
+        self.viewModel = viewModel
+        super.init(frame: .zero)
+        setupExtra()
+    }
+    
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Private Methods
     
     private func setupExtra() {
         backgroundColor = .systemBackground

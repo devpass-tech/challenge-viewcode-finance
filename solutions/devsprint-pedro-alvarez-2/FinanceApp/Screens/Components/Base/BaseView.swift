@@ -12,6 +12,7 @@ class BaseView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupView()
         setupConstraints()
     }
     
