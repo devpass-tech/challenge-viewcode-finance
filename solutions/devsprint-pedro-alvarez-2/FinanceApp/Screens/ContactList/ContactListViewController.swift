@@ -8,7 +8,7 @@
 import UIKit
 
 class ContactListViewController: UIViewController {
-
+    
     override func loadView() {
         self.view = ContactListView()
         
@@ -16,7 +16,9 @@ class ContactListViewController: UIViewController {
         configConstraints()
     }
     
-   
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
     private lazy var contactCellView: ContactCellView = {
         let contactCellView = ContactCellView()
         return contactCellView
@@ -45,26 +47,31 @@ class ContactListViewController: UIViewController {
         return tableView
     }()
     
-    
-    private func confighierarchy() {
-        view.addSubview(titleLabel)
-        view.addSubview(contactTableView)
-    }
-    
-    
-    private func configConstraints() {
-        NSLayoutConstraint.activate([
-        
-            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            
-            contactTableView.topAnchor.constraint(equalTo: titleLabel.topAnchor),
-            contactTableView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            contactTableView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            contactTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
-    }
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
 }
+
+    extension ContactListViewController {
+       
+        private func confighierarchy() {
+            view.addSubview(titleLabel)
+            view.addSubview(contactTableView)
+        }
+        
+        private func configConstraints() {
+            NSLayoutConstraint.activate([
+            
+                titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+                titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                
+                contactTableView.topAnchor.constraint(equalTo: titleLabel.topAnchor),
+                contactTableView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                contactTableView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                contactTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            ])
+        }
+    }
 
 extension ContactListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
