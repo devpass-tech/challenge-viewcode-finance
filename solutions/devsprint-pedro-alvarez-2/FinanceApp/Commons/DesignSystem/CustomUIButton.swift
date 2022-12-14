@@ -18,12 +18,12 @@ open class CustomUIButton: UIButton {
     }
     
     // MARK: - UI Components
-    public private(set) var style: Style
-    public private(set) var cornerRadius: CornerRadius
-    public private(set) var title: String
+    private var style: Style
+    private var cornerRadius: CornerRadius
+    private var title: String
     
     // MARK: - Initialization
-    init(style: Style, cornerRadius: CornerRadius, title: String) {
+    init(style: Style, cornerRadius: CornerRadius, title: String, frame: CGRect) {
         self.style = style
         self.cornerRadius = cornerRadius
         self.title = title
