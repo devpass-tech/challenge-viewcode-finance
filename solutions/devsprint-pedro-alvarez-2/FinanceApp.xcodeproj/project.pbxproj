@@ -51,6 +51,8 @@
 		98C8A4E327C819DE00A630ED /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8A4E227C819DE00A630ED /* Contact.swift */; };
 		98C8A4E527C81A3F00A630ED /* TransferResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8A4E427C81A3F00A630ED /* TransferResult.swift */; };
 		98C8A4E727C81A9C00A630ED /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8A4E627C81A9C00A630ED /* UserProfile.swift */; };
+		FBB56216294777360060278D /* BaseViewHierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB56215294777360060278D /* BaseViewHierarchy.swift */; };
+		FBB56219294778320060278D /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB56218294778320060278D /* BaseView.swift */; };
 		CCDA8BF12947F08A00E5410D /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = CCDA8BF02947F08A00E5410D /* SnapshotTesting */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +122,8 @@
 		98C8A4E227C819DE00A630ED /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		98C8A4E427C81A3F00A630ED /* TransferResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferResult.swift; sourceTree = "<group>"; };
 		98C8A4E627C81A9C00A630ED /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		FBB56215294777360060278D /* BaseViewHierarchy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewHierarchy.swift; sourceTree = "<group>"; };
+		FBB56218294778320060278D /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +280,7 @@
 				98C8A4E227C819DE00A630ED /* Contact.swift */,
 				98C8A4E427C81A3F00A630ED /* TransferResult.swift */,
 				98C8A4E627C81A9C00A630ED /* UserProfile.swift */,
+				FBB56215294777360060278D /* BaseViewHierarchy.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -328,6 +333,7 @@
 		98906BEC29392209001D1975 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				FBB56217294778170060278D /* Base */,
 				98906BED2939221B001D1975 /* AccountSummaryView.swift */,
 				98906BEF2939223C001D1975 /* ActivityCellView.swift */,
 				98906BF129392248001D1975 /* ActivityListView.swift */,
@@ -352,6 +358,14 @@
 				98C8A4DA27C815C000A630ED /* UITableViewCell+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FBB56217294778170060278D /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				FBB56218294778320060278D /* BaseView.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -503,6 +517,7 @@
 				98C8A4E327C819DE00A630ED /* Contact.swift in Sources */,
 				98C8A4E527C81A3F00A630ED /* TransferResult.swift in Sources */,
 				98584AE8277E50430028DBEA /* TransfersViewController.swift in Sources */,
+				FBB56216294777360060278D /* BaseViewHierarchy.swift in Sources */,
 				98906BF42939225B001D1975 /* ContactCellView.swift in Sources */,
 				98584B14277E605F0028DBEA /* ActivityDetailsView.swift in Sources */,
 				98584AE7277E50430028DBEA /* TransfersView.swift in Sources */,
@@ -519,6 +534,7 @@
 				989627E027ADC2F60009A07F /* DebugViewController.swift in Sources */,
 				98584AA5277E35E90028DBEA /* HomeViewController.swift in Sources */,
 				98906BF229392248001D1975 /* ActivityListView.swift in Sources */,
+				FBB56219294778320060278D /* BaseView.swift in Sources */,
 				98584AED277E50430028DBEA /* UserProfileView.swift in Sources */,
 				98C8A4E127C8196100A630ED /* ActivityDetails.swift in Sources */,
 			);
