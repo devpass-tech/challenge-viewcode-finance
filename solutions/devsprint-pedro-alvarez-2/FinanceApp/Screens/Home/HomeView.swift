@@ -23,6 +23,7 @@ final class HomeView: UIView {
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.listViewCellIdentifier)
+        tableView.backgroundColor = .systemBackground
         tableView.dataSource = self
         return tableView
     }()

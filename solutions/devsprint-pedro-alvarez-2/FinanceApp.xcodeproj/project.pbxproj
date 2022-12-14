@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1DBC0432294176F6000501FA /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBC0431294176F6000501FA /* TabBarController.swift */; };
+		1DFDAAE129453C5900EDA3A3 /* ViewCodePipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFDAAE029453C5900EDA3A3 /* ViewCodePipeline.swift */; };
 		98584A6D277E32C30028DBEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584A6C277E32C30028DBEA /* AppDelegate.swift */; };
 		98584A6F277E32C30028DBEA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584A6E277E32C30028DBEA /* SceneDelegate.swift */; };
 		98584A76277E32C50028DBEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98584A75277E32C50028DBEA /* Assets.xcassets */; };
@@ -75,6 +76,7 @@
 
 /* Begin PBXFileReference section */
 		1DBC0431294176F6000501FA /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		1DFDAAE029453C5900EDA3A3 /* ViewCodePipeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodePipeline.swift; sourceTree = "<group>"; };
 		98584A69277E32C30028DBEA /* FinanceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98584A6C277E32C30028DBEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98584A6E277E32C30028DBEA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 			children = (
 				98C8A4D827C8152200A630ED /* String+Extensions.swift */,
 				98C8A4DA27C815C000A630ED /* UITableViewCell+Extensions.swift */,
+				1DFDAAE029453C5900EDA3A3 /* ViewCodePipeline.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 				98584B10277E605F0028DBEA /* ActivityDetailsViewController.swift in Sources */,
 				98584B20277E60740028DBEA /* ContactListViewController.swift in Sources */,
 				98584AF4277E50430028DBEA /* ConfirmationViewController.swift in Sources */,
+				1DFDAAE129453C5900EDA3A3 /* ViewCodePipeline.swift in Sources */,
 				98C8A4DD27C818A800A630ED /* HomeData.swift in Sources */,
 				98C8A4D927C8152200A630ED /* String+Extensions.swift in Sources */,
 				98C8A4E727C81A9C00A630ED /* UserProfile.swift in Sources */,
