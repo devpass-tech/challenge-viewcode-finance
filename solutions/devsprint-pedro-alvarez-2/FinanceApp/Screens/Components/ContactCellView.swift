@@ -14,4 +14,8 @@ class ContactCellView {
         return contactListView
     }()
     
+//    private func loadView() {
+//       view = ContactListView()
+//       }
+    
 }

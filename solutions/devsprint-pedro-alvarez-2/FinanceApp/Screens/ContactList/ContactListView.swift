@@ -9,6 +9,7 @@ import UIKit
 
 class ContactListView: UIView {
     
+    // MARK: - Private Properties UI
     private let imagePerson: UIImageView = {
         let image = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -53,9 +54,35 @@ class ContactListView: UIView {
         view.layer.borderColor = UIColor.gray.cgColor
         return view
     }()
+    
+    private let viewModel: ContactListModel
+    
+    // MARK: - Init
+    init(viewModel: ContactListModel) {
+        self.viewModel = viewModel
+        super.init(frame: .zero)
+        getPopularTableView()
+        confighierarchy()
+        configConstraints()
+    }
+    
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+   
+    }
+    
+    private func getPopularTableView() {
+        imagePerson.image = viewModel.image
+        nameLabel.text = viewModel.name
+        phoneLabel.text = viewModel.phone
+    }
+    
 }
 
+
     extension ContactListView {
+        // MARK: - Private Methods
         private func confighierarchy() {
             addSubview(imagePerson)
             addSubview(separatorView)
@@ -66,14 +93,9 @@ class ContactListView: UIView {
         
         private func configConstraints() {
             NSLayoutConstraint.activate([
-            
-    //            titleLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 32.0),
-    //            titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-    //            titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
                 
                 imagePerson.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10.0),
                 imagePerson.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -10),
-                
                 
                 stackView.topAnchor.constraint(equalTo: topAnchor, constant: 16.0),
                 stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16.0),
