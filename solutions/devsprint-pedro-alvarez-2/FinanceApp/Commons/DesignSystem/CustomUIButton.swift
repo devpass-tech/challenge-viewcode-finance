@@ -7,7 +7,20 @@
 
 import UIKit
 
-open class CustomUIButton: UIButton {
+public class CustomUIButton: UIButton {
+    // MARK: - ViewModel
+    public struct ViewModel {
+        let style: Style
+        let cornerRadius: CornerRadius
+        let title: String
+        
+        public init(style: Style, cornerRadius: CornerRadius, title: String) {
+            self.style = style
+            self.cornerRadius = cornerRadius
+            self.title = title
+        }
+    }
+    
     // MARK: - Custom Types
     public enum Style {
         case primary
@@ -17,18 +30,14 @@ open class CustomUIButton: UIButton {
         case medium
     }
     
-    // MARK: - UI Components
-    private var style: Style
-    private var cornerRadius: CornerRadius
-    private var title: String
+    // MARK: - Data properties
+    private var viewModel: ViewModel
     
     // MARK: - Initialization
-    init(style: Style, cornerRadius: CornerRadius, title: String, frame: CGRect) {
-        self.style = style
-        self.cornerRadius = cornerRadius
-        self.title = title
+    public init(viewModel: ViewModel, frame: CGRect) {
+        self.viewModel = viewModel
         super.init(frame: .zero)
-        setupUI()
+        setupButton()
     }
     
     @available(*, unavailable)
@@ -36,35 +45,20 @@ open class CustomUIButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Methods
-    private func setupUI() {
-        setupButton()
-        handleStyleButton()
-        handleCornerRadiusButton()
-    }
-    
     /// Setup Button
     private func setupButton() {
-        translatesAutoresizingMaskIntoConstraints = false
-        setTitle(title, for: .normal)
-    }
-    
-    /// Style Button
-    private func handleStyleButton() {
-        switch style {
+        setTitle(viewModel.title, for: .normal)
+        
+        switch viewModel.style {
         case .primary:
-            backgroundColor = UIColor.backgroundButton
-            setTitleColor(UIColor.colorWhite, for: .normal)
+            backgroundColor = .blue
+            setTitleColor(.white, for: .normal)
         }
-    }
-    
-    /// Corner Radius Button
-    private func handleCornerRadiusButton() {
-        switch cornerRadius {
+        
+        switch viewModel.cornerRadius {
         case .medium:
             layer.cornerRadius = 14
         }
     }
 }
-
 
