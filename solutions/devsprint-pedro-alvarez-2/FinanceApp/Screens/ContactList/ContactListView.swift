@@ -10,10 +10,10 @@ import UIKit
 class ContactListView: UIView {
     
     // MARK: - Private Properties UI
-    private let imagePerson: UIImageView = {
-        let image = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+     lazy var imagePerson: UIImageView = {
+        let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.layer.cornerRadius = 10
+        image.layer.cornerRadius = 30
         image.clipsToBounds = true
         image.layer.masksToBounds = true
         image.backgroundColor = .gray
@@ -21,7 +21,7 @@ class ContactListView: UIView {
         return image
     }()
     
-    private lazy var nameLabel: UILabel = {
+     lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
@@ -31,7 +31,7 @@ class ContactListView: UIView {
         return label
     }()
     
-    private lazy var phoneLabel: UILabel = {
+     lazy var phoneLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
@@ -48,20 +48,9 @@ class ContactListView: UIView {
         return stackView
     }()
     
-    private lazy var separatorView: UIView = {
-        let view = UIView(frame: CGRect(x: 0, y: 100, width: 320, height: 1.0))
-        view.layer.borderWidth = 1.0
-        view.layer.borderColor = UIColor.gray.cgColor
-        return view
-    }()
-    
-    private let viewModel: ContactListModel
-    
     // MARK: - Init
-    init(viewModel: ContactListModel) {
-        self.viewModel = viewModel
+     init() {
         super.init(frame: .zero)
-        getPopularTableView()
         confighierarchy()
         configConstraints()
     }
@@ -72,12 +61,11 @@ class ContactListView: UIView {
    
     }
     
-    private func getPopularTableView() {
-        imagePerson.image = viewModel.image
-        nameLabel.text = viewModel.name
-        phoneLabel.text = viewModel.phone
+    func getPopularView(image: String, name: String, phone: String) {
+        imagePerson.image = UIImage(named: image)
+        nameLabel.text = name
+        phoneLabel.text = phone
     }
-    
 }
 
 
@@ -85,7 +73,7 @@ class ContactListView: UIView {
         // MARK: - Private Methods
         private func confighierarchy() {
             addSubview(imagePerson)
-            addSubview(separatorView)
+            addSubview(stackView)
             stackView.addArrangedSubview(nameLabel)
             stackView.addArrangedSubview(phoneLabel)
         }
@@ -94,13 +82,15 @@ class ContactListView: UIView {
         private func configConstraints() {
             NSLayoutConstraint.activate([
                 
-                imagePerson.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10.0),
-                imagePerson.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -10),
+                imagePerson.topAnchor.constraint(equalTo: self.topAnchor, constant: 16),
+                imagePerson.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16),
+                imagePerson.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+                imagePerson.heightAnchor.constraint(equalToConstant: 60.0),
+                imagePerson.widthAnchor.constraint(equalToConstant: 60.0),
                 
-                stackView.topAnchor.constraint(equalTo: topAnchor, constant: 16.0),
-                stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16.0),
-                stackView.leadingAnchor.constraint(equalTo: imagePerson.leadingAnchor, constant: 24.0),
-                stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24.0),
+                stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+                stackView.leadingAnchor.constraint(equalTo: imagePerson.trailingAnchor, constant: 20.0),
+                stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20.0),
             ])
         }
 

@@ -50,6 +50,7 @@
 		98C8A4E327C819DE00A630ED /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8A4E227C819DE00A630ED /* Contact.swift */; };
 		98C8A4E527C81A3F00A630ED /* TransferResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8A4E427C81A3F00A630ED /* TransferResult.swift */; };
 		98C8A4E727C81A9C00A630ED /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8A4E627C81A9C00A630ED /* UserProfile.swift */; };
+		FBD92BE1294C005D0005A98E /* ContactListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD92BE0294C005D0005A98E /* ContactListViewModel.swift */; };
 		FBECEFF22943E4E40027C8A2 /* ContactListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBECEFF12943E4E40027C8A2 /* ContactListModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -118,6 +119,7 @@
 		98C8A4E227C819DE00A630ED /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		98C8A4E427C81A3F00A630ED /* TransferResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferResult.swift; sourceTree = "<group>"; };
 		98C8A4E627C81A9C00A630ED /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		FBD92BE0294C005D0005A98E /* ContactListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewModel.swift; sourceTree = "<group>"; };
 		FBECEFF12943E4E40027C8A2 /* ContactListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -308,6 +310,7 @@
 		98584B08277E602C0028DBEA /* ContactList */ = {
 			isa = PBXGroup;
 			children = (
+				FBD92BDF294C00280005A98E /* ViewModel */,
 				98584B19277E60740028DBEA /* ContactListView.swift */,
 				98584B1A277E60740028DBEA /* ContactListViewController.swift */,
 				FBECEFF12943E4E40027C8A2 /* ContactListModel.swift */,
@@ -342,6 +345,14 @@
 				98C8A4DA27C815C000A630ED /* UITableViewCell+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FBD92BDF294C00280005A98E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FBD92BE0294C005D0005A98E /* ContactListViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -489,6 +500,7 @@
 				98584B14277E605F0028DBEA /* ActivityDetailsView.swift in Sources */,
 				98584AE7277E50430028DBEA /* TransfersView.swift in Sources */,
 				98906BF62939226B001D1975 /* UserProfileHeaderView.swift in Sources */,
+				FBD92BE1294C005D0005A98E /* ContactListViewModel.swift in Sources */,
 				98C8A4DB27C815C000A630ED /* UITableViewCell+Extensions.swift in Sources */,
 				98584AF3277E50430028DBEA /* ConfirmationView.swift in Sources */,
 				98584AEE277E50430028DBEA /* UserProfileViewController.swift in Sources */,
